@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/kitchen/kitchen",
-    "pages/setting/setting"
+    "pages/setting/setting",
+    "pages/setting/register/register",
+    "pages/setting/vegetable/vegetable"
   ],
   "window": {
     "navigationBarTextStyle": "black",

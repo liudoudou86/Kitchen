@@ -17,6 +17,18 @@
 			"style": {
 				"navigationBarTitleText": "设置"
 			}
+		},
+		{
+			"path": "pages/setting/register/register",
+			"style": {
+				"navigationBarTitleText": "注册"
+			}
+		},
+		{
+			"path": "pages/setting/vegetable/vegetable",
+			"style": {
+				"navigationBarTitleText": "菜篮子"
+			}
 		}
 	],
 	"globalStyle": {

@@ -2,9 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/kitchen/kitchen",
-    "pages/setting/setting",
-    "pages/setting/register/register",
-    "pages/setting/vegetable/vegetable"
+    "pages/setting/setting"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -34,7 +32,7 @@
         "pagePath": "pages/setting/setting",
         "iconPath": "static/tabbar/me.png",
         "selectedIconPath": "static/tabbar/me_active.png",
-        "text": "设置"
+        "text": "编辑"
       }
     ]
   },

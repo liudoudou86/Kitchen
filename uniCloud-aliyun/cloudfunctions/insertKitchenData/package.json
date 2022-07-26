@@ -1,0 +1,7 @@
+{
+  "name": "insertKitchenData",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

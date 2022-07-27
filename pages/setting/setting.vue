@@ -18,12 +18,12 @@
 					</radio-group>
 				</view>
 				<view class="uni-form-item uni-column">
-					<view class="title">菜名</view>
-					<input class="uni-input" name="nickname" placeholder="请输入菜名" />
+					<view class="title">菜谱</view>
+					<input class="uni-input" name="nickname" placeholder="请输入菜谱" />
 				</view>
 				<view class="uni-form-item uni-column">
-					<view class="title">材料</view>
-					<input class="uni-input" name="materials" placeholder="请输入材料" />
+					<view class="title">配料表</view>
+					<input class="uni-input" name="materials" placeholder="请输入配料" />
 				</view>
 				<view class="uni-btn-v">
 					<button form-type="submit">保存</button>
@@ -79,18 +79,43 @@
 
 <style>
 	
+	.uni-padding-wrap {
+	    margin-top: 50rpx;
+	    margin-bottom: 50rpx;
+		margin-left: 50rpx;
+		margin-right: 50rpx;
+	}
+	
+	.uni-form-item {
+		margin-top: 50rpx;
+		margin-bottom: 50rpx;
+		margin-left: 50rpx;
+		margin-right: 50rpx;
+	}
+	
 	.uni-form-item .title {
-		padding: 20rpx 0;
+		margin-top: 50rpx;
+		margin-bottom: 50rpx;
+	}
+	
+	.uni-form-item .uni-input {
+		margin-top: 50rpx;
+		margin-bottom: 50rpx;
+	}
+	
+	label {
+		margin-left: 10rpx;
+		margin-right: 10rpx;
 	}
 	
 	button {
-	    margin-top: 30rpx;
-	    margin-bottom: 30rpx;
+	    margin-top: 50rpx;
+	    margin-bottom: 50rpx;
 	}
 	
 	.uni-btn-v {
 	    margin: 0 auto;
-	    width: 70%;
+	    width: 95%;
 	}
 
 </style>

@@ -1,1 +1,1 @@
-.uni-form-item .title{padding:20rpx 0}button{margin-top:30rpx;margin-bottom:30rpx}.uni-btn-v{margin:0 auto;width:70%}
+.uni-padding-wrap,.uni-form-item{margin:50rpx}.uni-form-item .title,.uni-form-item .uni-input{margin-top:50rpx;margin-bottom:50rpx}label{margin-left:10rpx;margin-right:10rpx}button{margin-top:50rpx;margin-bottom:50rpx}.uni-btn-v{margin:0 auto;width:95%}

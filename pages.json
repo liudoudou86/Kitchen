@@ -1,21 +1,39 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/index/index",
+			"path": "pages/month/month",
 			"style": {
-				"navigationBarTitleText": "首页"
+				"navigationBarTitleText": "月"
 			}
 		},
 		{
-			"path": "pages/kitchen/kitchen",
+			"path": "pages/week/week",
 			"style": {
-				"navigationBarTitleText": "厨房"
+				"navigationBarTitleText": "周"
+			}
+		},
+		{
+			"path": "pages/menu/menu",
+			"style": {
+				"navigationBarTitleText": "菜单"
 			}
 		},
 		{
 			"path": "pages/setting/setting",
 			"style": {
+				"navigationBarTitleText": "设置"
+			}
+		},
+		{
+			"path": "pages/setting/edit/edit",
+			"style": {
 				"navigationBarTitleText": "编辑"
+			}
+		},
+		{
+			"path": "pages/setting/modify/modify",
+			"style": {
+				"navigationBarTitleText": "修改"
 			}
 		}
 	],
@@ -33,22 +51,28 @@
 		"backgroundColor": "#F8F8F8",
 		"list": [
 			{
-				"pagePath": "pages/index/index",
+				"pagePath": "pages/month/month",
 				"iconPath": "static/tabbar/list.png",
 				"selectedIconPath": "static/tabbar/list_active.png",
-				"text": "首页"
+				"text": "月"
 			},
 			{
-				"pagePath": "pages/kitchen/kitchen",
+				"pagePath": "pages/week/week",
 				"iconPath": "static/tabbar/grid.png",
 				"selectedIconPath": "static/tabbar/grid_active.png",
-				"text": "厨房"
+				"text": "周"
+			},
+			{
+				"pagePath": "pages/menu/menu",
+				"iconPath": "static/tabbar/im-contacts.png",
+				"selectedIconPath": "static/tabbar/im-contacts_active.png",
+				"text": "菜谱"
 			},
 			{
 				"pagePath": "pages/setting/setting",
 				"iconPath": "static/tabbar/me.png",
 				"selectedIconPath": "static/tabbar/me_active.png",
-				"text": "编辑"
+				"text": "设置"
 			}
 		]
 	}

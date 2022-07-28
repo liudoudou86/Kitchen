@@ -1,1 +1,0 @@
-"use strict";var e=require("../../common/vendor.js");const r={data(){return{title:"\u53A8\u623F"}},onLoad(){},methods:{}};function n(c,i,a,s,t,_){return{a:e.t(t.title)}}var o=e._export_sfc(r,[["render",n],["__file","D:/Coding/Kitchen/pages/kitchen/kitchen.vue"]]);wx.createPage(o);

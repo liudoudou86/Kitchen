@@ -1,1 +1,0 @@
-"use strict";var e=require("../../common/vendor.js");const n={data(){return{title:"\u9996\u9875"}},onLoad(){},methods:{}};function t(i,a,c,s,r,_){return{a:e.t(r.title)}}var o=e._export_sfc(n,[["render",t],["__file","D:/Coding/Kitchen/pages/index/index.vue"]]);wx.createPage(o);

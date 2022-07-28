@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "菜单",
+  "usingComponents": {
+    "uni-td": "../../uni_modules/uni-table/components/uni-td/uni-td",
+    "uni-th": "../../uni_modules/uni-table/components/uni-th/uni-th",
+    "uni-tr": "../../uni_modules/uni-table/components/uni-tr/uni-tr",
+    "uni-table": "../../uni_modules/uni-table/components/uni-table/uni-table"
+  }
+}

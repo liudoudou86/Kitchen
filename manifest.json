@@ -1,6 +1,6 @@
 {
     "name" : "上厨房",
-    "appid" : "__UNI__A3000F9",
+    "appid" : "__UNI__44EC4D6",
     "description" : "",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -38,7 +38,8 @@
                     "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
                     "<uses-feature android:name=\"android.hardware.camera\"/>",
                     "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>"
-                ]
+                ],
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a", "x86" ]
             },
             /* ios打包配置 */
             "ios" : {},
@@ -53,7 +54,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "wx232662019b7ba2b8",
+        "appid" : "wxe9b55030c1f1503a",
         "setting" : {
             "urlCheck" : false,
             "postcss" : true,

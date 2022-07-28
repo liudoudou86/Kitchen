@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/kitchen/kitchen",
+    "pages/month/month",
+    "pages/week/week",
+    "pages/menu/menu",
     "pages/setting/setting"
   ],
   "window": {
@@ -17,16 +18,22 @@
     "backgroundColor": "#F8F8F8",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/month/month",
         "iconPath": "static/tabbar/list.png",
         "selectedIconPath": "static/tabbar/list_active.png",
-        "text": "首页"
+        "text": "月"
       },
       {
-        "pagePath": "pages/kitchen/kitchen",
+        "pagePath": "pages/week/week",
         "iconPath": "static/tabbar/grid.png",
         "selectedIconPath": "static/tabbar/grid_active.png",
-        "text": "厨房"
+        "text": "周"
+      },
+      {
+        "pagePath": "pages/menu/menu",
+        "iconPath": "static/tabbar/im-contacts.png",
+        "selectedIconPath": "static/tabbar/im-contacts_active.png",
+        "text": "菜谱"
       },
       {
         "pagePath": "pages/setting/setting",

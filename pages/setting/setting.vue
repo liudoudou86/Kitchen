@@ -2,11 +2,11 @@
 	<view>
 		<view class="uni-padding-wrap uni-common-mt">
 			<view class="uni-btn-v">
-				<navigator url="/pages/setting/edit/edit" hover-class="navigator-hover">
-					<button type="default">编辑</button>
+				<navigator class="uni-btn-v" url="/pages/setting/edit/edit" hover-class="navigator-hover">
+					<button type="default">新增菜谱</button>
 				</navigator>
-				<navigator url="/pages/setting/modify/modify" hover-class="navigator-hover">
-					<button type="default">修改</button>
+				<navigator class="uni-btn-v" url="/pages/setting/modify/modify" hover-class="navigator-hover">
+					<button type="default">修改菜谱</button>
 				</navigator>
 			</view>
 		</view>
@@ -25,5 +25,17 @@
 </script>
 
 <style>
+
+ .uni-btn-v {
+	 margin-top: 50rpx;
+	 margin-bottom: 50rpx;
+	 margin-left: 50rpx;
+	 margin-right: 50rpx;
+ }
+ 
+ .navigator-hover {
+	 margin-top: 50rpx;
+	 margin-bottom: 50rpx;
+ }
 
 </style>

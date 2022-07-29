@@ -57,7 +57,7 @@ if (uni.restoreGlobal) {
   const _sfc_main$b = {
     data() {
       return {
-        title: "\u9996\u9875"
+        title: "\u5360\u4F4D\u7B26"
       };
     },
     onLoad() {
@@ -66,10 +66,6 @@ if (uni.restoreGlobal) {
   };
   function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "content" }, [
-      vue.createElementVNode("image", {
-        class: "logo",
-        src: "/static/logo.png"
-      }),
       vue.createElementVNode("view", { class: "text-area" }, [
         vue.createElementVNode("text", { class: "title" }, vue.toDisplayString($data.title), 1)
       ])
@@ -79,7 +75,7 @@ if (uni.restoreGlobal) {
   const _sfc_main$a = {
     data() {
       return {
-        title: "\u53A8\u623F"
+        title: "\u5360\u4F4D\u7B26"
       };
     },
     onLoad() {
@@ -717,7 +713,7 @@ if (uni.restoreGlobal) {
   function h(e) {
     return e && typeof e == "string" ? JSON.parse(e) : e;
   }
-  const d = true, f = "app", g = h('{\n    "address": [\n        "127.0.0.1",\n        "10.16.169.63"\n    ],\n    "debugPort": 50300,\n    "initialLaunchType": "local",\n    "servePort": 50301,\n    "skipFiles": [\n        "<node_internals>/**/*.js",\n        "D:/Coding/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), p = h('[{"provider":"aliyun","spaceName":"kitchen","spaceId":"18675ae6-1e0a-48ed-bbde-d40d5697caf1","clientSecret":"0LNWE8dlDUg8H7zEreT9Uw==","endpoint":"https://api.bspapp.com"}]');
+  const d = true, f = "app", g = h('{\n    "address": [\n        "127.0.0.1",\n        "10.16.169.63"\n    ],\n    "debugPort": 57205,\n    "initialLaunchType": "remote",\n    "servePort": 57206,\n    "skipFiles": [\n        "<node_internals>/**/*.js",\n        "D:/Coding/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), p = h('[{"provider":"aliyun","spaceName":"kitchen","spaceId":"18675ae6-1e0a-48ed-bbde-d40d5697caf1","clientSecret":"0LNWE8dlDUg8H7zEreT9Uw==","endpoint":"https://api.bspapp.com"}]');
   let y = "";
   try {
     y = "__UNI__44EC4D6";
@@ -3289,8 +3285,13 @@ if (uni.restoreGlobal) {
           formatAppLog("log", "at pages/menu/menu.vue:93", err);
         });
       },
-      getMaterials(e) {
-        formatAppLog("log", "at pages/menu/menu.vue:98", e.target.dataset);
+      getMaterials(item) {
+        formatAppLog("log", "at pages/menu/menu.vue:98", item.materials);
+        uni.hideLoading();
+        uni.showModal({
+          content: "\u914D\u6599\u8868\uFF1A\n" + item.materials,
+          showCancel: false
+        });
       }
     }
   };
@@ -3354,8 +3355,8 @@ if (uni.restoreGlobal) {
                           class: "uni-button",
                           size: "mini",
                           type: "primary",
-                          onClick: _cache[0] || (_cache[0] = ($event) => $options.getMaterials($event))
-                        }, vue.toDisplayString(item.nickname), 1)
+                          onClick: ($event) => $options.getMaterials(item)
+                        }, vue.toDisplayString(item.nickname), 9, ["onClick"])
                       ]);
                     }), 128))
                   ]),
@@ -3372,8 +3373,8 @@ if (uni.restoreGlobal) {
                           class: "uni-button",
                           size: "mini",
                           type: "primary",
-                          onClick: _cache[1] || (_cache[1] = ($event) => $options.getMaterials($event))
-                        }, vue.toDisplayString(item.nickname), 1)
+                          onClick: ($event) => $options.getMaterials(item)
+                        }, vue.toDisplayString(item.nickname), 9, ["onClick"])
                       ]);
                     }), 128))
                   ]),
@@ -3390,8 +3391,8 @@ if (uni.restoreGlobal) {
                           class: "uni-button",
                           size: "mini",
                           type: "primary",
-                          onClick: _cache[2] || (_cache[2] = ($event) => $options.getMaterials($event))
-                        }, vue.toDisplayString(item.nickname), 1)
+                          onClick: ($event) => $options.getMaterials(item)
+                        }, vue.toDisplayString(item.nickname), 9, ["onClick"])
                       ]);
                     }), 128))
                   ]),
@@ -3420,12 +3421,14 @@ if (uni.restoreGlobal) {
       vue.createElementVNode("view", { class: "uni-padding-wrap uni-common-mt" }, [
         vue.createElementVNode("view", { class: "uni-btn-v" }, [
           vue.createElementVNode("navigator", {
+            class: "uni-btn-v",
             url: "/pages/setting/edit/edit",
             "hover-class": "navigator-hover"
           }, [
-            vue.createElementVNode("button", { type: "default" }, "\u7F16\u8F91")
+            vue.createElementVNode("button", { type: "default" }, "\u63D0\u4EA4")
           ]),
           vue.createElementVNode("navigator", {
+            class: "uni-btn-v",
             url: "/pages/setting/modify/modify",
             "hover-class": "navigator-hover"
           }, [
@@ -3443,7 +3446,7 @@ if (uni.restoreGlobal) {
     methods: {
       formSubmit: function(e) {
         const formData = e.detail.value;
-        formatAppLog("log", "at pages/setting/edit/edit.vue:46", "\u63D0\u4EA4\u8868\u5355\u6570\u636E\uFF1A" + JSON.stringify(e.detail.value));
+        formatAppLog("log", "at pages/setting/edit/edit.vue:45", "\u63D0\u4EA4\u8868\u5355\u6570\u636E\uFF1A" + JSON.stringify(e.detail.value));
         tn.callFunction({
           name: "insertKitchenData",
           data: {
@@ -3452,14 +3455,14 @@ if (uni.restoreGlobal) {
             materials: formData.materials
           }
         }).then((res) => {
-          formatAppLog("log", "at pages/setting/edit/edit.vue:56", res);
+          formatAppLog("log", "at pages/setting/edit/edit.vue:55", res);
           uni.hideLoading();
           uni.showModal({
             content: "\u4FDD\u5B58\u6210\u529F",
             showCancel: false
           });
         }).catch((err) => {
-          formatAppLog("log", "at pages/setting/edit/edit.vue:63", err);
+          formatAppLog("log", "at pages/setting/edit/edit.vue:62", err);
           uni.hideLoading();
           uni.showModal({
             content: "\u4FDD\u5B58\u5931\u8D25",
@@ -3468,7 +3471,7 @@ if (uni.restoreGlobal) {
         });
       },
       formReset: function(e) {
-        formatAppLog("log", "at pages/setting/edit/edit.vue:72", "\u6E05\u7A7A\u6570\u636E");
+        formatAppLog("log", "at pages/setting/edit/edit.vue:71", "\u6E05\u7A7A\u6570\u636E");
       }
     }
   };
@@ -3513,9 +3516,12 @@ if (uni.restoreGlobal) {
             })
           ]),
           vue.createElementVNode("view", { class: "uni-btn-v" }, [
-            vue.createElementVNode("button", { "form-type": "submit" }, "\u4FDD\u5B58"),
             vue.createElementVNode("button", {
-              type: "default",
+              type: "primary",
+              "form-type": "submit"
+            }, "\u4FDD\u5B58"),
+            vue.createElementVNode("button", {
+              type: "warn",
               "form-type": "reset"
             }, "\u91CD\u7F6E")
           ])
@@ -3524,9 +3530,108 @@ if (uni.restoreGlobal) {
     ]);
   }
   var PagesSettingEditEdit = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__file", "D:/Coding/Kitchen/pages/setting/edit/edit.vue"]]);
-  const _sfc_main$1 = {};
-  function _sfc_render(_ctx, _cache) {
-    return vue.openBlock(), vue.createElementBlock("view", { class: "form" });
+  const _sfc_main$1 = {
+    data() {
+      return {};
+    },
+    methods: {
+      inputNickname: function(e) {
+        this.nickname = e.detail.value;
+      },
+      inputMaterials: function(e) {
+        this.materials = e.detail.value;
+      },
+      formModify() {
+        formatAppLog("log", "at pages/setting/modify/modify.vue:37", "\u83DC\u540D\uFF1A" + this.nickname);
+        formatAppLog("log", "at pages/setting/modify/modify.vue:38", "\u914D\u6599\u8868\uFF1A" + this.materials);
+        tn.callFunction({
+          name: "updateKitchenData",
+          data: {
+            nickname: this.nickname,
+            materials: this.materials
+          }
+        }).then((res) => {
+          formatAppLog("log", "at pages/setting/modify/modify.vue:47", res);
+          uni.hideLoading();
+          uni.showModal({
+            content: "\u4FEE\u6539\u6210\u529F",
+            showCancel: false
+          });
+        }).catch((err) => {
+          formatAppLog("log", "at pages/setting/modify/modify.vue:54", err);
+          uni.hideLoading();
+          uni.showModal({
+            content: "\u4FEE\u6539\u5931\u8D25",
+            showCancel: false
+          });
+        });
+      },
+      formDelete() {
+        formatAppLog("log", "at pages/setting/modify/modify.vue:63", this.nickname);
+        tn.callFunction({
+          name: "deleteKitchenData",
+          data: {
+            nickname: this.nickname
+          }
+        }).then((res) => {
+          formatAppLog("log", "at pages/setting/modify/modify.vue:71", res);
+          uni.hideLoading();
+          uni.showModal({
+            content: "\u5220\u9664\u6210\u529F",
+            showCancel: false
+          });
+        }).catch((err) => {
+          formatAppLog("log", "at pages/setting/modify/modify.vue:78", err);
+          uni.hideLoading();
+          uni.showModal({
+            content: "\u5220\u9664\u5931\u8D25",
+            showCancel: false
+          });
+        });
+      }
+    }
+  };
+  function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", { class: "form" }, [
+      vue.createElementVNode("view", { class: "uni-padding-wrap uni-common-mt" }, [
+        vue.createElementVNode("form", {
+          onSubmit: _cache[3] || (_cache[3] = ($event) => $options.formModify())
+        }, [
+          vue.createElementVNode("view", { class: "uni-form-item uni-column" }, [
+            vue.createElementVNode("view", { class: "title" }, "\u83DC\u540D\uFF1A"),
+            vue.createElementVNode("input", {
+              class: "uni-input",
+              name: "nickname",
+              type: "text",
+              onInput: _cache[0] || (_cache[0] = (...args) => $options.inputNickname && $options.inputNickname(...args)),
+              value: "",
+              placeholder: "\u8BF7\u8F93\u5165\u83DC\u540D"
+            }, null, 32)
+          ]),
+          vue.createElementVNode("view", { class: "uni-form-item uni-column" }, [
+            vue.createElementVNode("view", { class: "title" }, "\u914D\u6599\u8868\uFF1A"),
+            vue.createElementVNode("input", {
+              class: "uni-input",
+              name: "materials",
+              type: "text",
+              onInput: _cache[1] || (_cache[1] = (...args) => $options.inputMaterials && $options.inputMaterials(...args)),
+              value: "",
+              placeholder: "\u8BF7\u8F93\u5165\u914D\u6599"
+            }, null, 32)
+          ]),
+          vue.createElementVNode("view", { class: "uni-btn-v" }, [
+            vue.createElementVNode("button", {
+              type: "primary",
+              "form-type": "submit"
+            }, "\u4FEE\u6539"),
+            vue.createElementVNode("button", {
+              type: "warn",
+              onClick: _cache[2] || (_cache[2] = ($event) => $options.formDelete())
+            }, "\u5220\u9664")
+          ])
+        ], 32)
+      ])
+    ]);
   }
   var PagesSettingModifyModify = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "D:/Coding/Kitchen/pages/setting/modify/modify.vue"]]);
   __definePage("pages/month/month", PagesMonthMonth);

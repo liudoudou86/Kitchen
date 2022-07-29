@@ -9,4 +9,8 @@
 // 详细JQL语法，请参考：https://uniapp.dcloud.net.cn/uniCloud/jql.html
 
 // 下面示例查询uni-id-users表的所有数据
-db.collection('cooking').get();
+db.collection('cooking').where({
+	nickname: '肉末豆腐'
+}).update({
+	materials: '肉糜 豆腐'
+});

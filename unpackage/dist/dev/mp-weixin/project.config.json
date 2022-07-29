@@ -5,7 +5,7 @@
     "include": []
   },
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "postcss": true,
     "minified": true,
     "es6": true,
@@ -23,15 +23,14 @@
     "useStaticServer": true,
     "showES6CompileOption": false,
     "checkInvalidKey": true,
-    "compileHotReLoad": false,
+    "compileHotReLoad": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
     "disableUseStrict": false,
-    "useCompilerPlugins": false,
-    "minifyWXML": true
+    "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
   "libVersion": "2.25.2",

@@ -10,7 +10,7 @@
 	export default {
 		data() {
 			return {
-				title: '厨房'
+				title: '占位符'
 			}
 		},
 		onLoad() {

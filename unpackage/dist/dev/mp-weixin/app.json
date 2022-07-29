@@ -3,7 +3,9 @@
     "pages/month/month",
     "pages/week/week",
     "pages/menu/menu",
-    "pages/setting/setting"
+    "pages/setting/setting",
+    "pages/setting/edit/edit",
+    "pages/setting/modify/modify"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -39,7 +41,7 @@
         "pagePath": "pages/setting/setting",
         "iconPath": "static/tabbar/me.png",
         "selectedIconPath": "static/tabbar/me_active.png",
-        "text": "编辑"
+        "text": "设置"
       }
     ]
   },

@@ -25,8 +25,8 @@
 					<input class="uni-input" name="materials" placeholder="请输入配料" />
 				</view>
 				<view class="uni-btn-v">
-					<button form-type="submit">保存</button>
-					<button type="default" form-type="reset">重置</button>
+					<button  type="primary" form-type="submit">保存提交</button>
+					<button type="warn" form-type="reset">重置页面</button>
 				</view>
 			</form>
 		</view>
@@ -37,8 +37,7 @@
 	
 	export default {
 		data() {
-			return {
-			}
+			return {}
 		},
 		methods: {
 			formSubmit: function(e) {

@@ -2,7 +2,7 @@
 	<view>
 		<view class="uni-padding-wrap uni-common-mt">
 			<view class="uni-btn-v">
-				<navigator class="uni-btn-v" url="/pages/setting/edit/edit" hover-class="navigator-hover">
+				<navigator class="uni-btn-v" url="/pages/setting/submit/submit" hover-class="navigator-hover">
 					<button type="default">新增菜谱</button>
 				</navigator>
 				<navigator class="uni-btn-v" url="/pages/setting/modify/modify" hover-class="navigator-hover">

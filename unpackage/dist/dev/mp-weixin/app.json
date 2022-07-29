@@ -4,7 +4,7 @@
     "pages/week/week",
     "pages/menu/menu",
     "pages/setting/setting",
-    "pages/setting/edit/edit",
+    "pages/setting/submit/submit",
     "pages/setting/modify/modify"
   ],
   "window": {
@@ -45,6 +45,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

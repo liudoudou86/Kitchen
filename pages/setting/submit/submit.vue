@@ -6,18 +6,18 @@
 					<view class="title">时间：</view>
 					<radio-group name="time">
 						<label>
-							<radio value="早" /><text>早晨</text>
+							<radio value="早" /><text>早</text>
 						</label>
 						<label>
-							<radio value="中" /><text>中午</text>
+							<radio value="中" /><text>中</text>
 						</label>
 						<label>
-							<radio value="晚" /><text>晚上</text>
+							<radio value="晚" /><text>晚</text>
 						</label>
 					</radio-group>
 				</view>
 				<view class="uni-form-item uni-column">
-					<view class="title">菜谱：</view>
+					<view class="title">菜名：</view>
 					<input class="uni-input" name="nickname" placeholder="请输入菜谱" />
 				</view>
 				<view class="uni-form-item uni-column">

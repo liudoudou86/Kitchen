@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "菜单",
+  "navigationBarTitleText": "菜谱",
   "usingComponents": {
     "uni-td": "../../uni_modules/uni-table/components/uni-td/uni-td",
     "uni-th": "../../uni_modules/uni-table/components/uni-th/uni-th",

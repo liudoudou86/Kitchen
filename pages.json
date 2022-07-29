@@ -15,7 +15,7 @@
 		{
 			"path": "pages/menu/menu",
 			"style": {
-				"navigationBarTitleText": "菜单"
+				"navigationBarTitleText": "菜谱"
 			}
 		},
 		{
@@ -25,9 +25,9 @@
 			}
 		},
 		{
-			"path": "pages/setting/edit/edit",
+			"path": "pages/setting/submit/submit",
 			"style": {
-				"navigationBarTitleText": "编辑"
+				"navigationBarTitleText": "提交"
 			}
 		},
 		{

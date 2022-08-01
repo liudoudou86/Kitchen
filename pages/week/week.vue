@@ -1,51 +1,80 @@
 <template>
-	<view class="content">
-		<view class="text-area">
-			<text class="title">{{title}}</text>
+	<view>
+		<view class="uni-container">
+			<uni-table ref="table" :loading="loading" border stripe emptyText="暂无更多数据">
+				<uni-tr>
+					<uni-td width="100" align="center">日</uni-td>
+					<uni-td width="100" align="center">早</uni-td>
+					<uni-th width="100" align="center">中</uni-th>
+					<uni-th width="100" align="center">晚</uni-th>
+					<uni-th width="100" align="center">汤</uni-th>
+					<uni-th width="100" align="center">水果</uni-th>
+					<uni-th width="100" align="center">设置</uni-th>
+				</uni-tr>
+				<uni-tr v-for="(item, index) in tableData" :key="index">
+					<uni-td align="center">
+						<view class="date">{{ item.date }}</view>
+					</uni-td>
+					<uni-td align="center">
+						<view class="morning">{{ item.morning }}</view>
+					</uni-td>
+					<uni-td align="center">
+						<view class="noon">{{ item.noon }}</view>
+					</uni-td>
+					<uni-td align="center">
+						<view class="night">{{ item.night }}</view>
+					</uni-td>
+					<uni-td align="center">
+						<view class="soup">{{ item.soup }}</view>
+					</uni-td>
+					<uni-td align="center">
+						<view class="fruit">{{ item.fruit }}</view>
+					</uni-td>
+					<uni-td align="center">
+						<view class="select">
+							<button class="uni-button" size="mini" type="primary" @click="">选择</button>
+						</view>
+					</uni-td>
+				</uni-tr>
+			</uni-table>
 		</view>
 	</view>
 </template>
 
 <script>
+	import get from '@/common/weekMenu.js'; // 引用位置函数
+	
 	export default {
 		data() {
 			return {
-				title: '占位符'
+				tableData: [],
+				loading : false
 			}
 		},
-		onLoad() {
-
+		onShow() {
+			this.getTableDataList();
 		},
 		methods: {
-
+			getTableDataList() {
+				// 调用云函数查询
+				uniCloud.callFunction({
+					name: "readWeekData",
+				}).then((res) => {
+					this.tableData = res.result.data
+					console.log(res);
+				}).catch((err) => {
+					console.log(err);
+				});
+			}
 		}
 	}
 </script>
 
 <style>
-	.content {
+
+	.uni-group {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
-		justify-content: center;
 	}
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
 </style>

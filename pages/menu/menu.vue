@@ -6,6 +6,8 @@
 					<uni-td width="100" align="center">早</uni-td>
 					<uni-th width="100" align="center">中</uni-th>
 					<uni-th width="100" align="center">晚</uni-th>
+					<uni-th width="100" align="center">汤</uni-th>
+					<uni-th width="100" align="center">水果</uni-th>
 				</uni-tr>
 				<uni-tr>
 					<uni-td align="center">
@@ -23,6 +25,16 @@
 							<button class="uni-button" size="mini" type="primary" @click="getMaterials(item)">{{ item.nickname }}</button>
 						</view>
 					</uni-td>
+					<uni-td align="center">
+						<view class="soup" v-for="(item, index) in soupData" :key="index">
+							<button class="uni-button" size="mini" type="primary" @click="getMaterials(item)">{{ item.nickname }}</button>
+						</view>
+					</uni-td>
+					<uni-td align="center">
+						<view class="fruit" v-for="(item, index) in fruitData" :key="index">
+							<button class="uni-button" size="mini" type="primary" @click="getMaterials(item)">{{ item.nickname }}</button>
+						</view>
+					</uni-td>
 				</uni-tr>
 			</uni-table>
 		</view>
@@ -36,6 +48,8 @@
 				morningData : [],
 				noonData : [],
 				nightData : [],
+				soupData: [],
+				fruitData: [],
 				loading : false
 			}
 		},
@@ -43,6 +57,8 @@
 			this.getMorningDataList();
 			this.getNoonDataList();
 			this.getNightDataList();
+			this.getSoupDataList();
+			this.getFruitDataList();
 		},
 		methods: {
 			getMorningDataList() {
@@ -88,6 +104,38 @@
 				}).then((res) => {
 					console.log(res);
 					this.nightData = res.result.data;
+					this.loading = false;
+				}).catch((err) => {
+					console.log(err);
+				});
+			},
+			getSoupDataList() {
+				this.loading = true;
+				// 调用云函数查询
+				uniCloud.callFunction({
+					name: "readKitchenData",
+					data: {
+						time : '汤'
+					}
+				}).then((res) => {
+					console.log(res);
+					this.soupgData = res.result.data;
+					this.loading = false;
+				}).catch((err) => {
+					console.log(err);
+				});
+			},
+			getFruitDataList() {
+				this.loading = true;
+				// 调用云函数查询
+				uniCloud.callFunction({
+					name: "readKitchenData",
+					data: {
+						time : '水果'
+					}
+				}).then((res) => {
+					console.log(res);
+					this.fruitData = res.result.data;
 					this.loading = false;
 				}).catch((err) => {
 					console.log(err);

@@ -14,3 +14,5 @@ db.collection('cooking').where({
 }).update({
 	materials: '肉糜 豆腐'
 });
+
+db.collection('cooking').remove();

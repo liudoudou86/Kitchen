@@ -14,11 +14,17 @@
 						<label>
 							<radio value="晚" /><text>晚</text>
 						</label>
+						<label>
+							<radio value="汤" /><text>汤</text>
+						</label>
+						<label>
+							<radio value="水果" /><text>水果</text>
+						</label>
 					</radio-group>
 				</view>
 				<view class="uni-form-item uni-column">
 					<view class="title">菜名：</view>
-					<input class="uni-input" name="nickname" placeholder="请输入菜谱" />
+					<input class="uni-input" name="nickname" placeholder="请输入菜名" />
 				</view>
 				<view class="uni-form-item uni-column">
 					<view class="title">配料表：</view>
@@ -109,6 +115,8 @@
 	label {
 		margin-left: 10rpx;
 		margin-right: 10rpx;
+		margin-top: 10rpx;
+		margin-bottom: 10rpx;
 	}
 	
 	button {

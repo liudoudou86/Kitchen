@@ -5,7 +5,8 @@
     "pages/menu/menu",
     "pages/setting/setting",
     "pages/setting/submit/submit",
-    "pages/setting/modify/modify"
+    "pages/setting/modify/modify",
+    "pages/setting/weekmenu/weekmenu"
   ],
   "window": {
     "navigationBarTextStyle": "black",

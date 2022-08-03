@@ -3,11 +3,11 @@
 		<view class="uni-container">
 			<uni-table ref="table" :loading="loading" border stripe emptyText="暂无更多数据">
 				<uni-tr>
-					<uni-td width="100" align="center">早</uni-td>
-					<uni-th width="100" align="center">中</uni-th>
-					<uni-th width="100" align="center">晚</uni-th>
-					<uni-th width="100" align="center">汤</uni-th>
-					<uni-th width="100" align="center">水果</uni-th>
+					<uni-td width="150" align="center">早</uni-td>
+					<uni-th width="150" align="center">中</uni-th>
+					<uni-th width="150" align="center">晚</uni-th>
+					<uni-th width="150" align="center">汤</uni-th>
+					<uni-th width="150" align="center">水果</uni-th>
 				</uni-tr>
 				<uni-tr>
 					<uni-td align="center">
@@ -119,7 +119,7 @@
 					}
 				}).then((res) => {
 					console.log(res);
-					this.soupgData = res.result.data;
+					this.soupData = res.result.data;
 					this.loading = false;
 				}).catch((err) => {
 					console.log(err);

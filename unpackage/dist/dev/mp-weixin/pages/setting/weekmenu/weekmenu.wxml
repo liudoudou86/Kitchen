@@ -1,0 +1,1 @@
+<view class="form"><view class="uni-padding-wrap uni-common-mt"><form><view class="uni-btn-v"><button type="primary" bindtap="{{a}}">生成周别菜谱</button></view></form></view></view>

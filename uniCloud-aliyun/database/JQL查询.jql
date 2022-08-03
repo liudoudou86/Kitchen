@@ -10,9 +10,7 @@
 
 // 下面示例查询uni-id-users表的所有数据
 db.collection('cooking').where({
-	nickname: '肉末豆腐'
-}).update({
-	materials: '肉糜 豆腐'
-});
+	time: '早'
+}).get();
 
-db.collection('cooking').remove();
+db.collection('week').remove();

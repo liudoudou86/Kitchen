@@ -1,7 +1,5 @@
 {
   "name": "insertWeekData",
   "dependencies": {},
-  "extensions": {
-    "uni-cloud-jql": {}
-  }
+  "extensions": {}
 }

@@ -35,6 +35,12 @@
 			"style": {
 				"navigationBarTitleText": "修改"
 			}
+		},
+		{
+			"path": "pages/setting/weekmenu/weekmenu",
+			"style": {
+				"navigationBarTitleText": "周别菜谱"
+			}
 		}
 	],
 	"globalStyle": {

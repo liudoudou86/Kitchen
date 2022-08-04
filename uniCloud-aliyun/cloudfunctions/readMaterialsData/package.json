@@ -1,0 +1,7 @@
+{
+  "name": "readMaterialsData",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

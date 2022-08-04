@@ -8,9 +8,9 @@
 				<navigator class="uni-btn-v" url="/pages/setting/modify/modify" hover-class="navigator-hover">
 					<button type="default">修改菜谱</button>
 				</navigator>
-				<navigator class="uni-btn-v" url="/pages/setting/weekmenu/weekmenu" hover-class="navigator-hover">
-					<button type="default">周别菜谱</button>
-				</navigator>
+				<view class="uni-btn-v">
+					<button type="default" @click="addWeekMenu()">生成周别菜谱</button>
+				</view>
 			</view>
 		</view>
 	</view>
@@ -22,7 +22,28 @@
 		data() {
 			return {}
 		},
-		methods: {}
+		methods: {
+			addWeekMenu() {
+				// 调用云函数向云数据库插入数据
+				uniCloud.callFunction({
+					name: "insertWeekData",
+				}).then((res) => {
+					console.log(res);
+					uni.hideLoading()
+					uni.showModal({
+						content: "生成成功",
+						showCancel: false
+					});
+				}).catch((err) =>{
+					console.log(err);
+					uni.hideLoading()
+					uni.showModal({
+						content: "生成失败",
+						showCancel: false
+					});
+				});
+			}
+		}
 	}
 				
 </script>

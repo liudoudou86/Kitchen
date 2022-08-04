@@ -51,7 +51,6 @@
 				<view class="uni-btn-v">
 					<button  type="primary" form-type="submit">保存提交</button>
 					<button type="warn" form-type="reset">重置页面</button>
-					<button type="primary" @click="addWeekMenu()">生成周别菜谱</button>
 				</view>
 			</form>
 		</view>
@@ -94,16 +93,6 @@
 			},
 			formReset: function(e) {
 				console.log('清空数据')
-			},
-			addWeekMenu() {
-				// 调用云函数向云数据库插入数据
-				uniCloud.callFunction({
-					name: "insertWeekData",
-				}).then((res) => {
-					console.log(res);
-				}).catch((err) =>{
-					console.log(err);
-				});
 			}
 		}
 	}

@@ -3,7 +3,7 @@
 		<view class="uni-container">
 			<uni-table ref="table" :loading="loading" border stripe emptyText="暂无更多数据">
 				<uni-tr>
-					<uni-th width="50" align="center">周</uni-th>
+					<uni-th width="60" align="center">周</uni-th>
 					<uni-th width="100" align="center">早</uni-th>
 					<uni-th width="100" align="center">中</uni-th>
 					<uni-th width="100" align="center">晚</uni-th>

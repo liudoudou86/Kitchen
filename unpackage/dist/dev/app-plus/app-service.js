@@ -713,7 +713,7 @@ if (uni.restoreGlobal) {
     default:
       g = f;
   }
-  const p = h('{\n    "address": [\n        "127.0.0.1",\n        "10.16.169.63"\n    ],\n    "debugPort": 49915,\n    "initialLaunchType": "local",\n    "servePort": 49916,\n    "skipFiles": [\n        "<node_internals>/**/*.js",\n        "D:/Coding/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), m = h('[{"provider":"aliyun","spaceName":"kitchen","spaceId":"18675ae6-1e0a-48ed-bbde-d40d5697caf1","clientSecret":"0LNWE8dlDUg8H7zEreT9Uw==","endpoint":"https://api.bspapp.com"}]');
+  const p = h('{\n    "address": [\n        "127.0.0.1",\n        "10.16.169.63"\n    ],\n    "debugPort": 52797,\n    "initialLaunchType": "local",\n    "servePort": 52800,\n    "skipFiles": [\n        "<node_internals>/**/*.js",\n        "D:/Coding/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), m = h('[{"provider":"aliyun","spaceName":"kitchen","spaceId":"18675ae6-1e0a-48ed-bbde-d40d5697caf1","clientSecret":"0LNWE8dlDUg8H7zEreT9Uw==","endpoint":"https://api.bspapp.com"}]');
   let _ = "";
   try {
     _ = "__UNI__44EC4D6";
@@ -2641,12 +2641,10 @@ if (uni.restoreGlobal) {
   })();
   var rn = on;
   const _sfc_main$b = {
-    name: "uniTh",
+    name: "uniTd",
     options: {
       virtualHost: true
     },
-    components: {},
-    emits: ["sort-change", "filter-change"],
     props: {
       width: {
         type: [String, Number],
@@ -2663,125 +2661,22 @@ if (uni.restoreGlobal) {
       colspan: {
         type: [Number, String],
         default: 1
-      },
-      sortable: {
-        type: Boolean,
-        default: false
-      },
-      filterType: {
-        type: String,
-        default: ""
-      },
-      filterData: {
-        type: Array,
-        default() {
-          return [];
-        }
       }
     },
     data() {
       return {
-        border: false,
-        ascending: false,
-        descending: false
+        border: false
       };
     },
-    computed: {
-      customWidth() {
-        if (typeof this.width === "number") {
-          return this.width;
-        } else if (typeof this.width === "string") {
-          let regexHaveUnitPx = new RegExp(/^[1-9][0-9]*px$/g);
-          let regexHaveUnitRpx = new RegExp(/^[1-9][0-9]*rpx$/g);
-          let regexHaveNotUnit = new RegExp(/^[1-9][0-9]*$/g);
-          if (this.width.match(regexHaveUnitPx) !== null) {
-            return this.width.replace("px", "");
-          } else if (this.width.match(regexHaveUnitRpx) !== null) {
-            let numberRpx = Number(this.width.replace("rpx", ""));
-            let widthCoe = uni.getSystemInfoSync().screenWidth / 750;
-            return Math.round(numberRpx * widthCoe);
-          } else if (this.width.match(regexHaveNotUnit) !== null) {
-            return this.width;
-          } else {
-            return "";
-          }
-        } else {
-          return "";
-        }
-      },
-      contentAlign() {
-        let align = "left";
-        switch (this.align) {
-          case "left":
-            align = "flex-start";
-            break;
-          case "center":
-            align = "center";
-            break;
-          case "right":
-            align = "flex-end";
-            break;
-        }
-        return align;
-      }
-    },
     created() {
-      this.root = this.getTable("uniTable");
-      this.rootTr = this.getTable("uniTr");
-      this.rootTr.minWidthUpdate(this.customWidth ? this.customWidth : 140);
+      this.root = this.getTable();
       this.border = this.root.border;
-      this.root.thChildren.push(this);
     },
     methods: {
-      sort() {
-        if (!this.sortable)
-          return;
-        this.clearOther();
-        if (!this.ascending && !this.descending) {
-          this.ascending = true;
-          this.$emit("sort-change", { order: "ascending" });
-          return;
-        }
-        if (this.ascending && !this.descending) {
-          this.ascending = false;
-          this.descending = true;
-          this.$emit("sort-change", { order: "descending" });
-          return;
-        }
-        if (!this.ascending && this.descending) {
-          this.ascending = false;
-          this.descending = false;
-          this.$emit("sort-change", { order: null });
-        }
-      },
-      ascendingFn() {
-        this.clearOther();
-        this.ascending = !this.ascending;
-        this.descending = false;
-        this.$emit("sort-change", { order: this.ascending ? "ascending" : null });
-      },
-      descendingFn() {
-        this.clearOther();
-        this.descending = !this.descending;
-        this.ascending = false;
-        this.$emit("sort-change", { order: this.descending ? "descending" : null });
-      },
-      clearOther() {
-        this.root.thChildren.map((item) => {
-          if (item !== this) {
-            item.ascending = false;
-            item.descending = false;
-          }
-          return item;
-        });
-      },
-      ondropdown(e) {
-        this.$emit("filter-change", e);
-      },
-      getTable(name) {
+      getTable() {
         let parent = this.$parent;
         let parentName = parent.$options.name;
-        while (parentName !== name) {
+        while (parentName !== "uniTable") {
           parent = parent.$parent;
           if (!parent)
             return false;
@@ -2792,14 +2687,17 @@ if (uni.restoreGlobal) {
     }
   };
   function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("view", {
-      class: vue.normalizeClass(["uni-table-th", { "table--border": $data.border }]),
-      style: vue.normalizeStyle({ width: $options.customWidth + "px", "text-align": $props.align })
-    }, [
-      vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-    ], 6);
+    return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [
+      vue.createCommentVNode(` :class="{'table--border':border}"  `),
+      vue.createElementVNode("view", {
+        class: vue.normalizeClass(["uni-table-td", { "table--border": $data.border }]),
+        style: vue.normalizeStyle({ width: $props.width + "px", "text-align": $props.align })
+      }, [
+        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+      ], 6)
+    ], 2112);
   }
-  var __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["__scopeId", "data-v-511e81f9"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-th/uni-th.vue"]]);
+  var __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["__scopeId", "data-v-321f8e79"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-td/uni-td.vue"]]);
   function resolveEasycom(component, easycom) {
     return shared.isString(component) ? easycom : component;
   }
@@ -2989,64 +2887,6 @@ if (uni.restoreGlobal) {
   }
   var __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["__scopeId", "data-v-c2c83a8e"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-tr/uni-tr.vue"]]);
   const _sfc_main$8 = {
-    name: "uniTd",
-    options: {
-      virtualHost: true
-    },
-    props: {
-      width: {
-        type: [String, Number],
-        default: ""
-      },
-      align: {
-        type: String,
-        default: "left"
-      },
-      rowspan: {
-        type: [Number, String],
-        default: 1
-      },
-      colspan: {
-        type: [Number, String],
-        default: 1
-      }
-    },
-    data() {
-      return {
-        border: false
-      };
-    },
-    created() {
-      this.root = this.getTable();
-      this.border = this.root.border;
-    },
-    methods: {
-      getTable() {
-        let parent = this.$parent;
-        let parentName = parent.$options.name;
-        while (parentName !== "uniTable") {
-          parent = parent.$parent;
-          if (!parent)
-            return false;
-          parentName = parent.$options.name;
-        }
-        return parent;
-      }
-    }
-  };
-  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [
-      vue.createCommentVNode(` :class="{'table--border':border}"  `),
-      vue.createElementVNode("view", {
-        class: vue.normalizeClass(["uni-table-td", { "table--border": $data.border }]),
-        style: vue.normalizeStyle({ width: $props.width + "px", "text-align": $props.align })
-      }, [
-        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-      ], 6)
-    ], 2112);
-  }
-  var __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__scopeId", "data-v-321f8e79"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-td/uni-td.vue"]]);
-  const _sfc_main$7 = {
     name: "uniTable",
     options: {
       virtualHost: true
@@ -3265,7 +3105,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["uni-table-scroll", { "table--border": $props.border, "border-none": !$data.noData }])
     }, [
@@ -3291,8 +3131,8 @@ if (uni.restoreGlobal) {
       ], 6)
     ], 2);
   }
-  var __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__scopeId", "data-v-6cd49106"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-table/uni-table.vue"]]);
-  const _sfc_main$6 = {
+  var __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__scopeId", "data-v-6cd49106"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-table/uni-table.vue"]]);
+  const _sfc_main$7 = {
     data() {
       return {
         tableData: [],
@@ -3327,10 +3167,9 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_th = resolveEasycom(vue.resolveDynamicComponent("uni-th"), __easycom_1);
-    const _component_uni_tr = resolveEasycom(vue.resolveDynamicComponent("uni-tr"), __easycom_2);
+  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_uni_td = resolveEasycom(vue.resolveDynamicComponent("uni-td"), __easycom_0);
+    const _component_uni_tr = resolveEasycom(vue.resolveDynamicComponent("uni-tr"), __easycom_2);
     const _component_uni_table = resolveEasycom(vue.resolveDynamicComponent("uni-table"), __easycom_3);
     return vue.openBlock(), vue.createElementBlock("view", null, [
       vue.createElementVNode("view", { class: "uni-container" }, [
@@ -3344,8 +3183,8 @@ if (uni.restoreGlobal) {
           default: vue.withCtx(() => [
             vue.createVNode(_component_uni_tr, null, {
               default: vue.withCtx(() => [
-                vue.createVNode(_component_uni_th, {
-                  width: "50",
+                vue.createVNode(_component_uni_td, {
+                  width: "100",
                   align: "center"
                 }, {
                   default: vue.withCtx(() => [
@@ -3353,8 +3192,8 @@ if (uni.restoreGlobal) {
                   ]),
                   _: 1
                 }),
-                vue.createVNode(_component_uni_th, {
-                  width: "100",
+                vue.createVNode(_component_uni_td, {
+                  width: "120",
                   align: "center"
                 }, {
                   default: vue.withCtx(() => [
@@ -3362,8 +3201,8 @@ if (uni.restoreGlobal) {
                   ]),
                   _: 1
                 }),
-                vue.createVNode(_component_uni_th, {
-                  width: "100",
+                vue.createVNode(_component_uni_td, {
+                  width: "120",
                   align: "center"
                 }, {
                   default: vue.withCtx(() => [
@@ -3371,8 +3210,8 @@ if (uni.restoreGlobal) {
                   ]),
                   _: 1
                 }),
-                vue.createVNode(_component_uni_th, {
-                  width: "100",
+                vue.createVNode(_component_uni_td, {
+                  width: "120",
                   align: "center"
                 }, {
                   default: vue.withCtx(() => [
@@ -3380,8 +3219,8 @@ if (uni.restoreGlobal) {
                   ]),
                   _: 1
                 }),
-                vue.createVNode(_component_uni_th, {
-                  width: "100",
+                vue.createVNode(_component_uni_td, {
+                  width: "120",
                   align: "center"
                 }, {
                   default: vue.withCtx(() => [
@@ -3389,8 +3228,8 @@ if (uni.restoreGlobal) {
                   ]),
                   _: 1
                 }),
-                vue.createVNode(_component_uni_th, {
-                  width: "100",
+                vue.createVNode(_component_uni_td, {
+                  width: "120",
                   align: "center"
                 }, {
                   default: vue.withCtx(() => [
@@ -3398,8 +3237,8 @@ if (uni.restoreGlobal) {
                   ]),
                   _: 1
                 }),
-                vue.createVNode(_component_uni_th, {
-                  width: "90",
+                vue.createVNode(_component_uni_td, {
+                  width: "100",
                   align: "center"
                 }, {
                   default: vue.withCtx(() => [
@@ -3482,7 +3321,167 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesWeekWeek = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__file", "D:/Coding/Kitchen/pages/week/week.vue"]]);
+  var PagesWeekWeek = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__file", "D:/Coding/Kitchen/pages/week/week.vue"]]);
+  const _sfc_main$6 = {
+    name: "uniTh",
+    options: {
+      virtualHost: true
+    },
+    components: {},
+    emits: ["sort-change", "filter-change"],
+    props: {
+      width: {
+        type: [String, Number],
+        default: ""
+      },
+      align: {
+        type: String,
+        default: "left"
+      },
+      rowspan: {
+        type: [Number, String],
+        default: 1
+      },
+      colspan: {
+        type: [Number, String],
+        default: 1
+      },
+      sortable: {
+        type: Boolean,
+        default: false
+      },
+      filterType: {
+        type: String,
+        default: ""
+      },
+      filterData: {
+        type: Array,
+        default() {
+          return [];
+        }
+      }
+    },
+    data() {
+      return {
+        border: false,
+        ascending: false,
+        descending: false
+      };
+    },
+    computed: {
+      customWidth() {
+        if (typeof this.width === "number") {
+          return this.width;
+        } else if (typeof this.width === "string") {
+          let regexHaveUnitPx = new RegExp(/^[1-9][0-9]*px$/g);
+          let regexHaveUnitRpx = new RegExp(/^[1-9][0-9]*rpx$/g);
+          let regexHaveNotUnit = new RegExp(/^[1-9][0-9]*$/g);
+          if (this.width.match(regexHaveUnitPx) !== null) {
+            return this.width.replace("px", "");
+          } else if (this.width.match(regexHaveUnitRpx) !== null) {
+            let numberRpx = Number(this.width.replace("rpx", ""));
+            let widthCoe = uni.getSystemInfoSync().screenWidth / 750;
+            return Math.round(numberRpx * widthCoe);
+          } else if (this.width.match(regexHaveNotUnit) !== null) {
+            return this.width;
+          } else {
+            return "";
+          }
+        } else {
+          return "";
+        }
+      },
+      contentAlign() {
+        let align = "left";
+        switch (this.align) {
+          case "left":
+            align = "flex-start";
+            break;
+          case "center":
+            align = "center";
+            break;
+          case "right":
+            align = "flex-end";
+            break;
+        }
+        return align;
+      }
+    },
+    created() {
+      this.root = this.getTable("uniTable");
+      this.rootTr = this.getTable("uniTr");
+      this.rootTr.minWidthUpdate(this.customWidth ? this.customWidth : 140);
+      this.border = this.root.border;
+      this.root.thChildren.push(this);
+    },
+    methods: {
+      sort() {
+        if (!this.sortable)
+          return;
+        this.clearOther();
+        if (!this.ascending && !this.descending) {
+          this.ascending = true;
+          this.$emit("sort-change", { order: "ascending" });
+          return;
+        }
+        if (this.ascending && !this.descending) {
+          this.ascending = false;
+          this.descending = true;
+          this.$emit("sort-change", { order: "descending" });
+          return;
+        }
+        if (!this.ascending && this.descending) {
+          this.ascending = false;
+          this.descending = false;
+          this.$emit("sort-change", { order: null });
+        }
+      },
+      ascendingFn() {
+        this.clearOther();
+        this.ascending = !this.ascending;
+        this.descending = false;
+        this.$emit("sort-change", { order: this.ascending ? "ascending" : null });
+      },
+      descendingFn() {
+        this.clearOther();
+        this.descending = !this.descending;
+        this.ascending = false;
+        this.$emit("sort-change", { order: this.descending ? "descending" : null });
+      },
+      clearOther() {
+        this.root.thChildren.map((item) => {
+          if (item !== this) {
+            item.ascending = false;
+            item.descending = false;
+          }
+          return item;
+        });
+      },
+      ondropdown(e) {
+        this.$emit("filter-change", e);
+      },
+      getTable(name) {
+        let parent = this.$parent;
+        let parentName = parent.$options.name;
+        while (parentName !== name) {
+          parent = parent.$parent;
+          if (!parent)
+            return false;
+          parentName = parent.$options.name;
+        }
+        return parent;
+      }
+    }
+  };
+  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", {
+      class: vue.normalizeClass(["uni-table-th", { "table--border": $data.border }]),
+      style: vue.normalizeStyle({ width: $options.customWidth + "px", "text-align": $props.align })
+    }, [
+      vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+    ], 6);
+  }
+  var __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__scopeId", "data-v-511e81f9"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-th/uni-th.vue"]]);
   const _sfc_main$5 = {
     data() {
       return {

@@ -11,9 +11,17 @@ exports.main = async (event, context) => {
 	const materialsData = m.data[0].text;
 	
 	// 把数组转换成字符串
-	const res = materialsData.toString();
-	
-	console.log("配料表", res);
+	const str = materialsData.toString();
+	// 将，替换为空格
+	const rep = str.replace(/,/g," ");
+	// 通过空格将字符串拆分
+	const cut = rep.split(' ');
+	// 数组去重
+	const arr = Array.from(new Set(cut));
+	// 把数组转换成字符串
+	const res = arr.toString();
+
+	console.log("最终配料表", res);
 	
 	//返回数据给客户端
 	return res

@@ -5,7 +5,7 @@ exports.main = async (event, context) => {
 	// 初始化数据库
 	const db = uniCloud.database();
 	// 读取客户端的数据
-	const res = await db.collection('week').get();
+	const res = await db.collection('morningmenu').get();
 	console.log("读取数据", res)
 	//返回数据给客户端
 	return res

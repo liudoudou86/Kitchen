@@ -3,12 +3,14 @@
 		<view class="uni-container">
 			<uni-table ref="table" :loading="loading" border stripe emptyText="暂无更多数据">
 				<uni-tr>
-					<uni-th width="60" align="center">周</uni-th>
-					<uni-th width="100" align="center">早</uni-th>
-					<uni-th width="100" align="center">中</uni-th>
-					<uni-th width="100" align="center">晚</uni-th>
-					<uni-th width="100" align="center">汤</uni-th>
+					<uni-th width="60" align="center">时间</uni-th>
+					<uni-th width="100" align="center">早餐-主食</uni-th>
+					<uni-th width="100" align="center">早餐-汤/粥</uni-th>
+					<uni-th width="100" align="center">午餐-主食</uni-th>
+					<uni-th width="100" align="center">午餐-汤/粥</uni-th>
+					<uni-th width="100" align="center">凉菜</uni-th>
 					<uni-th width="100" align="center">水果</uni-th>
+					<uni-th width="100" align="center">其他</uni-th>
 					<uni-th width="90" align="center">设置</uni-th>
 				</uni-tr>
 				<uni-tr v-for="(item, index) in tableData" :key="index">
@@ -16,22 +18,28 @@
 						<view class="date">{{ item.date }}</view>
 					</uni-td>
 					<uni-td align="left">
-						<view class="morning">{{ item.morning }}</view>
+						<view>{{ item.morningfood }}</view>
 					</uni-td>
 					<uni-td align="left">
-						<view class="noon">{{ item.noon }}</view>
+						<view>{{ item.morningsoup }}</view>
 					</uni-td>
 					<uni-td align="left">
-						<view class="night">{{ item.night }}</view>
+						<view>{{ item.noonfood }}</view>
 					</uni-td>
 					<uni-td align="left">
-						<view class="soup">{{ item.soup }}</view>
+						<view>{{ item.noonsoup }}</view>
 					</uni-td>
 					<uni-td align="left">
-						<view class="fruit">{{ item.fruit }}</view>
+						<view>{{ item.clod }}</view>
+					</uni-td>
+					<uni-td align="left">
+						<view>{{ item.fruit }}</view>
+					</uni-td>
+					<uni-td align="left">
+						<view>{{ item.other }}</view>
 					</uni-td>
 					<uni-td>
-						<navigator class="uni-group" url="/pages/setting/weekmenu/weekmenu" hover-class="navigator-hover">
+						<navigator class="uni-group" url="/pages/setting/morningmenu/morningmenu" hover-class="navigator-hover">
 							<button size="mini" type="primary">修改</button>
 						</navigator>
 					</uni-td>
@@ -40,7 +48,8 @@
 		</view>
 		<view class="uni-padding-wrap uni-common-mt">
 			<view class="text-box" scroll-y="true">
-				<text>{{ materials }}</text>
+				<text>配料表: </text>
+				<text>{{ materialsData }}</text>
 			</view>
 		</view>
 	</view>
@@ -52,32 +61,36 @@
 		data() {
 			return {
 				tableData : [],
-				materials : [],
+				materialsData : [],
 				loading : false
 			}
 		},
 		onShow() {
-			this.getTableDataList();
-			this.getMaterialsDataList();
+			this.getTableData();
+			this.getMaterialsData();
 		},
 		methods: {
-			getTableDataList() {
+			getTableData() {
+				this.loading = true;
 				// 调用云函数查询
 				uniCloud.callFunction({
-					name: "readWeekData",
+					name: "readMorningMenuData",
 				}).then((res) => {
-					this.tableData = res.result.data
+					this.tableData = res.result.data;
+					this.loading = false;
 					console.log(res);
 				}).catch((err) => {
 					console.log(err);
 				});
 			},
-			getMaterialsDataList() {
+			getMaterialsData() {
+				this.loading = true;
 				// 调用云函数查询
 				uniCloud.callFunction({
 					name: "readMaterialsData",
 				}).then((res) => {
-					this.materials = res.result
+					this.materialsData = res.result;
+					this.loading = false;
 					console.log(res);
 				}).catch((err) => {
 					console.log(err);
@@ -94,18 +107,9 @@
 		align-items: center;
 	}
 	
-	.text-box {
-		margin-bottom: 40rpx;
-		padding: 40rpx 0;
-		display: flex;
-		min-height: 300rpx;
-		background-color: #FFFFFF;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		font-size: 30rpx;
-		color: #353535;
-		line-height: 1.8;
+	.uni-padding-wrap {
+		margin-top: 30rpx;
+		align-items: left;
 	}
 
 </style>

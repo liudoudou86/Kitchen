@@ -6,19 +6,25 @@
 					<view class="title">时间：</view>
 					<radio-group name="time">
 						<label>
-							<radio value="早" /><text>早</text>
+							<radio value="早餐主食" /><text>早餐-主食</text>
 						</label>
 						<label>
-							<radio value="中" /><text>中</text>
+							<radio value="早餐汤" /><text>早餐-汤/粥</text>
 						</label>
 						<label>
-							<radio value="晚" /><text>晚</text>
+							<radio value="午餐主食" /><text>午餐-主食</text>
 						</label>
 						<label>
-							<radio value="汤" /><text>汤</text>
+							<radio value="午餐汤" /><text>午餐-汤/粥</text>
+						</label>
+						<label>
+							<radio value="凉菜" /><text>凉菜</text>
 						</label>
 						<label>
 							<radio value="水果" /><text>水果</text>
+						</label>
+						<label>
+							<radio value="其他" /><text>其他</text>
 						</label>
 					</radio-group>
 				</view>

@@ -1,21 +1,21 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/month/month",
-			"style": {
-				"navigationBarTitleText": "月"
-			}
-		},
-		{
-			"path": "pages/week/week",
-			"style": {
-				"navigationBarTitleText": "周"
-			}
-		},
-		{
 			"path": "pages/menu/menu",
 			"style": {
 				"navigationBarTitleText": "菜谱"
+			}
+		},
+		{
+			"path": "pages/morning/morning",
+			"style": {
+				"navigationBarTitleText": "早餐"
+			}
+		},
+		{
+			"path": "pages/noon/noon",
+			"style": {
+				"navigationBarTitleText": "午餐"
 			}
 		},
 		{
@@ -37,9 +37,9 @@
 			}
 		},
 		{
-			"path": "pages/setting/weekmenu/weekmenu",
+			"path": "pages/setting/morningmenu/morningmenu",
 			"style": {
-				"navigationBarTitleText": "周别菜谱"
+				"navigationBarTitleText": "早餐菜谱"
 			}
 		}
 	],
@@ -57,22 +57,22 @@
 		"backgroundColor": "#F8F8F8",
 		"list": [
 			{
-				"pagePath": "pages/month/month",
+				"pagePath": "pages/menu/menu",
 				"iconPath": "static/tabbar/list.png",
 				"selectedIconPath": "static/tabbar/list_active.png",
-				"text": "月"
+				"text": "菜谱"
 			},
 			{
-				"pagePath": "pages/week/week",
+				"pagePath": "pages/morning/morning",
 				"iconPath": "static/tabbar/grid.png",
 				"selectedIconPath": "static/tabbar/grid_active.png",
-				"text": "周"
+				"text": "早餐"
 			},
 			{
-				"pagePath": "pages/menu/menu",
-				"iconPath": "static/tabbar/im-contacts.png",
-				"selectedIconPath": "static/tabbar/im-contacts_active.png",
-				"text": "菜谱"
+				"pagePath": "pages/noon/noon",
+				"iconPath": "static/tabbar/grid.png",
+				"selectedIconPath": "static/tabbar/grid_active.png",
+				"text": "午餐"
 			},
 			{
 				"pagePath": "pages/setting/setting",

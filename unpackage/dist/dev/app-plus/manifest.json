@@ -114,22 +114,22 @@
       "backgroundColor": "#F8F8F8",
       "list": [
         {
-          "pagePath": "pages/month/month",
+          "pagePath": "pages/menu/menu",
           "iconPath": "/static/tabbar/list.png",
           "selectedIconPath": "/static/tabbar/list_active.png",
-          "text": "月"
+          "text": "菜谱"
         },
         {
-          "pagePath": "pages/week/week",
+          "pagePath": "pages/morning/morning",
           "iconPath": "/static/tabbar/grid.png",
           "selectedIconPath": "/static/tabbar/grid_active.png",
-          "text": "周"
+          "text": "早餐"
         },
         {
-          "pagePath": "pages/menu/menu",
-          "iconPath": "/static/tabbar/im-contacts.png",
-          "selectedIconPath": "/static/tabbar/im-contacts_active.png",
-          "text": "菜谱"
+          "pagePath": "pages/noon/noon",
+          "iconPath": "/static/tabbar/grid.png",
+          "selectedIconPath": "/static/tabbar/grid_active.png",
+          "text": "午餐"
         },
         {
           "pagePath": "pages/setting/setting",

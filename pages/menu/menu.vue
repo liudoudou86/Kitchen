@@ -3,36 +3,48 @@
 		<view class="uni-container">
 			<uni-table ref="table" :loading="loading" border stripe emptyText="暂无更多数据">
 				<uni-tr>
-					<uni-td width="150" align="center">早</uni-td>
-					<uni-th width="150" align="center">中</uni-th>
-					<uni-th width="150" align="center">晚</uni-th>
-					<uni-th width="150" align="center">汤</uni-th>
-					<uni-th width="150" align="center">水果</uni-th>
+					<uni-th width="130" align="center">早餐-主食</uni-th>
+					<uni-th width="130" align="center">早餐-汤/粥</uni-th>
+					<uni-th width="130" align="center">午餐-主食</uni-th>
+					<uni-th width="130" align="center">午餐-汤/粥</uni-th>
+					<uni-th width="130" align="center">凉菜</uni-th>
+					<uni-th width="130" align="center">水果</uni-th>
+					<uni-th width="130" align="center">其他</uni-th>
 				</uni-tr>
 				<uni-tr>
 					<uni-td align="center">
-						<view class="morning" v-for="(item, index) in morningData" :key="index">
-							<button class="uni-button" size="mini" type="primary" @click="getMaterials(item)">{{ item.nickname }}</button>
+						<view v-for="(item, index) in morningFoodData" :key="index">
+							<button class="uni-button" size="mini" type="default" @click="getMaterials(item)">{{ item.nickname }}</button>
 						</view>
 					</uni-td>
 					<uni-td align="center">
-						<view class="noon" v-for="(item, index) in noonData" :key="index">
-							<button class="uni-button" size="mini" type="primary" @click="getMaterials(item)">{{ item.nickname }}</button>
+						<view v-for="(item, index) in morningSoupData" :key="index">
+							<button class="uni-button" size="mini" type="default" @click="getMaterials(item)">{{ item.nickname }}</button>
 						</view>
 					</uni-td>
 					<uni-td align="center">
-						<view class="night" v-for="(item, index) in nightData" :key="index">
-							<button class="uni-button" size="mini" type="primary" @click="getMaterials(item)">{{ item.nickname }}</button>
+						<view v-for="(item, index) in noonFoodData" :key="index">
+							<button class="uni-button" size="mini" type="default" @click="getMaterials(item)">{{ item.nickname }}</button>
 						</view>
 					</uni-td>
 					<uni-td align="center">
-						<view class="soup" v-for="(item, index) in soupData" :key="index">
-							<button class="uni-button" size="mini" type="primary" @click="getMaterials(item)">{{ item.nickname }}</button>
+						<view v-for="(item, index) in noonSoupData" :key="index">
+							<button class="uni-button" size="mini" type="default" @click="getMaterials(item)">{{ item.nickname }}</button>
 						</view>
 					</uni-td>
 					<uni-td align="center">
-						<view class="fruit" v-for="(item, index) in fruitData" :key="index">
-							<button class="uni-button" size="mini" type="primary" @click="getMaterials(item)">{{ item.nickname }}</button>
+						<view v-for="(item, index) in coldData" :key="index">
+							<button class="uni-button" size="mini" type="default" @click="getMaterials(item)">{{ item.nickname }}</button>
+						</view>
+					</uni-td>
+					<uni-td align="center">
+						<view v-for="(item, index) in fruitData" :key="index">
+							<button class="uni-button" size="mini" type="default" @click="getMaterials(item)">{{ item.nickname }}</button>
+						</view>
+					</uni-td>
+					<uni-td align="center">
+						<view v-for="(item, index) in otherData" :key="index">
+							<button class="uni-button" size="mini" type="default" @click="getMaterials(item)">{{ item.nickname }}</button>
 						</view>
 					</uni-td>
 				</uni-tr>
@@ -45,87 +57,107 @@
 	export default {
 		data() {
 			return {
-				morningData : [],
-				noonData : [],
-				nightData : [],
-				soupData: [],
+				morningFoodData : [],
+				morningSoupData : [],
+				noonFoodData : [],
+				noonSoupData : [],
+				coldData : [],
 				fruitData: [],
+				otherData: [],
 				loading : false
 			}
 		},
 		onShow() {
-			this.getMorningDataList();
-			this.getNoonDataList();
-			this.getNightDataList();
-			this.getSoupDataList();
-			this.getFruitDataList();
+			this.getMorningFoodData();
+			this.getMorningSoupData();
+			this.getNoonFoodData();
+			this.getNoonSoupData();
+			this.getColdData();
+			this.getFruitData();
+			this.getOtherData();
 		},
 		methods: {
-			getMorningDataList() {
+			getMorningFoodData() {
 				this.loading = true;
 				// 调用云函数查询
 				uniCloud.callFunction({
 					name: "readKitchenData",
 					data: {
-						time : '早'
+						time : '早餐主食'
 					}
 				}).then((res) => {
 					console.log(res);
-					this.morningData = res.result.data;
+					this.morningFoodData = res.result.data;
 					this.loading = false;
 				}).catch((err) => {
 					console.log(err);
 				});
 			},
-			getNoonDataList() {
+			getMorningSoupData() {
 				this.loading = true;
 				// 调用云函数查询
 				uniCloud.callFunction({
 					name: "readKitchenData",
 					data: {
-						time : '中'
+						time : '早餐汤'
 					}
 				}).then((res) => {
 					console.log(res);
-					this.noonData = res.result.data;
+					this.morningSoupData = res.result.data;
 					this.loading = false;
 				}).catch((err) => {
 					console.log(err);
 				});
 			},
-			getNightDataList() {
+			getNoonFoodData() {
 				this.loading = true;
 				// 调用云函数查询
 				uniCloud.callFunction({
 					name: "readKitchenData",
 					data: {
-						time : '晚'
+						time : '午餐主食'
 					}
 				}).then((res) => {
 					console.log(res);
-					this.nightData = res.result.data;
+					this.noonFoodData = res.result.data;
 					this.loading = false;
 				}).catch((err) => {
 					console.log(err);
 				});
 			},
-			getSoupDataList() {
+			getNoonSoupData() {
 				this.loading = true;
 				// 调用云函数查询
 				uniCloud.callFunction({
 					name: "readKitchenData",
 					data: {
-						time : '汤'
+						time : '午餐汤'
 					}
 				}).then((res) => {
 					console.log(res);
-					this.soupData = res.result.data;
+					this.noonSoupData = res.result.data;
 					this.loading = false;
 				}).catch((err) => {
 					console.log(err);
 				});
 			},
-			getFruitDataList() {
+			getColdData() {
+				this.loading = true;
+				// 调用云函数查询
+				uniCloud.callFunction({
+					name: "readKitchenData",
+					data: {
+						time : '凉菜'
+					}
+				}).then((res) => {
+					console.log(res);
+					this.coldData = res.result.data;
+					this.loading = false;
+				}).catch((err) => {
+					console.log(err);
+				});
+			},
+			getFruitData() {
 				this.loading = true;
 				// 调用云函数查询
 				uniCloud.callFunction({
@@ -136,6 +168,22 @@
 				}).then((res) => {
 					console.log(res);
 					this.fruitData = res.result.data;
+					this.loading = false;
+				}).catch((err) => {
+					console.log(err);
+				});
+			},
+			getOtherData() {
+				this.loading = true;
+				// 调用云函数查询
+				uniCloud.callFunction({
+					name: "readKitchenData",
+					data: {
+						time : '其他'
+					}
+				}).then((res) => {
+					console.log(res);
+					this.otherData = res.result.data;
 					this.loading = false;
 				}).catch((err) => {
 					console.log(err);

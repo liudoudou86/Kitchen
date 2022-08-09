@@ -13,4 +13,4 @@ db.collection('cooking').where({
 	time: '早'
 }).get();
 
-db.collection('week').remove();
+db.collection('morningmenu').remove();

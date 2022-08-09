@@ -9,7 +9,7 @@
 					<button type="default">修改菜谱</button>
 				</navigator>
 				<view class="uni-btn-v">
-					<button type="default" @click="addWeekMenu()">生成周别菜谱</button>
+					<button type="default" @click="addMorningMenu()">早餐菜谱</button>
 				</view>
 			</view>
 		</view>
@@ -23,10 +23,10 @@
 			return {}
 		},
 		methods: {
-			addWeekMenu() {
+			addMorningMenu() {
 				// 调用云函数向云数据库插入数据
 				uniCloud.callFunction({
-					name: "insertWeekData",
+					name: "insertMorningMenuData",
 				}).then((res) => {
 					console.log(res);
 					uni.hideLoading()

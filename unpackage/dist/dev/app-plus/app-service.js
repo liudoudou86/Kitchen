@@ -688,7 +688,7 @@ if (uni.restoreGlobal) {
     default:
       g = f;
   }
-  const p = h('{\n    "address": [\n        "127.0.0.1",\n        "10.16.169.63"\n    ],\n    "debugPort": 60885,\n    "initialLaunchType": "local",\n    "servePort": 60888,\n    "skipFiles": [\n        "<node_internals>/**/*.js",\n        "D:/Coding/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), m = h('[{"provider":"aliyun","spaceName":"kitchen","spaceId":"18675ae6-1e0a-48ed-bbde-d40d5697caf1","clientSecret":"0LNWE8dlDUg8H7zEreT9Uw==","endpoint":"https://api.bspapp.com"}]');
+  const p = h('{\n    "address": [\n        "127.0.0.1",\n        "192.168.1.102"\n    ],\n    "debugPort": 56416,\n    "initialLaunchType": "local",\n    "servePort": 56417,\n    "skipFiles": [\n        "<node_internals>/**/*.js",\n        "D:/Coding/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), m = h('[{"provider":"aliyun","spaceName":"kitchen","spaceId":"18675ae6-1e0a-48ed-bbde-d40d5697caf1","clientSecret":"0LNWE8dlDUg8H7zEreT9Uw==","endpoint":"https://api.bspapp.com"}]');
   let _ = "";
   try {
     _ = "__UNI__44EC4D6";

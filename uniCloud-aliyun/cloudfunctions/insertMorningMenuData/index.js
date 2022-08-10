@@ -24,23 +24,26 @@ exports.main = async (event, context) => {
 		morningFoods.push(mfData[i].nickname);
 		morningFoodsMaterials.push(mfData[i].materials);
 	};
-	// 组合早餐主食配料表
-	const morningFoodsMaterialsList =[];
-	for (let i=0; i<dates.length; i++) {
-		morningFoodsMaterialsList.push({
-			name : morningFoods[i],
-			text : morningFoodsMaterials[i]
-		})
-	};
-	const newMorningFoodsMaterials = await db.collection('morningmaterials').add(morningFoodsMaterialsList);
 	// 对数组随机排序
 	const newMorningFoods = [];
+	const newMorningFoodsMaterials = [];
 	const mfLength = morningFoods.length; // 需要单独将长度定义
 	for (let i=0; i < mfLength; i++) { // 重新排列index
 		let index = Math.floor(Math.random() * (mfLength - i));
 		newMorningFoods[i] = morningFoods[index];
+		newMorningFoodsMaterials[i] = morningFoodsMaterials[index];
 		morningFoods.splice(index, 1); // 删除该元素
+		morningFoodsMaterials.splice(index, 1);
 	};
+	// 组合早餐主食配料表
+	const morningFoodsMaterialsList =[];
+	for (let i=0; i<dates.length; i++) {
+		morningFoodsMaterialsList.push({
+			name : newMorningFoods[i],
+			text : newMorningFoodsMaterials[i]
+		})
+	};
+	const newMorningFoodsMaterialsList = await db.collection('morningmaterials').add(morningFoodsMaterialsList);
 
 	// 创建早餐汤的菜谱数组
 	const ms = await db.collection('cooking').where({
@@ -53,23 +56,26 @@ exports.main = async (event, context) => {
 		morningSoups.push(msData[i].nickname);
 		morningSoupsMaterials.push(msData[i].materials);
 	};
-	// 组合早餐汤配料表
-	const morningSoupsMaterialsList =[];
-	for (let i=0; i<dates.length; i++) {
-		morningSoupsMaterialsList.push({
-			name : morningSoups[i],
-			text : morningSoupsMaterials[i]
-		})
-	};
-	const newMorningSoupsMaterials = await db.collection('morningmaterials').add(morningSoupsMaterialsList);
 	// 对数组随机排序
 	const newMorningSoups = [];
+	const newMorningSoupsMaterials = [];
 	const msLength = morningSoups.length; // 需要单独将长度定义
 	for (let i=0; i < msLength; i++) { // 重新排列index
 		let index = Math.floor(Math.random() * (msLength - i));
 		newMorningSoups[i] = morningSoups[index];
+		newMorningSoupsMaterials[i] = morningSoupsMaterials[index];
 		morningSoups.splice(index, 1); // 删除该元素
+		morningSoupsMaterials.splice(index, 1);
 	};
+	// 组合早餐汤配料表
+	const morningSoupsMaterialsList =[];
+	for (let i=0; i<dates.length; i++) {
+		morningSoupsMaterialsList.push({
+			name : newMorningSoups[i],
+			text : newMorningSoupsMaterials[i]
+		})
+	};
+	const newMorningSoupsMaterialsList = await db.collection('morningmaterials').add(morningSoupsMaterialsList);
 
 	// 创建水果的菜谱数组
 	const f = await db.collection('cooking').where({
@@ -82,23 +88,26 @@ exports.main = async (event, context) => {
 		fruits.push(fData[i].nickname);
 		fruitsMaterials.push(fData[i].materials);
 	};
-	// 组合水果配料表
-	const fruitsMaterialsList =[];
-	for (let i=0; i<dates.length; i++) {
-		fruitsMaterialsList.push({
-			name : fruits[i],
-			text : fruitsMaterials[i]
-		})
-	};
-	const newFruitsMaterials = await db.collection('morningmaterials').add(fruitsMaterialsList);
 	// 对数组随机排序
 	const newFruits = [];
+	const newFruitsMaterials = [];
 	const fLength = fruits.length;
 	for (let i=0; i < fLength; i++) {
 		let index = Math.floor(Math.random() * (fLength - i));
 		newFruits[i] = fruits[index];
+		newFruitsMaterials[i] = fruitsMaterials[index];
 		fruits.splice(index, 1);
+		fruitsMaterials.splice(index, 1);
 	};
+	// 组合水果配料表
+	const fruitsMaterialsList =[];
+	for (let i=0; i<dates.length; i++) {
+		fruitsMaterialsList.push({
+			name : newFruits[i],
+			text : newFruitsMaterials[i]
+		})
+	};
+	const newFruitsMaterialsList = await db.collection('morningmaterials').add(fruitsMaterialsList);
 	
 	// 创建其他的菜谱数组
 	const o = await db.collection('cooking').where({
@@ -111,23 +120,26 @@ exports.main = async (event, context) => {
 		others.push(oData[i].nickname);
 		othersMaterials.push(oData[i].materials);
 	};
-	// 组合水果配料表
-	const othersMaterialsList =[];
-	for (let i=0; i<dates.length; i++) {
-		othersMaterialsList.push({
-			name : others[i],
-			text : othersMaterials[i]
-		})
-	};
-	const newOthersMaterials = await db.collection('morningmaterials').add(othersMaterialsList);
 	// 对数组随机排序
 	const newOthers = [];
+	const newOthersMaterials = [];
 	const oLength = others.length;
 	for (let i=0; i < oLength; i++) {
 		let index = Math.floor(Math.random() * (oLength - i));
 		newOthers[i] = others[index];
+		newOthersMaterials[i] = othersMaterials[index];
 		others.splice(index, 1);
+		othersMaterials.splice(index, 1);
 	};
+	// 组合其他配料表
+	const othersMaterialsList =[];
+	for (let i=0; i<dates.length; i++) {
+		othersMaterialsList.push({
+			name : newOthers[i],
+			text : newOthersMaterials[i]
+		})
+	};
+	const newOthersMaterialsList = await db.collection('morningmaterials').add(othersMaterialsList);
 	
 	// 组合以上数组
 	const morningMenuList =[];

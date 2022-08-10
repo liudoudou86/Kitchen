@@ -4,11 +4,8 @@
 			<uni-table ref="table" :loading="loading" border stripe emptyText="暂无更多数据">
 				<uni-tr>
 					<uni-th width="60" align="center">时间</uni-th>
-					<uni-th width="100" align="center">早餐-主食</uni-th>
-					<uni-th width="100" align="center">早餐-汤/粥</uni-th>
-					<uni-th width="100" align="center">午餐-主食</uni-th>
-					<uni-th width="100" align="center">午餐-汤/粥</uni-th>
-					<uni-th width="100" align="center">凉菜</uni-th>
+					<uni-th width="100" align="center">主食</uni-th>
+					<uni-th width="100" align="center">汤/粥</uni-th>
 					<uni-th width="100" align="center">水果</uni-th>
 					<uni-th width="100" align="center">其他</uni-th>
 					<uni-th width="90" align="center">设置</uni-th>
@@ -24,31 +21,22 @@
 						<view>{{ item.morningsoup }}</view>
 					</uni-td>
 					<uni-td align="left">
-						<view>{{ item.noonfood }}</view>
-					</uni-td>
-					<uni-td align="left">
-						<view>{{ item.noonsoup }}</view>
-					</uni-td>
-					<uni-td align="left">
-						<view>{{ item.clod }}</view>
-					</uni-td>
-					<uni-td align="left">
 						<view>{{ item.fruit }}</view>
 					</uni-td>
 					<uni-td align="left">
 						<view>{{ item.other }}</view>
 					</uni-td>
 					<uni-td>
-						<navigator class="uni-group" url="/pages/setting/morningmenu/morningmenu" hover-class="navigator-hover">
-							<button size="mini" type="primary">修改</button>
-						</navigator>
+						<view>
+							<button size="mini" type="primary" @click="getRowData(item)">修改</button>
+						</view>
 					</uni-td>
 				</uni-tr>
 			</uni-table>
 		</view>
 		<view class="uni-padding-wrap uni-common-mt">
 			<view class="text-box" scroll-y="true">
-				<text>配料表: </text>
+				<text>【采购单】:\n</text>
 				<text>{{ materialsData }}</text>
 			</view>
 		</view>
@@ -87,13 +75,26 @@
 				this.loading = true;
 				// 调用云函数查询
 				uniCloud.callFunction({
-					name: "readMaterialsData",
+					name: "readMorningMaterialsData",
 				}).then((res) => {
 					this.materialsData = res.result;
 					this.loading = false;
 					console.log(res);
 				}).catch((err) => {
 					console.log(err);
+				});
+			},
+			getRowData(item) {
+				// 将当前行数据传至新页面
+				console.log('准备传的数据',item);
+				uni.navigateTo({
+					url : 'modify/morningmodify?item='+ encodeURIComponent(JSON.stringify(item)),
+					success : function(res) {
+						console.log('回调成功',res);
+					},
+					fail : function(err) {
+						console.log('回调失败',err);
+					}
 				});
 			}
 		}

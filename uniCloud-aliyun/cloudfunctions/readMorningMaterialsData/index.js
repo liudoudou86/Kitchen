@@ -7,8 +7,14 @@ exports.main = async (event, context) => {
 	const db = uniCloud.database();
 	
 	// 读取客户端的数据
-	const m = await db.collection('materials').get();
-	const materialsData = m.data[0].text;
+	const m = await db.collection('morningmaterials').get();
+	const mLength = m.affectedDocs;
+	const mData = m.data;
+	const materialsData = [];
+	for (let i=0; i < mLength; i++) {
+		materialsData.push(mData[i].text);
+	};
+	console.log('materialsData',materialsData);	
 	
 	// 把数组转换成字符串
 	const str = materialsData.toString();
@@ -19,7 +25,9 @@ exports.main = async (event, context) => {
 	// ES6数组去重
 	const arr = Array.from(new Set(cut));
 	// 把数组转换成字符串
-	const res = arr.toString();
+	const list = arr.toString();
+	// 将，替换为空格
+	const res = list.replace(/,/g,' ');
 
 	console.log('最终配料表: ',res);
 	

@@ -8,7 +8,7 @@ exports.main = async (event, context) => {
 	
 	// 清空数据库数据
 	const removeWeek = await db.collection('morningmenu').remove();
-	const removeMaterials = await db.collection('materials').remove();
+	const removeMaterials = await db.collection('morningmaterials').remove();
 	
 	// 创建时间周期的数组
 	const dates = ['周一','周二','周三','周四','周五','周六','周日'];
@@ -24,6 +24,15 @@ exports.main = async (event, context) => {
 		morningFoods.push(mfData[i].nickname);
 		morningFoodsMaterials.push(mfData[i].materials);
 	};
+	// 组合早餐主食配料表
+	const morningFoodsMaterialsList =[];
+	for (let i=0; i<dates.length; i++) {
+		morningFoodsMaterialsList.push({
+			name : morningFoods[i],
+			text : morningFoodsMaterials[i]
+		})
+	};
+	const newMorningFoodsMaterials = await db.collection('morningmaterials').add(morningFoodsMaterialsList);
 	// 对数组随机排序
 	const newMorningFoods = [];
 	const mfLength = morningFoods.length; // 需要单独将长度定义
@@ -44,6 +53,15 @@ exports.main = async (event, context) => {
 		morningSoups.push(msData[i].nickname);
 		morningSoupsMaterials.push(msData[i].materials);
 	};
+	// 组合早餐汤配料表
+	const morningSoupsMaterialsList =[];
+	for (let i=0; i<dates.length; i++) {
+		morningSoupsMaterialsList.push({
+			name : morningSoups[i],
+			text : morningSoupsMaterials[i]
+		})
+	};
+	const newMorningSoupsMaterials = await db.collection('morningmaterials').add(morningSoupsMaterialsList);
 	// 对数组随机排序
 	const newMorningSoups = [];
 	const msLength = morningSoups.length; // 需要单独将长度定义
@@ -52,87 +70,7 @@ exports.main = async (event, context) => {
 		newMorningSoups[i] = morningSoups[index];
 		morningSoups.splice(index, 1); // 删除该元素
 	};
-	
-	// 创建午餐主食的菜谱数组
-	const nf = await db.collection('cooking').where({
-		time : '午餐主食'
-	}).get();
-	const noonFoods = [];
-	const noonFoodsMaterials = [];
-	const nfData = nf.data;
-	for (let i=0; i < nfData.length; i++) {
-		noonFoods.push(nfData[i].nickname);
-		noonFoodsMaterials.push(nfData[i].materials);
-	};
-	// 对数组随机排序
-	const newNoonFoods = [];
-	const nfLength = noonFoods.length;
-	for (let i=0; i < nfLength; i++) {
-		let index = Math.floor(Math.random() * (nfLength - i));
-		newNoonFoods[i] = noonFoods[index];
-		noonFoods.splice(index, 1);
-	};
-	
-	// 创建午餐汤的菜谱数组
-	const ns = await db.collection('cooking').where({
-		time : '午餐汤'
-	}).get();
-	const noonSoups = [];
-	const noonSoupsMaterials = [];
-	const nsData = ns.data;
-	for (let i=0; i < nsData.length; i++) {
-		noonSoups.push(nsData[i].nickname);
-		noonSoupsMaterials.push(nsData[i].materials);
-	};
-	// 对数组随机排序
-	const newNoonSoups = [];
-	const nsLength = noonSoups.length;
-	for (let i=0; i < nsLength; i++) {
-		let index = Math.floor(Math.random() * (nsLength - i));
-		newNoonSoups[i] = noonSoups[index];
-		noonSoups.splice(index, 1);
-	};
-	
-	// 创建凉菜的菜谱数组
-	const c = await db.collection('cooking').where({
-		time : '凉菜'
-	}).get();
-	const clods = [];
-	const clodsMaterials = [];
-	const cData = c.data;
-	for (let i=0; i < cData.length; i++) {
-		clods.push(cData[i].nickname);
-		clodsMaterials.push(cData[i].materials);
-	};
-	// 对数组随机排序
-	const newClods = [];
-	const cLength = clods.length;
-	for (let i=0; i < cLength; i++) {
-		let index = Math.floor(Math.random() * (cLength - i));
-		newClods[i] = clods[index];
-		clods.splice(index, 1);
-	};
-	
-	// 创建汤的菜谱数组
-	const s = await db.collection('cooking').where({
-		time : '汤'
-	}).get();
-	const soups = [];
-	const soupsMaterials = [];
-	const sData = s.data;
-	for (let i=0; i < sData.length; i++) {
-		soups.push(sData[i].nickname);
-		soupsMaterials.push(sData[i].materials);
-	};
-	// 对数组随机排序
-	const newSoups = [];
-	const sLength = soups.length;
-	for (let i=0; i < sLength; i++) {
-		let index = Math.floor(Math.random() * (sLength - i));
-		newSoups[i] = soups[index];
-		soups.splice(index, 1);
-	};
-	
+
 	// 创建水果的菜谱数组
 	const f = await db.collection('cooking').where({
 		time : '水果'
@@ -144,6 +82,15 @@ exports.main = async (event, context) => {
 		fruits.push(fData[i].nickname);
 		fruitsMaterials.push(fData[i].materials);
 	};
+	// 组合水果配料表
+	const fruitsMaterialsList =[];
+	for (let i=0; i<dates.length; i++) {
+		fruitsMaterialsList.push({
+			name : fruits[i],
+			text : fruitsMaterials[i]
+		})
+	};
+	const newFruitsMaterials = await db.collection('morningmaterials').add(fruitsMaterialsList);
 	// 对数组随机排序
 	const newFruits = [];
 	const fLength = fruits.length;
@@ -164,6 +111,15 @@ exports.main = async (event, context) => {
 		others.push(oData[i].nickname);
 		othersMaterials.push(oData[i].materials);
 	};
+	// 组合水果配料表
+	const othersMaterialsList =[];
+	for (let i=0; i<dates.length; i++) {
+		othersMaterialsList.push({
+			name : others[i],
+			text : othersMaterials[i]
+		})
+	};
+	const newOthersMaterials = await db.collection('morningmaterials').add(othersMaterialsList);
 	// 对数组随机排序
 	const newOthers = [];
 	const oLength = others.length;
@@ -180,24 +136,14 @@ exports.main = async (event, context) => {
 			date : dates[i],
 			morningfood : newMorningFoods[i],
 			morningsoup : newMorningSoups[i],
-			noonfood : newNoonFoods[i],
-			noonsoup : newNoonSoups[i],
-			clod : newClods[i],
 			fruit : newFruits[i],
-			other : newOthers[i],
+			other : newOthers[i]
 		})
 	};
-	console.log('新组合的对象: ',morningMenuList);
-	
-	// 使用ES6新特性合并多个数组
-	const sumMaterials = [...morningFoodsMaterials,...morningSoupsMaterials,...noonFoodsMaterials,...noonSoupsMaterials,...clodsMaterials,...fruitsMaterials,...othersMaterials];
-	console.log('新组合的配料表: ',sumMaterials);
+	console.log('新组合的早餐全部对象: ',morningMenuList);
 	
 	// 将生成的数组插入数据库
 	const res = await db.collection('morningmenu').add(morningMenuList);
-	const text = await db.collection('materials').add({
-		text : sumMaterials
-	});
 	
 	//返回数据给客户端
 	return res;

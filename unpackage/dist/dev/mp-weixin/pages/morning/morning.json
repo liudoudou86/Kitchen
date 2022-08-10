@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "周",
+  "navigationBarTitleText": "早餐",
   "usingComponents": {
     "uni-th": "../../uni_modules/uni-table/components/uni-th/uni-th",
     "uni-tr": "../../uni_modules/uni-table/components/uni-tr/uni-tr",

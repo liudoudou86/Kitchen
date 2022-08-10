@@ -1,1 +1,0 @@
-"use strict";var e=require("../../common/vendor.js");const r={data(){return{title:"\u5360\u4F4D\u7B26"}},onLoad(){},methods:{}};function n(a,c,i,s,t,_){return{a:e.t(t.title)}}var o=e._export_sfc(r,[["render",n],["__file","D:/Coding/Kitchen/pages/month/month.vue"]]);wx.createPage(o);

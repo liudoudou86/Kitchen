@@ -5,8 +5,8 @@
 				<uni-tr>
 					<uni-th width="130" align="center">早餐-主食</uni-th>
 					<uni-th width="130" align="center">早餐-汤/粥</uni-th>
-					<uni-th width="130" align="center">午餐-主食</uni-th>
-					<uni-th width="130" align="center">午餐-汤/粥</uni-th>
+					<uni-th width="130" align="center">正餐-菜</uni-th>
+					<uni-th width="130" align="center">正餐-汤/粥</uni-th>
 					<uni-th width="130" align="center">凉菜</uni-th>
 					<uni-th width="130" align="center">水果</uni-th>
 					<uni-th width="130" align="center">其他</uni-th>

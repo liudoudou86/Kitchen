@@ -1,0 +1,1 @@
+"use strict";var e=require("../../common/vendor.js");const o={data(){return{title:"\u5360\u4F4D\u7B26"}},onLoad(){},methods:{}};function r(a,c,i,s,n,_){return{a:e.t(n.title)}}var t=e._export_sfc(o,[["render",r],["__file","D:/Coding/Kitchen/pages/noon/noon.vue"]]);wx.createPage(t);

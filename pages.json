@@ -13,6 +13,12 @@
 			}
 		},
 		{
+			"path": "pages/morning/modify/morningmodify",
+			"style": {
+				"navigationBarTitleText": "修改早餐菜谱"
+			}
+		},
+		{
 			"path": "pages/noon/noon",
 			"style": {
 				"navigationBarTitleText": "午餐"
@@ -34,12 +40,6 @@
 			"path": "pages/setting/modify/modify",
 			"style": {
 				"navigationBarTitleText": "修改"
-			}
-		},
-		{
-			"path": "pages/setting/morningmenu/morningmenu",
-			"style": {
-				"navigationBarTitleText": "早餐菜谱"
 			}
 		}
 	],

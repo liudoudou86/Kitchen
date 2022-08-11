@@ -394,13 +394,3 @@
     transform: rotate(-360deg);
 }
 }
-
-.uni-group {
-		display: flex;
-		align-items: center;
-}
-.uni-padding-wrap {
-		margin-top: 0.9375rem;
-		align-items: left;
-}
-

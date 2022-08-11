@@ -34,12 +34,6 @@
 				</uni-tr>
 			</uni-table>
 		</view>
-		<view class="uni-padding-wrap uni-common-mt">
-			<view class="text-box" scroll-y="true">
-				<text>【采购单】:\n</text>
-				<text>{{ materialsData }}</text>
-			</view>
-		</view>
 	</view>
 </template>
 
@@ -102,15 +96,5 @@
 </script>
 
 <style>
-
-	.uni-group {
-		display: flex;
-		align-items: center;
-	}
-	
-	.uni-padding-wrap {
-		margin-top: 30rpx;
-		align-items: left;
-	}
 
 </style>

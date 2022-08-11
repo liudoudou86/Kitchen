@@ -399,6 +399,12 @@ if (uni.restoreGlobal) {
       }
     },
     {
+      path: "pages/material/material",
+      style: {
+        navigationBarTitleText: "\u91C7\u8D2D\u5355"
+      }
+    },
+    {
       path: "pages/setting/setting",
       style: {
         navigationBarTitleText: "\u8BBE\u7F6E"
@@ -432,26 +438,32 @@ if (uni.restoreGlobal) {
     list: [
       {
         pagePath: "pages/menu/menu",
-        iconPath: "static/tabbar/list.png",
-        selectedIconPath: "static/tabbar/list_active.png",
+        iconPath: "static/tabbar/home.png",
+        selectedIconPath: "static/tabbar/home-active.png",
         text: "\u83DC\u8C31"
       },
       {
         pagePath: "pages/morning/morning",
-        iconPath: "static/tabbar/grid.png",
-        selectedIconPath: "static/tabbar/grid_active.png",
+        iconPath: "static/tabbar/category.png",
+        selectedIconPath: "static/tabbar/category-active.png",
         text: "\u65E9\u9910"
       },
       {
         pagePath: "pages/noon/noon",
-        iconPath: "static/tabbar/grid.png",
-        selectedIconPath: "static/tabbar/grid_active.png",
+        iconPath: "static/tabbar/category.png",
+        selectedIconPath: "static/tabbar/category-active.png",
         text: "\u5348\u9910"
       },
       {
+        pagePath: "pages/material/material",
+        iconPath: "static/tabbar/cart.png",
+        selectedIconPath: "static/tabbar/cart-active.png",
+        text: "\u91C7\u8D2D\u5355"
+      },
+      {
         pagePath: "pages/setting/setting",
-        iconPath: "static/tabbar/me.png",
-        selectedIconPath: "static/tabbar/me_active.png",
+        iconPath: "static/tabbar/user.png",
+        selectedIconPath: "static/tabbar/user-active.png",
         text: "\u8BBE\u7F6E"
       }
     ]
@@ -688,7 +700,7 @@ if (uni.restoreGlobal) {
     default:
       g = f;
   }
-  const p = h('{\n    "address": [\n        "127.0.0.1",\n        "192.168.1.102"\n    ],\n    "debugPort": 51278,\n    "initialLaunchType": "local",\n    "servePort": 51279,\n    "skipFiles": [\n        "<node_internals>/**/*.js",\n        "D:/Coding/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), m = h('[{"provider":"aliyun","spaceName":"kitchen","spaceId":"18675ae6-1e0a-48ed-bbde-d40d5697caf1","clientSecret":"0LNWE8dlDUg8H7zEreT9Uw==","endpoint":"https://api.bspapp.com"}]');
+  const p = h('{\n    "address": [\n        "127.0.0.1",\n        "192.168.1.105"\n    ],\n    "debugPort": 57075,\n    "initialLaunchType": "local",\n    "servePort": 57076,\n    "skipFiles": [\n        "<node_internals>/**/*.js",\n        "D:/Coding/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), m = h('[{"provider":"aliyun","spaceName":"kitchen","spaceId":"18675ae6-1e0a-48ed-bbde-d40d5697caf1","clientSecret":"0LNWE8dlDUg8H7zEreT9Uw==","endpoint":"https://api.bspapp.com"}]');
   let _ = "";
   try {
     _ = "__UNI__44EC4D6";
@@ -2622,7 +2634,7 @@ if (uni.restoreGlobal) {
     }
     return target;
   };
-  const _sfc_main$c = {
+  const _sfc_main$e = {
     name: "uniTh",
     options: {
       virtualHost: true
@@ -2773,7 +2785,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["uni-table-th", { "table--border": $data.border }]),
       style: vue.normalizeStyle({ width: $options.customWidth + "px", "text-align": $props.align })
@@ -2781,11 +2793,11 @@ if (uni.restoreGlobal) {
       vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
     ], 6);
   }
-  var __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["__scopeId", "data-v-511e81f9"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-th/uni-th.vue"]]);
+  var __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-511e81f9"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-th/uni-th.vue"]]);
   function resolveEasycom(component, easycom) {
     return shared.isString(component) ? easycom : component;
   }
-  const _sfc_main$b = {
+  const _sfc_main$d = {
     name: "TableCheckbox",
     emits: ["checkboxSelected"],
     props: {
@@ -2850,7 +2862,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: "uni-table-checkbox",
       onClick: _cache[0] || (_cache[0] = (...args) => $options.selected && $options.selected(...args))
@@ -2868,8 +2880,8 @@ if (uni.restoreGlobal) {
       ]))
     ]);
   }
-  var tableCheckbox = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["__scopeId", "data-v-68100fa0"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-tr/table-checkbox.vue"]]);
-  const _sfc_main$a = {
+  var tableCheckbox = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__scopeId", "data-v-68100fa0"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-tr/table-checkbox.vue"]]);
+  const _sfc_main$c = {
     name: "uniTr",
     components: { tableCheckbox },
     props: {
@@ -2952,7 +2964,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_table_checkbox = vue.resolveComponent("table-checkbox");
     return vue.openBlock(), vue.createElementBlock("view", { class: "uni-table-tr" }, [
       $data.selection === "selection" ? (vue.openBlock(), vue.createElementBlock("view", {
@@ -2969,8 +2981,8 @@ if (uni.restoreGlobal) {
       vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
     ]);
   }
-  var __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["__scopeId", "data-v-c2c83a8e"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-tr/uni-tr.vue"]]);
-  const _sfc_main$9 = {
+  var __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["__scopeId", "data-v-c2c83a8e"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-tr/uni-tr.vue"]]);
+  const _sfc_main$b = {
     name: "uniTd",
     options: {
       virtualHost: true
@@ -3016,7 +3028,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [
       vue.createCommentVNode(` :class="{'table--border':border}"  `),
       vue.createElementVNode("view", {
@@ -3027,8 +3039,8 @@ if (uni.restoreGlobal) {
       ], 6)
     ], 2112);
   }
-  var __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["__scopeId", "data-v-321f8e79"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-td/uni-td.vue"]]);
-  const _sfc_main$8 = {
+  var __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["__scopeId", "data-v-321f8e79"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-td/uni-td.vue"]]);
+  const _sfc_main$a = {
     name: "uniTable",
     options: {
       virtualHost: true
@@ -3247,7 +3259,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["uni-table-scroll", { "table--border": $props.border, "border-none": !$data.noData }])
     }, [
@@ -3273,8 +3285,8 @@ if (uni.restoreGlobal) {
       ], 6)
     ], 2);
   }
-  var __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__scopeId", "data-v-6cd49106"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-table/uni-table.vue"]]);
-  const _sfc_main$7 = {
+  var __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["__scopeId", "data-v-6cd49106"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-table/uni-table.vue"]]);
+  const _sfc_main$9 = {
     data() {
       return {
         morningFoodData: [],
@@ -3412,8 +3424,8 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_th = resolveEasycom(vue.resolveDynamicComponent("uni-th"), __easycom_0);
+  function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_th = resolveEasycom(vue.resolveDynamicComponent("uni-th"), __easycom_0$1);
     const _component_uni_tr = resolveEasycom(vue.resolveDynamicComponent("uni-tr"), __easycom_1);
     const _component_uni_td = resolveEasycom(vue.resolveDynamicComponent("uni-td"), __easycom_2);
     const _component_uni_table = resolveEasycom(vue.resolveDynamicComponent("uni-table"), __easycom_3);
@@ -3611,8 +3623,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesMenuMenu = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__file", "D:/Coding/Kitchen/pages/menu/menu.vue"]]);
-  const _sfc_main$6 = {
+  var PagesMenuMenu = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["__file", "D:/Coding/Kitchen/pages/menu/menu.vue"]]);
+  const _sfc_main$8 = {
     data() {
       return {
         tableData: [],
@@ -3632,9 +3644,9 @@ if (uni.restoreGlobal) {
         }).then((res) => {
           this.tableData = res.result.data;
           this.loading = false;
-          formatAppLog("log", "at pages/morning/morning.vue:69", res);
+          formatAppLog("log", "at pages/morning/morning.vue:63", res);
         }).catch((err) => {
-          formatAppLog("log", "at pages/morning/morning.vue:71", err);
+          formatAppLog("log", "at pages/morning/morning.vue:65", err);
         });
       },
       getMaterialsData() {
@@ -3644,27 +3656,27 @@ if (uni.restoreGlobal) {
         }).then((res) => {
           this.materialsData = res.result;
           this.loading = false;
-          formatAppLog("log", "at pages/morning/morning.vue:82", res);
+          formatAppLog("log", "at pages/morning/morning.vue:76", res);
         }).catch((err) => {
-          formatAppLog("log", "at pages/morning/morning.vue:84", err);
+          formatAppLog("log", "at pages/morning/morning.vue:78", err);
         });
       },
       getRowData(item) {
-        formatAppLog("log", "at pages/morning/morning.vue:89", "\u51C6\u5907\u4F20\u7684\u6570\u636E", item);
+        formatAppLog("log", "at pages/morning/morning.vue:83", "\u51C6\u5907\u4F20\u7684\u6570\u636E", item);
         uni.navigateTo({
           url: "modify/morningmodify?item=" + encodeURIComponent(JSON.stringify(item)),
           success: function(res) {
-            formatAppLog("log", "at pages/morning/morning.vue:93", "\u56DE\u8C03\u6210\u529F", res);
+            formatAppLog("log", "at pages/morning/morning.vue:87", "\u56DE\u8C03\u6210\u529F", res);
           },
           fail: function(err) {
-            formatAppLog("log", "at pages/morning/morning.vue:96", "\u56DE\u8C03\u5931\u8D25", err);
+            formatAppLog("log", "at pages/morning/morning.vue:90", "\u56DE\u8C03\u5931\u8D25", err);
           }
         });
       }
     }
   };
-  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_uni_th = resolveEasycom(vue.resolveDynamicComponent("uni-th"), __easycom_0);
+  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_th = resolveEasycom(vue.resolveDynamicComponent("uni-th"), __easycom_0$1);
     const _component_uni_tr = resolveEasycom(vue.resolveDynamicComponent("uni-tr"), __easycom_1);
     const _component_uni_td = resolveEasycom(vue.resolveDynamicComponent("uni-td"), __easycom_2);
     const _component_uni_table = resolveEasycom(vue.resolveDynamicComponent("uni-table"), __easycom_3);
@@ -3789,20 +3801,11 @@ if (uni.restoreGlobal) {
           ]),
           _: 1
         }, 8, ["loading"])
-      ]),
-      vue.createElementVNode("view", { class: "uni-padding-wrap uni-common-mt" }, [
-        vue.createElementVNode("view", {
-          class: "text-box",
-          "scroll-y": "true"
-        }, [
-          vue.createElementVNode("text", null, "\u3010\u91C7\u8D2D\u5355\u3011:\\n"),
-          vue.createElementVNode("text", null, vue.toDisplayString($data.materialsData), 1)
-        ])
       ])
     ]);
   }
-  var PagesMorningMorning = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__file", "D:/Coding/Kitchen/pages/morning/morning.vue"]]);
-  const _sfc_main$5 = {
+  var PagesMorningMorning = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__file", "D:/Coding/Kitchen/pages/morning/morning.vue"]]);
+  const _sfc_main$7 = {
     data() {
       return {};
     },
@@ -3849,7 +3852,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "form" }, [
       vue.createElementVNode("view", { class: "uni-padding-wrap uni-common-mt" }, [
         vue.createElementVNode("form", {
@@ -3897,8 +3900,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesMorningModifyMorningmodify = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["__file", "D:/Coding/Kitchen/pages/morning/modify/morningmodify.vue"]]);
-  const _sfc_main$4 = {
+  var PagesMorningModifyMorningmodify = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__file", "D:/Coding/Kitchen/pages/morning/modify/morningmodify.vue"]]);
+  const _sfc_main$6 = {
     data() {
       return {
         title: "\u5360\u4F4D\u7B26"
@@ -3908,14 +3911,147 @@ if (uni.restoreGlobal) {
     },
     methods: {}
   };
-  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "content" }, [
       vue.createElementVNode("view", { class: "text-area" }, [
         vue.createElementVNode("text", { class: "title" }, vue.toDisplayString($data.title), 1)
       ])
     ]);
   }
-  var PagesNoonNoon = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["__file", "D:/Coding/Kitchen/pages/noon/noon.vue"]]);
+  var PagesNoonNoon = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__file", "D:/Coding/Kitchen/pages/noon/noon.vue"]]);
+  const _sfc_main$5 = {
+    name: "UniSection",
+    emits: ["click"],
+    props: {
+      type: {
+        type: String,
+        default: ""
+      },
+      title: {
+        type: String,
+        required: true,
+        default: ""
+      },
+      titleFontSize: {
+        type: String,
+        default: "14px"
+      },
+      titleColor: {
+        type: String,
+        default: "#333"
+      },
+      subTitle: {
+        type: String,
+        default: ""
+      },
+      subTitleFontSize: {
+        type: String,
+        default: "12px"
+      },
+      subTitleColor: {
+        type: String,
+        default: "#999"
+      },
+      padding: {
+        type: [Boolean, String],
+        default: false
+      }
+    },
+    computed: {
+      _padding() {
+        if (typeof this.padding === "string") {
+          return this.padding;
+        }
+        return this.padding ? "10px" : "";
+      }
+    },
+    watch: {
+      title(newVal) {
+        if (uni.report && newVal !== "") {
+          uni.report("title", newVal);
+        }
+      }
+    },
+    methods: {
+      onClick() {
+        this.$emit("click");
+      }
+    }
+  };
+  function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", { class: "uni-section" }, [
+      vue.createElementVNode("view", {
+        class: "uni-section-header",
+        onClick: _cache[0] || (_cache[0] = (...args) => $options.onClick && $options.onClick(...args))
+      }, [
+        $props.type ? (vue.openBlock(), vue.createElementBlock("view", {
+          key: 0,
+          class: vue.normalizeClass(["uni-section-header__decoration", $props.type])
+        }, null, 2)) : vue.renderSlot(_ctx.$slots, "decoration", { key: 1 }, void 0, true),
+        vue.createElementVNode("view", { class: "uni-section-header__content" }, [
+          vue.createElementVNode("text", {
+            style: vue.normalizeStyle({ "font-size": $props.titleFontSize, "color": $props.titleColor }),
+            class: vue.normalizeClass(["uni-section__content-title", { "distraction": !$props.subTitle }])
+          }, vue.toDisplayString($props.title), 7),
+          $props.subTitle ? (vue.openBlock(), vue.createElementBlock("text", {
+            key: 0,
+            style: vue.normalizeStyle({ "font-size": $props.subTitleFontSize, "color": $props.subTitleColor }),
+            class: "uni-section-header__content-sub"
+          }, vue.toDisplayString($props.subTitle), 5)) : vue.createCommentVNode("v-if", true)
+        ]),
+        vue.createElementVNode("view", { class: "uni-section-header__slot-right" }, [
+          vue.renderSlot(_ctx.$slots, "right", {}, void 0, true)
+        ])
+      ]),
+      vue.createElementVNode("view", {
+        class: "uni-section-content",
+        style: vue.normalizeStyle({ padding: $options._padding })
+      }, [
+        vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
+      ], 4)
+    ]);
+  }
+  var __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["__scopeId", "data-v-f7ca1098"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-section/components/uni-section/uni-section.vue"]]);
+  const _sfc_main$4 = {
+    data() {
+      return {
+        materialsData: []
+      };
+    },
+    onShow() {
+      this.getMaterialsData();
+    },
+    methods: {
+      getMaterialsData() {
+        this.loading = true;
+        rn.callFunction({
+          name: "readMorningMaterialsData"
+        }).then((res) => {
+          this.materialsData = res.result;
+          this.loading = false;
+          formatAppLog("log", "at pages/material/material.vue:29", res);
+        }).catch((err) => {
+          formatAppLog("log", "at pages/material/material.vue:31", err);
+        });
+      }
+    }
+  };
+  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_uni_section = resolveEasycom(vue.resolveDynamicComponent("uni-section"), __easycom_0);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "uni-padding-wrap uni-common-mt" }, [
+      vue.createVNode(_component_uni_section, {
+        title: "\u3010\u91C7\u8D2D\u5355\u3011",
+        type: "line",
+        padding: ""
+      }, {
+        default: vue.withCtx(() => [
+          vue.createElementVNode("text", null, vue.toDisplayString($data.materialsData), 1)
+        ]),
+        _: 1
+      })
+    ]);
+  }
+  var PagesMaterialMaterial = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["__file", "D:/Coding/Kitchen/pages/material/material.vue"]]);
   const _sfc_main$3 = {
     data() {
       return {};
@@ -4186,6 +4322,7 @@ if (uni.restoreGlobal) {
   __definePage("pages/morning/morning", PagesMorningMorning);
   __definePage("pages/morning/modify/morningmodify", PagesMorningModifyMorningmodify);
   __definePage("pages/noon/noon", PagesNoonNoon);
+  __definePage("pages/material/material", PagesMaterialMaterial);
   __definePage("pages/setting/setting", PagesSettingSetting);
   __definePage("pages/setting/submit/submit", PagesSettingSubmitSubmit);
   __definePage("pages/setting/modify/modify", PagesSettingModifyModify);

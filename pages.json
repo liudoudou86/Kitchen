@@ -64,32 +64,32 @@
 		"list": [
 			{
 				"pagePath": "pages/menu/menu",
-				"iconPath": "static/tabbar/home.png",
-				"selectedIconPath": "static/tabbar/home-active.png",
+				"iconPath": "static/tabbar/tab-home.png",
+				"selectedIconPath": "static/tabbar/tab-home-current.png",
 				"text": "菜谱"
 			},
 			{
 				"pagePath": "pages/morning/morning",
-				"iconPath": "static/tabbar/category.png",
-				"selectedIconPath": "static/tabbar/category-active.png",
+				"iconPath": "static/tabbar/tab-cate.png",
+				"selectedIconPath": "static/tabbar/tab-cate-current.png",
 				"text": "早餐"
 			},
 			{
 				"pagePath": "pages/noon/noon",
-				"iconPath": "static/tabbar/category.png",
-				"selectedIconPath": "static/tabbar/category-active.png",
+				"iconPath": "static/tabbar/tab-cate.png",
+				"selectedIconPath": "static/tabbar/tab-cate-current.png",
 				"text": "午餐"
 			},
 			{
 				"pagePath": "pages/material/material",
-				"iconPath": "static/tabbar/cart.png",
-				"selectedIconPath": "static/tabbar/cart-active.png",
+				"iconPath": "static/tabbar/tab-cart.png",
+				"selectedIconPath": "static/tabbar/tab-cart-current.png",
 				"text": "采购单"
 			},
 			{
 				"pagePath": "pages/setting/setting",
-				"iconPath": "static/tabbar/user.png",
-				"selectedIconPath": "static/tabbar/user-active.png",
+				"iconPath": "static/tabbar/tab-my.png",
+				"selectedIconPath": "static/tabbar/tab-my-current.png",
 				"text": "设置"
 			}
 		]

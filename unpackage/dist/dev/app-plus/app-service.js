@@ -438,32 +438,32 @@ if (uni.restoreGlobal) {
     list: [
       {
         pagePath: "pages/menu/menu",
-        iconPath: "static/tabbar/home.png",
-        selectedIconPath: "static/tabbar/home-active.png",
+        iconPath: "static/tabbar/tab-home.png",
+        selectedIconPath: "static/tabbar/tab-home-current.png",
         text: "\u83DC\u8C31"
       },
       {
         pagePath: "pages/morning/morning",
-        iconPath: "static/tabbar/category.png",
-        selectedIconPath: "static/tabbar/category-active.png",
+        iconPath: "static/tabbar/tab-cate.png",
+        selectedIconPath: "static/tabbar/tab-cate-current.png",
         text: "\u65E9\u9910"
       },
       {
         pagePath: "pages/noon/noon",
-        iconPath: "static/tabbar/category.png",
-        selectedIconPath: "static/tabbar/category-active.png",
+        iconPath: "static/tabbar/tab-cate.png",
+        selectedIconPath: "static/tabbar/tab-cate-current.png",
         text: "\u5348\u9910"
       },
       {
         pagePath: "pages/material/material",
-        iconPath: "static/tabbar/cart.png",
-        selectedIconPath: "static/tabbar/cart-active.png",
+        iconPath: "static/tabbar/tab-cart.png",
+        selectedIconPath: "static/tabbar/tab-cart-current.png",
         text: "\u91C7\u8D2D\u5355"
       },
       {
         pagePath: "pages/setting/setting",
-        iconPath: "static/tabbar/user.png",
-        selectedIconPath: "static/tabbar/user-active.png",
+        iconPath: "static/tabbar/tab-my.png",
+        selectedIconPath: "static/tabbar/tab-my-current.png",
         text: "\u8BBE\u7F6E"
       }
     ]
@@ -700,7 +700,7 @@ if (uni.restoreGlobal) {
     default:
       g = f;
   }
-  const p = h('{\n    "address": [\n        "127.0.0.1",\n        "192.168.1.105"\n    ],\n    "debugPort": 57075,\n    "initialLaunchType": "local",\n    "servePort": 57076,\n    "skipFiles": [\n        "<node_internals>/**/*.js",\n        "D:/Coding/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), m = h('[{"provider":"aliyun","spaceName":"kitchen","spaceId":"18675ae6-1e0a-48ed-bbde-d40d5697caf1","clientSecret":"0LNWE8dlDUg8H7zEreT9Uw==","endpoint":"https://api.bspapp.com"}]');
+  const p = h('{\n    "address": [\n        "127.0.0.1",\n        "192.168.1.105"\n    ],\n    "debugPort": 51397,\n    "initialLaunchType": "local",\n    "servePort": 51398,\n    "skipFiles": [\n        "<node_internals>/**/*.js",\n        "D:/Coding/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), m = h('[{"provider":"aliyun","spaceName":"kitchen","spaceId":"18675ae6-1e0a-48ed-bbde-d40d5697caf1","clientSecret":"0LNWE8dlDUg8H7zEreT9Uw==","endpoint":"https://api.bspapp.com"}]');
   let _ = "";
   try {
     _ = "__UNI__44EC4D6";

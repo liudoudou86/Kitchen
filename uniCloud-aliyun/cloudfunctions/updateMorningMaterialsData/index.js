@@ -26,7 +26,8 @@ exports.main = async (event, context) => {
 		console.log("更新数据", res);
 		//返回数据给客户端
 		return res
-	}else if (event.type === 'morningsoup') {
+	};
+	if (event.type === 'morningsoup') {
 		// 通过修改名字获取新的配料表
 		const newValue = await db.collection('cooking').where({
 			nickname : event.nickname
@@ -48,7 +49,8 @@ exports.main = async (event, context) => {
 		console.log("更新数据", res)
 		//返回数据给客户端
 		return res
-	} else if (event.type === 'fruit') {
+	};
+	if (event.type === 'fruit') {
 		// 通过修改名字获取新的配料表
 		const newValue = await db.collection('cooking').where({
 			nickname : event.nickname
@@ -70,7 +72,8 @@ exports.main = async (event, context) => {
 		console.log("更新数据", res)
 		//返回数据给客户端
 		return res
-	} else if (event.type === 'other') {
+	};
+	if (event.type === 'other') {
 		// 通过修改名字获取新的配料表
 		const newValue = await db.collection('cooking').where({
 			nickname : event.nickname

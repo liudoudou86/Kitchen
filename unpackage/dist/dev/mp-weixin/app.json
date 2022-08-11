@@ -4,6 +4,7 @@
     "pages/morning/morning",
     "pages/morning/modify/morningmodify",
     "pages/noon/noon",
+    "pages/material/material",
     "pages/setting/setting",
     "pages/setting/submit/submit",
     "pages/setting/modify/modify"
@@ -22,29 +23,36 @@
     "list": [
       {
         "pagePath": "pages/menu/menu",
-        "iconPath": "static/tabbar/list.png",
-        "selectedIconPath": "static/tabbar/list_active.png",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home-active.png",
         "text": "菜谱"
       },
       {
         "pagePath": "pages/morning/morning",
-        "iconPath": "static/tabbar/grid.png",
-        "selectedIconPath": "static/tabbar/grid_active.png",
+        "iconPath": "static/tabbar/category.png",
+        "selectedIconPath": "static/tabbar/category-active.png",
         "text": "早餐"
       },
       {
         "pagePath": "pages/noon/noon",
-        "iconPath": "static/tabbar/grid.png",
-        "selectedIconPath": "static/tabbar/grid_active.png",
+        "iconPath": "static/tabbar/category.png",
+        "selectedIconPath": "static/tabbar/category-active.png",
         "text": "午餐"
       },
       {
+        "pagePath": "pages/material/material",
+        "iconPath": "static/tabbar/cart.png",
+        "selectedIconPath": "static/tabbar/cart-active.png",
+        "text": "采购单"
+      },
+      {
         "pagePath": "pages/setting/setting",
-        "iconPath": "static/tabbar/me.png",
-        "selectedIconPath": "static/tabbar/me_active.png",
+        "iconPath": "static/tabbar/user.png",
+        "selectedIconPath": "static/tabbar/user-active.png",
         "text": "设置"
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
 }

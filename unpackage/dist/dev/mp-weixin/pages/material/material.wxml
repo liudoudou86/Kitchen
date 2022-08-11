@@ -1,0 +1,1 @@
+<view class="uni-padding-wrap uni-common-mt"><uni-section wx:if="{{b}}" u-s="{{['d']}}" u-i="45c369e2-0" bind:__l="__l" u-p="{{b}}"><text>{{a}}</text></uni-section></view>

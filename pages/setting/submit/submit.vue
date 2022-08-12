@@ -12,10 +12,10 @@
 							<radio value="早餐汤" /><text>早餐-汤/粥</text>
 						</label>
 						<label>
-							<radio value="午餐主食" /><text>正餐-菜</text>
+							<radio value="正餐主菜" /><text>正餐-菜</text>
 						</label>
 						<label>
-							<radio value="午餐汤" /><text>正餐-汤/粥</text>
+							<radio value="正餐汤" /><text>正餐-汤/粥</text>
 						</label>
 						<label>
 							<radio value="凉菜" /><text>凉菜</text>

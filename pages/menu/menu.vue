@@ -6,7 +6,7 @@
 					<uni-th width="130" align="center">早餐-主食</uni-th>
 					<uni-th width="130" align="center">早餐-汤/粥</uni-th>
 					<uni-th width="130" align="center">正餐-菜</uni-th>
-					<uni-th width="130" align="center">正餐-汤/粥</uni-th>
+					<uni-th width="130" align="center">正餐-汤</uni-th>
 					<uni-th width="130" align="center">凉菜</uni-th>
 					<uni-th width="130" align="center">水果</uni-th>
 					<uni-th width="130" align="center">其他</uni-th>
@@ -115,11 +115,11 @@
 				uniCloud.callFunction({
 					name: "readKitchenData",
 					data: {
-						time : '正餐主食'
+						time : '正餐主菜'
 					}
 				}).then((res) => {
 					console.log(res);
-					this.noonFoodData = res.result.data;
+					this.dinnerFoodData = res.result.data;
 					this.loading = false;
 				}).catch((err) => {
 					console.log(err);
@@ -135,7 +135,7 @@
 					}
 				}).then((res) => {
 					console.log(res);
-					this.noonSoupData = res.result.data;
+					this.dinnerSoupData = res.result.data;
 					this.loading = false;
 				}).catch((err) => {
 					console.log(err);

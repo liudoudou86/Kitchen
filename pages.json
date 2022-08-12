@@ -21,7 +21,13 @@
 		{
 			"path": "pages/noon/noon",
 			"style": {
-				"navigationBarTitleText": "午餐"
+				"navigationBarTitleText": "正餐"
+			}
+		},
+		{
+			"path": "pages/noon/noon/noonmodify",
+			"style": {
+				"navigationBarTitleText": "修改正餐菜谱"
 			}
 		},
 		{

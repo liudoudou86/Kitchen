@@ -43,13 +43,11 @@
 		data() {
 			return {
 				tableData : [],
-				materialsData : [],
 				loading : false
 			}
 		},
 		onShow() {
 			this.getTableData();
-			this.getMaterialsData();
 		},
 		methods: {
 			getTableData() {
@@ -59,19 +57,6 @@
 					name: "readMorningMenuData",
 				}).then((res) => {
 					this.tableData = res.result.data;
-					this.loading = false;
-					console.log(res);
-				}).catch((err) => {
-					console.log(err);
-				});
-			},
-			getMaterialsData() {
-				this.loading = true;
-				// 调用云函数查询
-				uniCloud.callFunction({
-					name: "readMorningMaterialsData",
-				}).then((res) => {
-					this.materialsData = res.result;
 					this.loading = false;
 					console.log(res);
 				}).catch((err) => {

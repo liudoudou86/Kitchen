@@ -22,7 +22,7 @@
 				this.loading = true;
 				// 调用云函数查询
 				uniCloud.callFunction({
-					name: "readMorningMaterialsData",
+					name: "readMaterialsData",
 				}).then((res) => {
 					this.materialsData = res.result;
 					this.loading = false;

@@ -1,7 +1,7 @@
 'use strict';
 exports.main = async (event, context) => {
 	//event为客户端上传的参数
-	console.log('创建周别菜谱: ', event)
+	console.log('创建周别早餐菜谱: ', event)
 	
 	// 初始化数据库
 	const db = uniCloud.database();

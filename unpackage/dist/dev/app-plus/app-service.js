@@ -395,7 +395,13 @@ if (uni.restoreGlobal) {
     {
       path: "pages/noon/noon",
       style: {
-        navigationBarTitleText: "\u5348\u9910"
+        navigationBarTitleText: "\u6B63\u9910"
+      }
+    },
+    {
+      path: "pages/noon/noon/noonmodify",
+      style: {
+        navigationBarTitleText: "\u4FEE\u6539\u6B63\u9910\u83DC\u8C31"
       }
     },
     {
@@ -3344,11 +3350,11 @@ if (uni.restoreGlobal) {
         rn.callFunction({
           name: "readKitchenData",
           data: {
-            time: "\u6B63\u9910\u4E3B\u98DF"
+            time: "\u6B63\u9910\u4E3B\u83DC"
           }
         }).then((res) => {
           formatAppLog("log", "at pages/menu/menu.vue:121", res);
-          this.noonFoodData = res.result.data;
+          this.dinnerFoodData = res.result.data;
           this.loading = false;
         }).catch((err) => {
           formatAppLog("log", "at pages/menu/menu.vue:125", err);
@@ -3363,7 +3369,7 @@ if (uni.restoreGlobal) {
           }
         }).then((res) => {
           formatAppLog("log", "at pages/menu/menu.vue:137", res);
-          this.noonSoupData = res.result.data;
+          this.dinnerSoupData = res.result.data;
           this.loading = false;
         }).catch((err) => {
           formatAppLog("log", "at pages/menu/menu.vue:141", err);
@@ -3473,7 +3479,7 @@ if (uni.restoreGlobal) {
                   align: "center"
                 }, {
                   default: vue.withCtx(() => [
-                    vue.createTextVNode("\u6B63\u9910-\u6C64/\u7CA5")
+                    vue.createTextVNode("\u6B63\u9910-\u6C64")
                   ]),
                   _: 1
                 }),
@@ -3628,13 +3634,11 @@ if (uni.restoreGlobal) {
     data() {
       return {
         tableData: [],
-        materialsData: [],
         loading: false
       };
     },
     onShow() {
       this.getTableData();
-      this.getMaterialsData();
     },
     methods: {
       getTableData() {
@@ -3644,32 +3648,20 @@ if (uni.restoreGlobal) {
         }).then((res) => {
           this.tableData = res.result.data;
           this.loading = false;
-          formatAppLog("log", "at pages/morning/morning.vue:63", res);
+          formatAppLog("log", "at pages/morning/morning.vue:61", res);
         }).catch((err) => {
-          formatAppLog("log", "at pages/morning/morning.vue:65", err);
-        });
-      },
-      getMaterialsData() {
-        this.loading = true;
-        rn.callFunction({
-          name: "readMorningMaterialsData"
-        }).then((res) => {
-          this.materialsData = res.result;
-          this.loading = false;
-          formatAppLog("log", "at pages/morning/morning.vue:76", res);
-        }).catch((err) => {
-          formatAppLog("log", "at pages/morning/morning.vue:78", err);
+          formatAppLog("log", "at pages/morning/morning.vue:63", err);
         });
       },
       getRowData(item) {
-        formatAppLog("log", "at pages/morning/morning.vue:83", "\u51C6\u5907\u4F20\u7684\u6570\u636E", item);
+        formatAppLog("log", "at pages/morning/morning.vue:68", "\u51C6\u5907\u4F20\u7684\u6570\u636E", item);
         uni.navigateTo({
           url: "modify/morningmodify?item=" + encodeURIComponent(JSON.stringify(item)),
           success: function(res) {
-            formatAppLog("log", "at pages/morning/morning.vue:87", "\u56DE\u8C03\u6210\u529F", res);
+            formatAppLog("log", "at pages/morning/morning.vue:72", "\u56DE\u8C03\u6210\u529F", res);
           },
           fail: function(err) {
-            formatAppLog("log", "at pages/morning/morning.vue:90", "\u56DE\u8C03\u5931\u8D25", err);
+            formatAppLog("log", "at pages/morning/morning.vue:75", "\u56DE\u8C03\u5931\u8D25", err);
           }
         });
       }
@@ -3808,7 +3800,7 @@ if (uni.restoreGlobal) {
   const _sfc_main$7 = {
     data() {
       return {
-        nicknameList: []
+        nickNameList: []
       };
     },
     onLoad(option) {
@@ -3821,7 +3813,7 @@ if (uni.restoreGlobal) {
         this.nickname = e.detail.value;
         formatAppLog("log", "at pages/morning/modify/morningmodify.vue:53", this.nickname);
         if (this.nickname === "") {
-          return this.nicknameList = [];
+          return this.nickNameList = [];
         }
         rn.callFunction({
           name: "readKitchenQuery",
@@ -3832,9 +3824,9 @@ if (uni.restoreGlobal) {
           formatAppLog("log", "at pages/morning/modify/morningmodify.vue:64", res);
           const rd = res.result.data;
           for (let i2 = 0; i2 < rd.length; i2++) {
-            this.nicknameList.push(rd[i2].nickname);
+            this.nickNameList.push(rd[i2].nickname);
           }
-          formatAppLog("log", "at pages/morning/modify/morningmodify.vue:69", "\u6A21\u7CCA\u67E5\u8BE2\u5217\u8868", this.nicknameList);
+          formatAppLog("log", "at pages/morning/modify/morningmodify.vue:69", "\u6A21\u7CCA\u67E5\u8BE2\u5217\u8868", this.nickNameList);
         }).catch((err) => {
           formatAppLog("log", "at pages/morning/modify/morningmodify.vue:71", err);
         });
@@ -3910,7 +3902,7 @@ if (uni.restoreGlobal) {
               onInput: _cache[0] || (_cache[0] = (...args) => $options.inputNickname && $options.inputNickname(...args)),
               placeholder: "\u8BF7\u8F93\u5165\u83DC\u540D"
             }, null, 32),
-            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.nicknameList, (item, index) => {
+            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.nickNameList, (item, index) => {
               return vue.openBlock(), vue.createElementBlock("text", { key: index }, "\u3010" + vue.toDisplayString(item) + "\u3011", 1);
             }), 128))
           ]),
@@ -3932,17 +3924,226 @@ if (uni.restoreGlobal) {
   const _sfc_main$6 = {
     data() {
       return {
-        title: "\u5360\u4F4D\u7B26"
+        tableData: [],
+        loading: false
       };
     },
-    onLoad() {
+    onShow() {
+      this.getTableData();
     },
-    methods: {}
+    methods: {
+      getTableData() {
+        this.loading = true;
+        rn.callFunction({
+          name: "readNoonMenuData"
+        }).then((res) => {
+          this.tableData = res.result.data;
+          this.loading = false;
+          formatAppLog("log", "at pages/noon/noon.vue:77", res);
+        }).catch((err) => {
+          formatAppLog("log", "at pages/noon/noon.vue:79", err);
+        });
+      },
+      getRowData(item) {
+        formatAppLog("log", "at pages/noon/noon.vue:84", "\u51C6\u5907\u4F20\u7684\u6570\u636E", item);
+        uni.navigateTo({
+          url: "modify/noonmodify?item=" + encodeURIComponent(JSON.stringify(item)),
+          success: function(res) {
+            formatAppLog("log", "at pages/noon/noon.vue:88", "\u56DE\u8C03\u6210\u529F", res);
+          },
+          fail: function(err) {
+            formatAppLog("log", "at pages/noon/noon.vue:91", "\u56DE\u8C03\u5931\u8D25", err);
+          }
+        });
+      }
+    }
   };
   function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("view", { class: "content" }, [
-      vue.createElementVNode("view", { class: "text-area" }, [
-        vue.createElementVNode("text", { class: "title" }, vue.toDisplayString($data.title), 1)
+    const _component_uni_th = resolveEasycom(vue.resolveDynamicComponent("uni-th"), __easycom_0$1);
+    const _component_uni_tr = resolveEasycom(vue.resolveDynamicComponent("uni-tr"), __easycom_1);
+    const _component_uni_td = resolveEasycom(vue.resolveDynamicComponent("uni-td"), __easycom_2);
+    const _component_uni_table = resolveEasycom(vue.resolveDynamicComponent("uni-table"), __easycom_3);
+    return vue.openBlock(), vue.createElementBlock("view", null, [
+      vue.createElementVNode("view", { class: "uni-container" }, [
+        vue.createVNode(_component_uni_table, {
+          ref: "table",
+          loading: $data.loading,
+          border: "",
+          stripe: "",
+          emptyText: "\u6682\u65E0\u66F4\u591A\u6570\u636E"
+        }, {
+          default: vue.withCtx(() => [
+            vue.createVNode(_component_uni_tr, null, {
+              default: vue.withCtx(() => [
+                vue.createVNode(_component_uni_th, {
+                  width: "60",
+                  align: "center"
+                }, {
+                  default: vue.withCtx(() => [
+                    vue.createTextVNode("\u65F6\u95F4")
+                  ]),
+                  _: 1
+                }),
+                vue.createVNode(_component_uni_th, {
+                  width: "100",
+                  align: "center"
+                }, {
+                  default: vue.withCtx(() => [
+                    vue.createTextVNode("\u4E3B\u83DC\u2460")
+                  ]),
+                  _: 1
+                }),
+                vue.createVNode(_component_uni_th, {
+                  width: "100",
+                  align: "center"
+                }, {
+                  default: vue.withCtx(() => [
+                    vue.createTextVNode("\u4E3B\u83DC\u2461")
+                  ]),
+                  _: 1
+                }),
+                vue.createVNode(_component_uni_th, {
+                  width: "100",
+                  align: "center"
+                }, {
+                  default: vue.withCtx(() => [
+                    vue.createTextVNode("\u4E3B\u83DC\u2462")
+                  ]),
+                  _: 1
+                }),
+                vue.createVNode(_component_uni_th, {
+                  width: "100",
+                  align: "center"
+                }, {
+                  default: vue.withCtx(() => [
+                    vue.createTextVNode("\u4E3B\u83DC\u2463")
+                  ]),
+                  _: 1
+                }),
+                vue.createVNode(_component_uni_th, {
+                  width: "100",
+                  align: "center"
+                }, {
+                  default: vue.withCtx(() => [
+                    vue.createTextVNode("\u4E3B\u83DC\u2464")
+                  ]),
+                  _: 1
+                }),
+                vue.createVNode(_component_uni_th, {
+                  width: "100",
+                  align: "center"
+                }, {
+                  default: vue.withCtx(() => [
+                    vue.createTextVNode("\u6C64")
+                  ]),
+                  _: 1
+                }),
+                vue.createVNode(_component_uni_th, {
+                  width: "100",
+                  align: "center"
+                }, {
+                  default: vue.withCtx(() => [
+                    vue.createTextVNode("\u6C34\u679C")
+                  ]),
+                  _: 1
+                }),
+                vue.createVNode(_component_uni_th, {
+                  width: "100",
+                  align: "center"
+                }, {
+                  default: vue.withCtx(() => [
+                    vue.createTextVNode("\u51C9\u83DC")
+                  ]),
+                  _: 1
+                }),
+                vue.createVNode(_component_uni_th, {
+                  width: "90",
+                  align: "center"
+                }, {
+                  default: vue.withCtx(() => [
+                    vue.createTextVNode("\u8BBE\u7F6E")
+                  ]),
+                  _: 1
+                })
+              ]),
+              _: 1
+            }),
+            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.tableData, (item, index) => {
+              return vue.openBlock(), vue.createBlock(_component_uni_tr, { key: index }, {
+                default: vue.withCtx(() => [
+                  vue.createVNode(_component_uni_td, { align: "center" }, {
+                    default: vue.withCtx(() => [
+                      vue.createElementVNode("view", { class: "date" }, vue.toDisplayString(item.date), 1)
+                    ]),
+                    _: 2
+                  }, 1024),
+                  vue.createVNode(_component_uni_td, { align: "left" }, {
+                    default: vue.withCtx(() => [
+                      vue.createElementVNode("view", null, vue.toDisplayString(item.noonfood), 1)
+                    ]),
+                    _: 2
+                  }, 1024),
+                  vue.createVNode(_component_uni_td, { align: "left" }, {
+                    default: vue.withCtx(() => [
+                      vue.createElementVNode("view", null, vue.toDisplayString(item.noonfood), 1)
+                    ]),
+                    _: 2
+                  }, 1024),
+                  vue.createVNode(_component_uni_td, { align: "left" }, {
+                    default: vue.withCtx(() => [
+                      vue.createElementVNode("view", null, vue.toDisplayString(item.noonfood), 1)
+                    ]),
+                    _: 2
+                  }, 1024),
+                  vue.createVNode(_component_uni_td, { align: "left" }, {
+                    default: vue.withCtx(() => [
+                      vue.createElementVNode("view", null, vue.toDisplayString(item.noonfood), 1)
+                    ]),
+                    _: 2
+                  }, 1024),
+                  vue.createVNode(_component_uni_td, { align: "left" }, {
+                    default: vue.withCtx(() => [
+                      vue.createElementVNode("view", null, vue.toDisplayString(item.noonfood), 1)
+                    ]),
+                    _: 2
+                  }, 1024),
+                  vue.createVNode(_component_uni_td, { align: "left" }, {
+                    default: vue.withCtx(() => [
+                      vue.createElementVNode("view", null, vue.toDisplayString(item.noonsoup), 1)
+                    ]),
+                    _: 2
+                  }, 1024),
+                  vue.createVNode(_component_uni_td, { align: "left" }, {
+                    default: vue.withCtx(() => [
+                      vue.createElementVNode("view", null, vue.toDisplayString(item.fruit), 1)
+                    ]),
+                    _: 2
+                  }, 1024),
+                  vue.createVNode(_component_uni_td, { align: "left" }, {
+                    default: vue.withCtx(() => [
+                      vue.createElementVNode("view", null, vue.toDisplayString(item.cold), 1)
+                    ]),
+                    _: 2
+                  }, 1024),
+                  vue.createVNode(_component_uni_td, null, {
+                    default: vue.withCtx(() => [
+                      vue.createElementVNode("view", null, [
+                        vue.createElementVNode("button", {
+                          size: "mini",
+                          type: "primary",
+                          onClick: ($event) => $options.getRowData(item)
+                        }, "\u4FEE\u6539", 8, ["onClick"])
+                      ])
+                    ]),
+                    _: 2
+                  }, 1024)
+                ]),
+                _: 2
+              }, 1024);
+            }), 128))
+          ]),
+          _: 1
+        }, 8, ["loading"])
       ])
     ]);
   }
@@ -4053,7 +4254,7 @@ if (uni.restoreGlobal) {
       getMaterialsData() {
         this.loading = true;
         rn.callFunction({
-          name: "readMorningMaterialsData"
+          name: "readMaterialsData"
         }).then((res) => {
           this.materialsData = res.result;
           this.loading = false;
@@ -4089,14 +4290,33 @@ if (uni.restoreGlobal) {
         rn.callFunction({
           name: "insertMorningMenuData"
         }).then((res) => {
-          formatAppLog("log", "at pages/setting/setting.vue:31", res);
+          formatAppLog("log", "at pages/setting/setting.vue:34", res);
           uni.hideLoading();
           uni.showModal({
             content: "\u751F\u6210\u6210\u529F",
             showCancel: false
           });
         }).catch((err) => {
-          formatAppLog("log", "at pages/setting/setting.vue:38", err);
+          formatAppLog("log", "at pages/setting/setting.vue:41", err);
+          uni.hideLoading();
+          uni.showModal({
+            content: "\u751F\u6210\u5931\u8D25",
+            showCancel: false
+          });
+        });
+      },
+      addNoonMenu() {
+        rn.callFunction({
+          name: "insertNoonMenuData"
+        }).then((res) => {
+          formatAppLog("log", "at pages/setting/setting.vue:54", res);
+          uni.hideLoading();
+          uni.showModal({
+            content: "\u751F\u6210\u6210\u529F",
+            showCancel: false
+          });
+        }).catch((err) => {
+          formatAppLog("log", "at pages/setting/setting.vue:61", err);
           uni.hideLoading();
           uni.showModal({
             content: "\u751F\u6210\u5931\u8D25",
@@ -4129,6 +4349,12 @@ if (uni.restoreGlobal) {
               type: "default",
               onClick: _cache[0] || (_cache[0] = ($event) => $options.addMorningMenu())
             }, "\u65E9\u9910\u83DC\u8C31")
+          ]),
+          vue.createElementVNode("view", { class: "uni-btn-v" }, [
+            vue.createElementVNode("button", {
+              type: "default",
+              onClick: _cache[1] || (_cache[1] = ($event) => $options.addNoonMenu())
+            }, "\u6B63\u9910\u83DC\u8C31")
           ])
         ])
       ])
@@ -4190,11 +4416,11 @@ if (uni.restoreGlobal) {
                 vue.createElementVNode("text", null, "\u65E9\u9910-\u6C64/\u7CA5")
               ]),
               vue.createElementVNode("label", null, [
-                vue.createElementVNode("radio", { value: "\u5348\u9910\u4E3B\u98DF" }),
+                vue.createElementVNode("radio", { value: "\u6B63\u9910\u4E3B\u83DC" }),
                 vue.createElementVNode("text", null, "\u6B63\u9910-\u83DC")
               ]),
               vue.createElementVNode("label", null, [
-                vue.createElementVNode("radio", { value: "\u5348\u9910\u6C64" }),
+                vue.createElementVNode("radio", { value: "\u6B63\u9910\u6C64" }),
                 vue.createElementVNode("text", null, "\u6B63\u9910-\u6C64/\u7CA5")
               ]),
               vue.createElementVNode("label", null, [
@@ -4244,18 +4470,39 @@ if (uni.restoreGlobal) {
   var PagesSettingSubmitSubmit = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["__file", "D:/Coding/Kitchen/pages/setting/submit/submit.vue"]]);
   const _sfc_main$1 = {
     data() {
-      return {};
+      return {
+        nickNameList: []
+      };
     },
     methods: {
       inputNickname: function(e) {
         this.nickname = e.detail.value;
+        formatAppLog("log", "at pages/setting/modify/modify.vue:37", this.nickname);
+        if (this.nickname === "") {
+          return this.nickNameList = [];
+        }
+        rn.callFunction({
+          name: "readKitchenQuery",
+          data: {
+            nickname: this.nickname
+          }
+        }).then((res) => {
+          formatAppLog("log", "at pages/setting/modify/modify.vue:48", res);
+          const rd = res.result.data;
+          for (let i2 = 0; i2 < rd.length; i2++) {
+            this.nickNameList.push(rd[i2].nickname);
+          }
+          formatAppLog("log", "at pages/setting/modify/modify.vue:53", "\u6A21\u7CCA\u67E5\u8BE2\u5217\u8868", this.nickNameList);
+        }).catch((err) => {
+          formatAppLog("log", "at pages/setting/modify/modify.vue:55", err);
+        });
       },
       inputMaterials: function(e) {
         this.materials = e.detail.value;
       },
       formModify() {
-        formatAppLog("log", "at pages/setting/modify/modify.vue:37", "\u83DC\u540D\uFF1A" + this.nickname);
-        formatAppLog("log", "at pages/setting/modify/modify.vue:38", "\u914D\u6599\u8868\uFF1A" + this.materials);
+        formatAppLog("log", "at pages/setting/modify/modify.vue:62", "\u83DC\u540D\uFF1A" + this.nickname);
+        formatAppLog("log", "at pages/setting/modify/modify.vue:63", "\u914D\u6599\u8868\uFF1A" + this.materials);
         rn.callFunction({
           name: "updateKitchenData",
           data: {
@@ -4263,14 +4510,14 @@ if (uni.restoreGlobal) {
             materials: this.materials
           }
         }).then((res) => {
-          formatAppLog("log", "at pages/setting/modify/modify.vue:47", res);
+          formatAppLog("log", "at pages/setting/modify/modify.vue:72", res);
           uni.hideLoading();
           uni.showModal({
             content: "\u4FEE\u6539\u6210\u529F",
             showCancel: false
           });
         }).catch((err) => {
-          formatAppLog("log", "at pages/setting/modify/modify.vue:54", err);
+          formatAppLog("log", "at pages/setting/modify/modify.vue:79", err);
           uni.hideLoading();
           uni.showModal({
             content: "\u4FEE\u6539\u5931\u8D25",
@@ -4279,21 +4526,21 @@ if (uni.restoreGlobal) {
         });
       },
       formDelete() {
-        formatAppLog("log", "at pages/setting/modify/modify.vue:63", this.nickname);
+        formatAppLog("log", "at pages/setting/modify/modify.vue:88", this.nickname);
         rn.callFunction({
           name: "deleteKitchenData",
           data: {
             nickname: this.nickname
           }
         }).then((res) => {
-          formatAppLog("log", "at pages/setting/modify/modify.vue:71", res);
+          formatAppLog("log", "at pages/setting/modify/modify.vue:96", res);
           uni.hideLoading();
           uni.showModal({
             content: "\u5220\u9664\u6210\u529F",
             showCancel: false
           });
         }).catch((err) => {
-          formatAppLog("log", "at pages/setting/modify/modify.vue:78", err);
+          formatAppLog("log", "at pages/setting/modify/modify.vue:103", err);
           uni.hideLoading();
           uni.showModal({
             content: "\u5220\u9664\u5931\u8D25",
@@ -4318,7 +4565,10 @@ if (uni.restoreGlobal) {
               onInput: _cache[0] || (_cache[0] = (...args) => $options.inputNickname && $options.inputNickname(...args)),
               value: "",
               placeholder: "\u8BF7\u8F93\u5165\u83DC\u540D"
-            }, null, 32)
+            }, null, 32),
+            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.nickNameList, (item, index) => {
+              return vue.openBlock(), vue.createElementBlock("text", { key: index }, "\u3010" + vue.toDisplayString(item) + "\u3011", 1);
+            }), 128))
           ]),
           vue.createElementVNode("view", { class: "uni-form-item uni-column" }, [
             vue.createElementVNode("view", { class: "title" }, "\u914D\u6599\u8868\uFF1A"),

@@ -11,6 +11,9 @@
 				<view class="uni-btn-v">
 					<button type="default" @click="addMorningMenu()">早餐菜谱</button>
 				</view>
+				<view class="uni-btn-v">
+					<button type="default" @click="addNoonMenu()">正餐菜谱</button>
+				</view>
 			</view>
 		</view>
 	</view>
@@ -27,6 +30,26 @@
 				// 调用云函数向云数据库插入数据
 				uniCloud.callFunction({
 					name: "insertMorningMenuData",
+				}).then((res) => {
+					console.log(res);
+					uni.hideLoading()
+					uni.showModal({
+						content: "生成成功",
+						showCancel: false
+					});
+				}).catch((err) =>{
+					console.log(err);
+					uni.hideLoading()
+					uni.showModal({
+						content: "生成失败",
+						showCancel: false
+					});
+				});
+			},
+			addNoonMenu() {
+				// 调用云函数向云数据库插入数据
+				uniCloud.callFunction({
+					name: "insertNoonMenuData",
 				}).then((res) => {
 					console.log(res);
 					uni.hideLoading()

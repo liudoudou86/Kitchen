@@ -1,0 +1,7 @@
+{
+  "name": "readKitchenQuery",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

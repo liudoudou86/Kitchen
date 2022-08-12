@@ -5,6 +5,9 @@
 				<view class="uni-form-item uni-column">
 					<view class="title">菜名：</view>
 					<input class="uni-input" name="nickname" type="text" @input="inputNickname" value="" placeholder="请输入菜名" />
+					<block v-for="(item,index) in nickNameList" :key="index">
+						<text>【{{item}}】</text>
+					</block>
 				</view>
 				<view class="uni-form-item uni-column">
 					<view class="title">配料表：</view>
@@ -23,12 +26,34 @@
 	
 	export default {
 		data() {
-			return {}
+			return {
+				nickNameList : []
+			}
 		},
 		methods: {
 			// 读取输入的昵
 			inputNickname: function(e) {
 				this.nickname = e.detail.value;
+				console.log(this.nickname);
+				if (this.nickname === '') {
+					return this.nickNameList = [];
+				}
+				// 调用云函数查询
+				uniCloud.callFunction({
+					name: "readKitchenQuery",
+					data: {
+						nickname : this.nickname
+					}
+				}).then((res) => {
+					console.log(res);
+					const rd = res.result.data;
+					for (let i=0; i< rd.length; i++) {
+						this.nickNameList.push(rd[i].nickname);
+					}
+					console.log('模糊查询列表',this.nickNameList);
+				}).catch((err) => {
+					console.log(err);
+				});
 			},
 			inputMaterials: function(e) {
 				this.materials = e.detail.value;

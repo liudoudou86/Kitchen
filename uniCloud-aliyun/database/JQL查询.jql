@@ -10,7 +10,7 @@
 
 // 下面示例查询uni-id-users表的所有数据
 db.collection('cooking').where({
-	nickname: '发面糖饼'
+	nickname: new RegExp('肉')
 }).get();
 
 db.collection('morningmenu').remove();

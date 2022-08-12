@@ -19,7 +19,10 @@
 						</label>
 					</radio-group>
 					<view class="title">菜名：</view>
-					<input class="uni-input" name="nickname" placeholder="请输入菜名" />
+					<input class="uni-input" name="nickname" @input="inputNickname" placeholder="请输入菜名" />
+					<block v-for="(item,index) in nickNameList" :key="index">
+						<text>【{{item}}】</text>
+					</block>
 				</view>
 				<view class="uni-btn-v">
 					<button  type="primary" form-type="submit">保存提交</button>
@@ -34,7 +37,9 @@
 	
 	export default {
 		data() {
-			return {}
+			return {
+				nickNameList : []
+			}
 		},
 		onLoad(option) {
 			const item = JSON.parse(decodeURIComponent(option.item));
@@ -42,6 +47,30 @@
 			this.objData = item;
 		},
 		methods: {
+			// 读取输入的昵称
+			inputNickname: function(e) {
+				this.nickname = e.detail.value;
+				console.log(this.nickname);
+				if (this.nickname === '') {
+					return this.nickNameList = [];
+				}
+				// 调用云函数查询
+				uniCloud.callFunction({
+					name: "readKitchenQuery",
+					data: {
+						nickname : this.nickname
+					}
+				}).then((res) => {
+					console.log(res);
+					const rd = res.result.data;
+					for (let i=0; i< rd.length; i++) {
+						this.nickNameList.push(rd[i].nickname);
+					}
+					console.log('模糊查询列表',this.nickNameList);
+				}).catch((err) => {
+					console.log(err);
+				});
+			},
 			formSubmit: function(e) {
 				const that = this;
 				const formData = e.detail.value;

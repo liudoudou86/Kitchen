@@ -700,7 +700,7 @@ if (uni.restoreGlobal) {
     default:
       g = f;
   }
-  const p = h('{\n    "address": [\n        "127.0.0.1",\n        "192.168.1.105"\n    ],\n    "debugPort": 51397,\n    "initialLaunchType": "local",\n    "servePort": 51398,\n    "skipFiles": [\n        "<node_internals>/**/*.js",\n        "D:/Coding/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), m = h('[{"provider":"aliyun","spaceName":"kitchen","spaceId":"18675ae6-1e0a-48ed-bbde-d40d5697caf1","clientSecret":"0LNWE8dlDUg8H7zEreT9Uw==","endpoint":"https://api.bspapp.com"}]');
+  const p = h('{\n    "address": [\n        "127.0.0.1",\n        "192.168.1.105"\n    ],\n    "debugPort": 52547,\n    "initialLaunchType": "local",\n    "servePort": 52548,\n    "skipFiles": [\n        "<node_internals>/**/*.js",\n        "D:/Coding/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), m = h('[{"provider":"aliyun","spaceName":"kitchen","spaceId":"18675ae6-1e0a-48ed-bbde-d40d5697caf1","clientSecret":"0LNWE8dlDUg8H7zEreT9Uw==","endpoint":"https://api.bspapp.com"}]');
   let _ = "";
   try {
     _ = "__UNI__44EC4D6";
@@ -3291,8 +3291,8 @@ if (uni.restoreGlobal) {
       return {
         morningFoodData: [],
         morningSoupData: [],
-        noonFoodData: [],
-        noonSoupData: [],
+        dinnerFoodData: [],
+        dinnerSoupData: [],
         coldData: [],
         fruitData: [],
         otherData: [],
@@ -3302,8 +3302,8 @@ if (uni.restoreGlobal) {
     onShow() {
       this.getMorningFoodData();
       this.getMorningSoupData();
-      this.getNoonFoodData();
-      this.getNoonSoupData();
+      this.getDinnerFoodData();
+      this.getDinnerSoupData();
       this.getColdData();
       this.getFruitData();
       this.getOtherData();
@@ -3339,12 +3339,12 @@ if (uni.restoreGlobal) {
           formatAppLog("log", "at pages/menu/menu.vue:109", err);
         });
       },
-      getNoonFoodData() {
+      getDinnerFoodData() {
         this.loading = true;
         rn.callFunction({
           name: "readKitchenData",
           data: {
-            time: "\u5348\u9910\u4E3B\u98DF"
+            time: "\u6B63\u9910\u4E3B\u98DF"
           }
         }).then((res) => {
           formatAppLog("log", "at pages/menu/menu.vue:121", res);
@@ -3354,12 +3354,12 @@ if (uni.restoreGlobal) {
           formatAppLog("log", "at pages/menu/menu.vue:125", err);
         });
       },
-      getNoonSoupData() {
+      getDinnerSoupData() {
         this.loading = true;
         rn.callFunction({
           name: "readKitchenData",
           data: {
-            time: "\u5348\u9910\u6C64"
+            time: "\u6B63\u9910\u6C64"
           }
         }).then((res) => {
           formatAppLog("log", "at pages/menu/menu.vue:137", res);
@@ -3541,7 +3541,7 @@ if (uni.restoreGlobal) {
                 }),
                 vue.createVNode(_component_uni_td, { align: "center" }, {
                   default: vue.withCtx(() => [
-                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.noonFoodData, (item, index) => {
+                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.dinnerFoodData, (item, index) => {
                       return vue.openBlock(), vue.createElementBlock("view", { key: index }, [
                         vue.createElementVNode("button", {
                           class: "uni-button",
@@ -3556,7 +3556,7 @@ if (uni.restoreGlobal) {
                 }),
                 vue.createVNode(_component_uni_td, { align: "center" }, {
                   default: vue.withCtx(() => [
-                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.noonSoupData, (item, index) => {
+                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.dinnerSoupData, (item, index) => {
                       return vue.openBlock(), vue.createElementBlock("view", { key: index }, [
                         vue.createElementVNode("button", {
                           class: "uni-button",
@@ -3807,18 +3807,42 @@ if (uni.restoreGlobal) {
   var PagesMorningMorning = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__file", "D:/Coding/Kitchen/pages/morning/morning.vue"]]);
   const _sfc_main$7 = {
     data() {
-      return {};
+      return {
+        nicknameList: []
+      };
     },
     onLoad(option) {
       const item = JSON.parse(decodeURIComponent(option.item));
-      formatAppLog("log", "at pages/morning/modify/morningmodify.vue:41", "\u4E0A\u4E00\u4E2A\u9875\u9762\u4F20\u9012\u8FC7\u6765\u7684\u53C2\u6570\u5BF9\u8C61", item);
+      formatAppLog("log", "at pages/morning/modify/morningmodify.vue:46", "\u4E0A\u4E00\u4E2A\u9875\u9762\u4F20\u9012\u8FC7\u6765\u7684\u53C2\u6570\u5BF9\u8C61", item);
       this.objData = item;
     },
     methods: {
+      inputNickname: function(e) {
+        this.nickname = e.detail.value;
+        formatAppLog("log", "at pages/morning/modify/morningmodify.vue:53", this.nickname);
+        if (this.nickname === "") {
+          return this.nicknameList = [];
+        }
+        rn.callFunction({
+          name: "readKitchenQuery",
+          data: {
+            nickname: this.nickname
+          }
+        }).then((res) => {
+          formatAppLog("log", "at pages/morning/modify/morningmodify.vue:64", res);
+          const rd = res.result.data;
+          for (let i2 = 0; i2 < rd.length; i2++) {
+            this.nicknameList.push(rd[i2].nickname);
+          }
+          formatAppLog("log", "at pages/morning/modify/morningmodify.vue:69", "\u6A21\u7CCA\u67E5\u8BE2\u5217\u8868", this.nicknameList);
+        }).catch((err) => {
+          formatAppLog("log", "at pages/morning/modify/morningmodify.vue:71", err);
+        });
+      },
       formSubmit: function(e) {
         const that = this;
         const formData = e.detail.value;
-        formatAppLog("log", "at pages/morning/modify/morningmodify.vue:48", "\u63D0\u4EA4\u8868\u5355\u6570\u636E\uFF1A" + JSON.stringify(e.detail.value));
+        formatAppLog("log", "at pages/morning/modify/morningmodify.vue:77", "\u63D0\u4EA4\u8868\u5355\u6570\u636E\uFF1A" + JSON.stringify(e.detail.value));
         rn.callFunction({
           name: "updateMorningMaterialsData",
           data: {
@@ -3832,14 +3856,14 @@ if (uni.restoreGlobal) {
             nickname: formData.nickname
           }
         }).then((res) => {
-          formatAppLog("log", "at pages/morning/modify/morningmodify.vue:63", res);
+          formatAppLog("log", "at pages/morning/modify/morningmodify.vue:92", res);
           uni.hideLoading();
           uni.showModal({
             content: "\u4FDD\u5B58\u6210\u529F",
             showCancel: false
           });
         }).catch((err) => {
-          formatAppLog("log", "at pages/morning/modify/morningmodify.vue:70", err);
+          formatAppLog("log", "at pages/morning/modify/morningmodify.vue:99", err);
           uni.hideLoading();
           uni.showModal({
             content: "\u4FDD\u5B58\u5931\u8D25",
@@ -3848,7 +3872,7 @@ if (uni.restoreGlobal) {
         });
       },
       formReset: function(e) {
-        formatAppLog("log", "at pages/morning/modify/morningmodify.vue:79", "\u6E05\u7A7A\u6570\u636E");
+        formatAppLog("log", "at pages/morning/modify/morningmodify.vue:108", "\u6E05\u7A7A\u6570\u636E");
       }
     }
   };
@@ -3856,8 +3880,8 @@ if (uni.restoreGlobal) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "form" }, [
       vue.createElementVNode("view", { class: "uni-padding-wrap uni-common-mt" }, [
         vue.createElementVNode("form", {
-          onSubmit: _cache[0] || (_cache[0] = (...args) => $options.formSubmit && $options.formSubmit(...args)),
-          onReset: _cache[1] || (_cache[1] = (...args) => $options.formReset && $options.formReset(...args))
+          onSubmit: _cache[1] || (_cache[1] = (...args) => $options.formSubmit && $options.formSubmit(...args)),
+          onReset: _cache[2] || (_cache[2] = (...args) => $options.formReset && $options.formReset(...args))
         }, [
           vue.createElementVNode("view", { class: "uni-form-item uni-column" }, [
             vue.createElementVNode("view", { class: "title" }, "\u79CD\u7C7B\uFF1A"),
@@ -3883,8 +3907,12 @@ if (uni.restoreGlobal) {
             vue.createElementVNode("input", {
               class: "uni-input",
               name: "nickname",
+              onInput: _cache[0] || (_cache[0] = (...args) => $options.inputNickname && $options.inputNickname(...args)),
               placeholder: "\u8BF7\u8F93\u5165\u83DC\u540D"
-            })
+            }, null, 32),
+            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.nicknameList, (item, index) => {
+              return vue.openBlock(), vue.createElementBlock("text", { key: index }, "\u3010" + vue.toDisplayString(item) + "\u3011", 1);
+            }), 128))
           ]),
           vue.createElementVNode("view", { class: "uni-btn-v" }, [
             vue.createElementVNode("button", {

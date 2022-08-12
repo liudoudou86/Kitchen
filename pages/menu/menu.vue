@@ -23,12 +23,12 @@
 						</view>
 					</uni-td>
 					<uni-td align="center">
-						<view v-for="(item, index) in noonFoodData" :key="index">
+						<view v-for="(item, index) in dinnerFoodData" :key="index">
 							<button class="uni-button" size="mini" type="default" @click="getMaterials(item)">{{ item.nickname }}</button>
 						</view>
 					</uni-td>
 					<uni-td align="center">
-						<view v-for="(item, index) in noonSoupData" :key="index">
+						<view v-for="(item, index) in dinnerSoupData" :key="index">
 							<button class="uni-button" size="mini" type="default" @click="getMaterials(item)">{{ item.nickname }}</button>
 						</view>
 					</uni-td>
@@ -59,8 +59,8 @@
 			return {
 				morningFoodData : [],
 				morningSoupData : [],
-				noonFoodData : [],
-				noonSoupData : [],
+				dinnerFoodData : [],
+				dinnerSoupData : [],
 				coldData : [],
 				fruitData: [],
 				otherData: [],
@@ -70,8 +70,8 @@
 		onShow() {
 			this.getMorningFoodData();
 			this.getMorningSoupData();
-			this.getNoonFoodData();
-			this.getNoonSoupData();
+			this.getDinnerFoodData();
+			this.getDinnerSoupData();
 			this.getColdData();
 			this.getFruitData();
 			this.getOtherData();
@@ -109,13 +109,13 @@
 					console.log(err);
 				});
 			},
-			getNoonFoodData() {
+			getDinnerFoodData() {
 				this.loading = true;
 				// 调用云函数查询
 				uniCloud.callFunction({
 					name: "readKitchenData",
 					data: {
-						time : '午餐主食'
+						time : '正餐主食'
 					}
 				}).then((res) => {
 					console.log(res);
@@ -125,13 +125,13 @@
 					console.log(err);
 				});
 			},
-			getNoonSoupData() {
+			getDinnerSoupData() {
 				this.loading = true;
 				// 调用云函数查询
 				uniCloud.callFunction({
 					name: "readKitchenData",
 					data: {
-						time : '午餐汤'
+						time : '正餐汤'
 					}
 				}).then((res) => {
 					console.log(res);

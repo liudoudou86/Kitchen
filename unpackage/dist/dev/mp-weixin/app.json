@@ -4,6 +4,7 @@
     "pages/morning/morning",
     "pages/morning/modify/morningmodify",
     "pages/noon/noon",
+    "pages/noon/modify/noonmodify",
     "pages/material/material",
     "pages/setting/setting",
     "pages/setting/submit/submit",

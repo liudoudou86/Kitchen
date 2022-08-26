@@ -25,7 +25,7 @@
 			}
 		},
 		{
-			"path": "pages/noon/noon/noonmodify",
+			"path": "pages/noon/modify/noonmodify",
 			"style": {
 				"navigationBarTitleText": "修改正餐菜谱"
 			}

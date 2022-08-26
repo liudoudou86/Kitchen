@@ -16,7 +16,7 @@ exports.main = async (event, context) => {
 	};
 	console.log('morningMaterialsData',morningMaterialsData);
 	
-	// 读取早餐客户端的数据
+	// 读取正餐客户端的数据
 	const nm = await db.collection('noonmaterials').get();
 	const nLength = nm.affectedDocs;
 	const nmData = nm.data;

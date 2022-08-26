@@ -13,4 +13,4 @@ db.collection('cooking').where({
 	nickname: new RegExp('肉')
 }).get();
 
-db.collection('morningmenu').remove();
+db.collection('noonmenu').remove();

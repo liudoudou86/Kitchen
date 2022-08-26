@@ -1,7 +1,7 @@
 <template>
 	<view class="form">
 		<view class="uni-padding-wrap uni-common-mt">
-			<form @submit="formSubmit" @reset="formReset">
+			<form @submit="formSubmit()" @reset="formReset()">
 				<view class="uni-form-item uni-column">
 					<view class="title">时间：</view>
 					<radio-group name="time">

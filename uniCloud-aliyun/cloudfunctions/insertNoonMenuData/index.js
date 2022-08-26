@@ -7,7 +7,7 @@ exports.main = async (event, context) => {
 	const db = uniCloud.database();
 	
 	// 清空数据库数据
-	const removeWeek = await db.collection('noongmenu').remove();
+	const removeWeek = await db.collection('noonmenu').remove();
 	const removeMaterials = await db.collection('noonmaterials').remove();
 	
 	// 创建时间周期的数组
@@ -47,7 +47,7 @@ exports.main = async (event, context) => {
 
 	// 创建早餐汤的菜谱数组
 	const ns = await db.collection('cooking').where({
-		time : '正餐汤'
+		time : '早餐汤'
 	}).get();
 	const noonSoups = []; // 创建空数组
 	const noonSoupsMaterials = [];
@@ -146,7 +146,11 @@ exports.main = async (event, context) => {
 	for (let i=0; i<dates.length; i++) {
 		noonMenuList.push({
 			date : dates[i],
-			noonfood : newNoonFoods[i],
+			noonfood1 : newNoonFoods[i],
+			noonfood2 : newNoonFoods[i+7],
+			noonfood3 : newNoonFoods[i+14],
+			noonfood4 : newNoonFoods[i+21],
+			noonfood5 : newNoonFoods[i+28],
 			noonsoup : newNoonSoups[i],
 			fruit : newFruits[i],
 			cold : newColds[i]

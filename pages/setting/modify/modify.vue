@@ -1,7 +1,7 @@
 <template>
 	<view class="form">
 		<view class="uni-padding-wrap uni-common-mt">
-			<form @submit="formModify()">
+			<form @submit="formModify()" @reset="formReset()">
 				<view class="uni-form-item uni-column">
 					<view class="title">菜名：</view>
 					<input class="uni-input" name="nickname" type="text" @input="inputNickname" value="" placeholder="请输入菜名" />
@@ -11,10 +11,11 @@
 				</view>
 				<view class="uni-form-item uni-column">
 					<view class="title">配料表：</view>
-					<input class="uni-input" name="materials" type="text" @input="inputMaterials" value="" placeholder="请输入配料" />
+					<input class="uni-input" v-model="materialsData" name="materials" type="text" @input="inputMaterials" placeholder="请输入配料" />
 				</view>
 				<view class="uni-btn-v">
 					<button  type="primary" form-type="submit">修改菜谱</button>
+					<button type="warn" form-type="reset">重置页面</button>
 					<button type="warn" @click="formDelete()">删除菜谱</button>
 				</view>
 			</form>
@@ -27,7 +28,8 @@
 	export default {
 		data() {
 			return {
-				nickNameList : []
+				nickNameList : [],
+				materialsData : []
 			}
 		},
 		methods: {
@@ -46,10 +48,12 @@
 					}
 				}).then((res) => {
 					console.log(res);
-					const rd = res.result.data;
-					for (let i=0; i< rd.length; i++) {
-						this.nickNameList.push(rd[i].nickname);
-					}
+					let rData = res.result.data;
+					for (let i=0; i< rData.length; i++) {
+						this.nickNameList.push(rData[i].nickname);
+					};
+					this.materialsData = rData[0].materials;
+					console.log('模糊查询列表',this.materialsData);
 					console.log('模糊查询列表',this.nickNameList);
 				}).catch((err) => {
 					console.log(err);
@@ -83,6 +87,9 @@
 						showCancel: false
 					})
 				});
+			},
+			formReset: function(e) {
+				console.log('清空数据')
 			},
 			formDelete() {
 				console.log(this.nickname)

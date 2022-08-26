@@ -1,0 +1,7 @@
+{
+  "name": "updateNoonMaterialsData",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

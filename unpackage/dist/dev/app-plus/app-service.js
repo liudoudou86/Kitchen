@@ -399,7 +399,7 @@ if (uni.restoreGlobal) {
       }
     },
     {
-      path: "pages/noon/noon/noonmodify",
+      path: "pages/noon/modify/noonmodify",
       style: {
         navigationBarTitleText: "\u4FEE\u6539\u6B63\u9910\u83DC\u8C31"
       }
@@ -706,7 +706,7 @@ if (uni.restoreGlobal) {
     default:
       g = f;
   }
-  const p = h('{\n    "address": [\n        "127.0.0.1",\n        "192.168.1.105"\n    ],\n    "debugPort": 52547,\n    "initialLaunchType": "local",\n    "servePort": 52548,\n    "skipFiles": [\n        "<node_internals>/**/*.js",\n        "D:/Coding/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), m = h('[{"provider":"aliyun","spaceName":"kitchen","spaceId":"18675ae6-1e0a-48ed-bbde-d40d5697caf1","clientSecret":"0LNWE8dlDUg8H7zEreT9Uw==","endpoint":"https://api.bspapp.com"}]');
+  const p = h('{\n    "address": [\n        "127.0.0.1",\n        "10.16.169.63"\n    ],\n    "debugPort": 59638,\n    "initialLaunchType": "local",\n    "servePort": 59639,\n    "skipFiles": [\n        "<node_internals>/**/*.js",\n        "D:/Coding/HBuilderX/plugins/unicloud/**/*.js"\n    ]\n}\n'), m = h('[{"provider":"aliyun","spaceName":"kitchen","spaceId":"18675ae6-1e0a-48ed-bbde-d40d5697caf1","clientSecret":"0LNWE8dlDUg8H7zEreT9Uw==","endpoint":"https://api.bspapp.com"}]');
   let _ = "";
   try {
     _ = "__UNI__44EC4D6";
@@ -2640,7 +2640,7 @@ if (uni.restoreGlobal) {
     }
     return target;
   };
-  const _sfc_main$e = {
+  const _sfc_main$f = {
     name: "uniTh",
     options: {
       virtualHost: true
@@ -2791,7 +2791,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["uni-table-th", { "table--border": $data.border }]),
       style: vue.normalizeStyle({ width: $options.customWidth + "px", "text-align": $props.align })
@@ -2799,11 +2799,11 @@ if (uni.restoreGlobal) {
       vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
     ], 6);
   }
-  var __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-511e81f9"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-th/uni-th.vue"]]);
+  var __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["__scopeId", "data-v-511e81f9"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-th/uni-th.vue"]]);
   function resolveEasycom(component, easycom) {
     return shared.isString(component) ? easycom : component;
   }
-  const _sfc_main$d = {
+  const _sfc_main$e = {
     name: "TableCheckbox",
     emits: ["checkboxSelected"],
     props: {
@@ -2868,7 +2868,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: "uni-table-checkbox",
       onClick: _cache[0] || (_cache[0] = (...args) => $options.selected && $options.selected(...args))
@@ -2886,8 +2886,8 @@ if (uni.restoreGlobal) {
       ]))
     ]);
   }
-  var tableCheckbox = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__scopeId", "data-v-68100fa0"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-tr/table-checkbox.vue"]]);
-  const _sfc_main$c = {
+  var tableCheckbox = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["__scopeId", "data-v-68100fa0"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-tr/table-checkbox.vue"]]);
+  const _sfc_main$d = {
     name: "uniTr",
     components: { tableCheckbox },
     props: {
@@ -2970,7 +2970,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_table_checkbox = vue.resolveComponent("table-checkbox");
     return vue.openBlock(), vue.createElementBlock("view", { class: "uni-table-tr" }, [
       $data.selection === "selection" ? (vue.openBlock(), vue.createElementBlock("view", {
@@ -2987,8 +2987,8 @@ if (uni.restoreGlobal) {
       vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
     ]);
   }
-  var __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["__scopeId", "data-v-c2c83a8e"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-tr/uni-tr.vue"]]);
-  const _sfc_main$b = {
+  var __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__scopeId", "data-v-c2c83a8e"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-tr/uni-tr.vue"]]);
+  const _sfc_main$c = {
     name: "uniTd",
     options: {
       virtualHost: true
@@ -3034,7 +3034,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [
       vue.createCommentVNode(` :class="{'table--border':border}"  `),
       vue.createElementVNode("view", {
@@ -3045,8 +3045,8 @@ if (uni.restoreGlobal) {
       ], 6)
     ], 2112);
   }
-  var __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["__scopeId", "data-v-321f8e79"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-td/uni-td.vue"]]);
-  const _sfc_main$a = {
+  var __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["__scopeId", "data-v-321f8e79"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-td/uni-td.vue"]]);
+  const _sfc_main$b = {
     name: "uniTable",
     options: {
       virtualHost: true
@@ -3265,7 +3265,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["uni-table-scroll", { "table--border": $props.border, "border-none": !$data.noData }])
     }, [
@@ -3291,8 +3291,8 @@ if (uni.restoreGlobal) {
       ], 6)
     ], 2);
   }
-  var __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["__scopeId", "data-v-6cd49106"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-table/uni-table.vue"]]);
-  const _sfc_main$9 = {
+  var __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["__scopeId", "data-v-6cd49106"], ["__file", "D:/Coding/Kitchen/uni_modules/uni-table/components/uni-table/uni-table.vue"]]);
+  const _sfc_main$a = {
     data() {
       return {
         morningFoodData: [],
@@ -3430,7 +3430,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_uni_th = resolveEasycom(vue.resolveDynamicComponent("uni-th"), __easycom_0$1);
     const _component_uni_tr = resolveEasycom(vue.resolveDynamicComponent("uni-tr"), __easycom_1);
     const _component_uni_td = resolveEasycom(vue.resolveDynamicComponent("uni-td"), __easycom_2);
@@ -3629,8 +3629,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesMenuMenu = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["__file", "D:/Coding/Kitchen/pages/menu/menu.vue"]]);
-  const _sfc_main$8 = {
+  var PagesMenuMenu = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["__file", "D:/Coding/Kitchen/pages/menu/menu.vue"]]);
+  const _sfc_main$9 = {
     data() {
       return {
         tableData: [],
@@ -3667,7 +3667,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_uni_th = resolveEasycom(vue.resolveDynamicComponent("uni-th"), __easycom_0$1);
     const _component_uni_tr = resolveEasycom(vue.resolveDynamicComponent("uni-tr"), __easycom_1);
     const _component_uni_td = resolveEasycom(vue.resolveDynamicComponent("uni-td"), __easycom_2);
@@ -3796,8 +3796,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesMorningMorning = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__file", "D:/Coding/Kitchen/pages/morning/morning.vue"]]);
-  const _sfc_main$7 = {
+  var PagesMorningMorning = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["__file", "D:/Coding/Kitchen/pages/morning/morning.vue"]]);
+  const _sfc_main$8 = {
     data() {
       return {
         nickNameList: []
@@ -3868,7 +3868,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "form" }, [
       vue.createElementVNode("view", { class: "uni-padding-wrap uni-common-mt" }, [
         vue.createElementVNode("form", {
@@ -3920,8 +3920,8 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesMorningModifyMorningmodify = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__file", "D:/Coding/Kitchen/pages/morning/modify/morningmodify.vue"]]);
-  const _sfc_main$6 = {
+  var PagesMorningModifyMorningmodify = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["__file", "D:/Coding/Kitchen/pages/morning/modify/morningmodify.vue"]]);
+  const _sfc_main$7 = {
     data() {
       return {
         tableData: [],
@@ -3958,7 +3958,7 @@ if (uni.restoreGlobal) {
       }
     }
   };
-  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_uni_th = resolveEasycom(vue.resolveDynamicComponent("uni-th"), __easycom_0$1);
     const _component_uni_tr = resolveEasycom(vue.resolveDynamicComponent("uni-tr"), __easycom_1);
     const _component_uni_td = resolveEasycom(vue.resolveDynamicComponent("uni-td"), __easycom_2);
@@ -4079,31 +4079,31 @@ if (uni.restoreGlobal) {
                   }, 1024),
                   vue.createVNode(_component_uni_td, { align: "left" }, {
                     default: vue.withCtx(() => [
-                      vue.createElementVNode("view", null, vue.toDisplayString(item.noonfood), 1)
+                      vue.createElementVNode("view", null, vue.toDisplayString(item.noonfood1), 1)
                     ]),
                     _: 2
                   }, 1024),
                   vue.createVNode(_component_uni_td, { align: "left" }, {
                     default: vue.withCtx(() => [
-                      vue.createElementVNode("view", null, vue.toDisplayString(item.noonfood), 1)
+                      vue.createElementVNode("view", null, vue.toDisplayString(item.noonfood2), 1)
                     ]),
                     _: 2
                   }, 1024),
                   vue.createVNode(_component_uni_td, { align: "left" }, {
                     default: vue.withCtx(() => [
-                      vue.createElementVNode("view", null, vue.toDisplayString(item.noonfood), 1)
+                      vue.createElementVNode("view", null, vue.toDisplayString(item.noonfood3), 1)
                     ]),
                     _: 2
                   }, 1024),
                   vue.createVNode(_component_uni_td, { align: "left" }, {
                     default: vue.withCtx(() => [
-                      vue.createElementVNode("view", null, vue.toDisplayString(item.noonfood), 1)
+                      vue.createElementVNode("view", null, vue.toDisplayString(item.noonfood4), 1)
                     ]),
                     _: 2
                   }, 1024),
                   vue.createVNode(_component_uni_td, { align: "left" }, {
                     default: vue.withCtx(() => [
-                      vue.createElementVNode("view", null, vue.toDisplayString(item.noonfood), 1)
+                      vue.createElementVNode("view", null, vue.toDisplayString(item.noonfood5), 1)
                     ]),
                     _: 2
                   }, 1024),
@@ -4147,7 +4147,151 @@ if (uni.restoreGlobal) {
       ])
     ]);
   }
-  var PagesNoonNoon = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__file", "D:/Coding/Kitchen/pages/noon/noon.vue"]]);
+  var PagesNoonNoon = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["__file", "D:/Coding/Kitchen/pages/noon/noon.vue"]]);
+  const _sfc_main$6 = {
+    data() {
+      return {
+        nickNameList: []
+      };
+    },
+    onLoad(option) {
+      const item = JSON.parse(decodeURIComponent(option.item));
+      formatAppLog("log", "at pages/noon/modify/noonmodify.vue:58", "\u4E0A\u4E00\u4E2A\u9875\u9762\u4F20\u9012\u8FC7\u6765\u7684\u53C2\u6570\u5BF9\u8C61", item);
+      this.objData = item;
+    },
+    methods: {
+      inputNickname: function(e) {
+        this.nickname = e.detail.value;
+        formatAppLog("log", "at pages/noon/modify/noonmodify.vue:65", this.nickname);
+        if (this.nickname === "") {
+          return this.nickNameList = [];
+        }
+        rn.callFunction({
+          name: "readKitchenQuery",
+          data: {
+            nickname: this.nickname
+          }
+        }).then((res) => {
+          formatAppLog("log", "at pages/noon/modify/noonmodify.vue:76", res);
+          const rd = res.result.data;
+          for (let i2 = 0; i2 < rd.length; i2++) {
+            this.nickNameList.push(rd[i2].nickname);
+          }
+          formatAppLog("log", "at pages/noon/modify/noonmodify.vue:81", "\u6A21\u7CCA\u67E5\u8BE2\u5217\u8868", this.nickNameList);
+        }).catch((err) => {
+          formatAppLog("log", "at pages/noon/modify/noonmodify.vue:83", err);
+        });
+      },
+      formSubmit: function(e) {
+        const that = this;
+        const formData = e.detail.value;
+        formatAppLog("log", "at pages/noon/modify/noonmodify.vue:89", "\u63D0\u4EA4\u8868\u5355\u6570\u636E\uFF1A" + JSON.stringify(e.detail.value));
+        rn.callFunction({
+          name: "updateNoonMaterialsData",
+          data: {
+            date: that.objData.date,
+            type: formData.type,
+            noonfood1: that.objData.noonfood1,
+            noonfood2: that.objData.noonfood2,
+            noonfood3: that.objData.noonfood3,
+            noonfood4: that.objData.noonfood4,
+            noonfood5: that.objData.noonfood5,
+            noonsoup: that.objData.noonsoup,
+            fruit: that.objData.fruit,
+            cold: that.objData.cold,
+            oldNickname: that.objData.nickname,
+            nickname: formData.nickname
+          }
+        }).then((res) => {
+          formatAppLog("log", "at pages/noon/modify/noonmodify.vue:108", res);
+          uni.hideLoading();
+          uni.showModal({
+            content: "\u4FDD\u5B58\u6210\u529F",
+            showCancel: false
+          });
+        }).catch((err) => {
+          formatAppLog("log", "at pages/noon/modify/noonmodify.vue:115", err);
+          uni.hideLoading();
+          uni.showModal({
+            content: "\u4FDD\u5B58\u5931\u8D25",
+            showCancel: false
+          });
+        });
+      },
+      formReset: function(e) {
+        formatAppLog("log", "at pages/noon/modify/noonmodify.vue:124", "\u6E05\u7A7A\u6570\u636E");
+      }
+    }
+  };
+  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", { class: "form" }, [
+      vue.createElementVNode("view", { class: "uni-padding-wrap uni-common-mt" }, [
+        vue.createElementVNode("form", {
+          onSubmit: _cache[1] || (_cache[1] = (...args) => $options.formSubmit && $options.formSubmit(...args)),
+          onReset: _cache[2] || (_cache[2] = (...args) => $options.formReset && $options.formReset(...args))
+        }, [
+          vue.createElementVNode("view", { class: "uni-form-item uni-column" }, [
+            vue.createElementVNode("view", { class: "title" }, "\u79CD\u7C7B\uFF1A"),
+            vue.createElementVNode("radio-group", { name: "type" }, [
+              vue.createElementVNode("label", null, [
+                vue.createElementVNode("radio", { value: "noonfood1" }),
+                vue.createElementVNode("text", null, "\u4E3B\u83DC\u2460")
+              ]),
+              vue.createElementVNode("label", null, [
+                vue.createElementVNode("radio", { value: "noonfood3" }),
+                vue.createElementVNode("text", null, "\u4E3B\u83DC\u2461")
+              ]),
+              vue.createElementVNode("label", null, [
+                vue.createElementVNode("radio", { value: "noonfood3" }),
+                vue.createElementVNode("text", null, "\u4E3B\u83DC\u2462")
+              ]),
+              vue.createElementVNode("label", null, [
+                vue.createElementVNode("radio", { value: "noonfood4" }),
+                vue.createElementVNode("text", null, "\u4E3B\u83DC\u2463")
+              ]),
+              vue.createElementVNode("label", null, [
+                vue.createElementVNode("radio", { value: "noonfood5" }),
+                vue.createElementVNode("text", null, "\u4E3B\u83DC\u2464")
+              ]),
+              vue.createElementVNode("label", null, [
+                vue.createElementVNode("radio", { value: "noonsoup" }),
+                vue.createElementVNode("text", null, "\u6C64")
+              ]),
+              vue.createElementVNode("label", null, [
+                vue.createElementVNode("radio", { value: "fruit" }),
+                vue.createElementVNode("text", null, "\u6C34\u679C")
+              ]),
+              vue.createElementVNode("label", null, [
+                vue.createElementVNode("radio", { value: "cold" }),
+                vue.createElementVNode("text", null, "\u51C9\u83DC")
+              ])
+            ]),
+            vue.createElementVNode("view", { class: "title" }, "\u83DC\u540D\uFF1A"),
+            vue.createElementVNode("input", {
+              class: "uni-input",
+              name: "nickname",
+              onInput: _cache[0] || (_cache[0] = (...args) => $options.inputNickname && $options.inputNickname(...args)),
+              placeholder: "\u8BF7\u8F93\u5165\u83DC\u540D"
+            }, null, 32),
+            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.nickNameList, (item, index) => {
+              return vue.openBlock(), vue.createElementBlock("text", { key: index }, "\u3010" + vue.toDisplayString(item) + "\u3011", 1);
+            }), 128))
+          ]),
+          vue.createElementVNode("view", { class: "uni-btn-v" }, [
+            vue.createElementVNode("button", {
+              type: "primary",
+              "form-type": "submit"
+            }, "\u4FDD\u5B58\u63D0\u4EA4"),
+            vue.createElementVNode("button", {
+              type: "warn",
+              "form-type": "reset"
+            }, "\u91CD\u7F6E\u9875\u9762")
+          ])
+        ], 32)
+      ])
+    ]);
+  }
+  var PagesNoonModifyNoonmodify = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["__file", "D:/Coding/Kitchen/pages/noon/modify/noonmodify.vue"]]);
   const _sfc_main$5 = {
     name: "UniSection",
     emits: ["click"],
@@ -4401,8 +4545,8 @@ if (uni.restoreGlobal) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "form" }, [
       vue.createElementVNode("view", { class: "uni-padding-wrap uni-common-mt" }, [
         vue.createElementVNode("form", {
-          onSubmit: _cache[0] || (_cache[0] = (...args) => $options.formSubmit && $options.formSubmit(...args)),
-          onReset: _cache[1] || (_cache[1] = (...args) => $options.formReset && $options.formReset(...args))
+          onSubmit: _cache[0] || (_cache[0] = ($event) => $options.formSubmit()),
+          onReset: _cache[1] || (_cache[1] = ($event) => $options.formReset())
         }, [
           vue.createElementVNode("view", { class: "uni-form-item uni-column" }, [
             vue.createElementVNode("view", { class: "title" }, "\u65F6\u95F4\uFF1A"),
@@ -4471,13 +4615,14 @@ if (uni.restoreGlobal) {
   const _sfc_main$1 = {
     data() {
       return {
-        nickNameList: []
+        nickNameList: [],
+        materialsData: []
       };
     },
     methods: {
       inputNickname: function(e) {
         this.nickname = e.detail.value;
-        formatAppLog("log", "at pages/setting/modify/modify.vue:37", this.nickname);
+        formatAppLog("log", "at pages/setting/modify/modify.vue:39", this.nickname);
         if (this.nickname === "") {
           return this.nickNameList = [];
         }
@@ -4487,22 +4632,24 @@ if (uni.restoreGlobal) {
             nickname: this.nickname
           }
         }).then((res) => {
-          formatAppLog("log", "at pages/setting/modify/modify.vue:48", res);
-          const rd = res.result.data;
-          for (let i2 = 0; i2 < rd.length; i2++) {
-            this.nickNameList.push(rd[i2].nickname);
+          formatAppLog("log", "at pages/setting/modify/modify.vue:50", res);
+          let rData = res.result.data;
+          for (let i2 = 0; i2 < rData.length; i2++) {
+            this.nickNameList.push(rData[i2].nickname);
           }
-          formatAppLog("log", "at pages/setting/modify/modify.vue:53", "\u6A21\u7CCA\u67E5\u8BE2\u5217\u8868", this.nickNameList);
+          this.materialsData = rData[0].materials;
+          formatAppLog("log", "at pages/setting/modify/modify.vue:56", "\u6A21\u7CCA\u67E5\u8BE2\u5217\u8868", this.materialsData);
+          formatAppLog("log", "at pages/setting/modify/modify.vue:57", "\u6A21\u7CCA\u67E5\u8BE2\u5217\u8868", this.nickNameList);
         }).catch((err) => {
-          formatAppLog("log", "at pages/setting/modify/modify.vue:55", err);
+          formatAppLog("log", "at pages/setting/modify/modify.vue:59", err);
         });
       },
       inputMaterials: function(e) {
         this.materials = e.detail.value;
       },
       formModify() {
-        formatAppLog("log", "at pages/setting/modify/modify.vue:62", "\u83DC\u540D\uFF1A" + this.nickname);
-        formatAppLog("log", "at pages/setting/modify/modify.vue:63", "\u914D\u6599\u8868\uFF1A" + this.materials);
+        formatAppLog("log", "at pages/setting/modify/modify.vue:66", "\u83DC\u540D\uFF1A" + this.nickname);
+        formatAppLog("log", "at pages/setting/modify/modify.vue:67", "\u914D\u6599\u8868\uFF1A" + this.materials);
         rn.callFunction({
           name: "updateKitchenData",
           data: {
@@ -4510,14 +4657,14 @@ if (uni.restoreGlobal) {
             materials: this.materials
           }
         }).then((res) => {
-          formatAppLog("log", "at pages/setting/modify/modify.vue:72", res);
+          formatAppLog("log", "at pages/setting/modify/modify.vue:76", res);
           uni.hideLoading();
           uni.showModal({
             content: "\u4FEE\u6539\u6210\u529F",
             showCancel: false
           });
         }).catch((err) => {
-          formatAppLog("log", "at pages/setting/modify/modify.vue:79", err);
+          formatAppLog("log", "at pages/setting/modify/modify.vue:83", err);
           uni.hideLoading();
           uni.showModal({
             content: "\u4FEE\u6539\u5931\u8D25",
@@ -4525,22 +4672,25 @@ if (uni.restoreGlobal) {
           });
         });
       },
+      formReset: function(e) {
+        formatAppLog("log", "at pages/setting/modify/modify.vue:92", "\u6E05\u7A7A\u6570\u636E");
+      },
       formDelete() {
-        formatAppLog("log", "at pages/setting/modify/modify.vue:88", this.nickname);
+        formatAppLog("log", "at pages/setting/modify/modify.vue:95", this.nickname);
         rn.callFunction({
           name: "deleteKitchenData",
           data: {
             nickname: this.nickname
           }
         }).then((res) => {
-          formatAppLog("log", "at pages/setting/modify/modify.vue:96", res);
+          formatAppLog("log", "at pages/setting/modify/modify.vue:103", res);
           uni.hideLoading();
           uni.showModal({
             content: "\u5220\u9664\u6210\u529F",
             showCancel: false
           });
         }).catch((err) => {
-          formatAppLog("log", "at pages/setting/modify/modify.vue:103", err);
+          formatAppLog("log", "at pages/setting/modify/modify.vue:110", err);
           uni.hideLoading();
           uni.showModal({
             content: "\u5220\u9664\u5931\u8D25",
@@ -4554,7 +4704,8 @@ if (uni.restoreGlobal) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "form" }, [
       vue.createElementVNode("view", { class: "uni-padding-wrap uni-common-mt" }, [
         vue.createElementVNode("form", {
-          onSubmit: _cache[3] || (_cache[3] = ($event) => $options.formModify())
+          onSubmit: _cache[4] || (_cache[4] = ($event) => $options.formModify()),
+          onReset: _cache[5] || (_cache[5] = ($event) => $options.formReset())
         }, [
           vue.createElementVNode("view", { class: "uni-form-item uni-column" }, [
             vue.createElementVNode("view", { class: "title" }, "\u83DC\u540D\uFF1A"),
@@ -4572,14 +4723,16 @@ if (uni.restoreGlobal) {
           ]),
           vue.createElementVNode("view", { class: "uni-form-item uni-column" }, [
             vue.createElementVNode("view", { class: "title" }, "\u914D\u6599\u8868\uFF1A"),
-            vue.createElementVNode("input", {
+            vue.withDirectives(vue.createElementVNode("input", {
               class: "uni-input",
+              "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $data.materialsData = $event),
               name: "materials",
               type: "text",
-              onInput: _cache[1] || (_cache[1] = (...args) => $options.inputMaterials && $options.inputMaterials(...args)),
-              value: "",
+              onInput: _cache[2] || (_cache[2] = (...args) => $options.inputMaterials && $options.inputMaterials(...args)),
               placeholder: "\u8BF7\u8F93\u5165\u914D\u6599"
-            }, null, 32)
+            }, null, 544), [
+              [vue.vModelText, $data.materialsData]
+            ])
           ]),
           vue.createElementVNode("view", { class: "uni-btn-v" }, [
             vue.createElementVNode("button", {
@@ -4588,7 +4741,11 @@ if (uni.restoreGlobal) {
             }, "\u4FEE\u6539\u83DC\u8C31"),
             vue.createElementVNode("button", {
               type: "warn",
-              onClick: _cache[2] || (_cache[2] = ($event) => $options.formDelete())
+              "form-type": "reset"
+            }, "\u91CD\u7F6E\u9875\u9762"),
+            vue.createElementVNode("button", {
+              type: "warn",
+              onClick: _cache[3] || (_cache[3] = ($event) => $options.formDelete())
             }, "\u5220\u9664\u83DC\u8C31")
           ])
         ], 32)
@@ -4600,6 +4757,7 @@ if (uni.restoreGlobal) {
   __definePage("pages/morning/morning", PagesMorningMorning);
   __definePage("pages/morning/modify/morningmodify", PagesMorningModifyMorningmodify);
   __definePage("pages/noon/noon", PagesNoonNoon);
+  __definePage("pages/noon/modify/noonmodify", PagesNoonModifyNoonmodify);
   __definePage("pages/material/material", PagesMaterialMaterial);
   __definePage("pages/setting/setting", PagesSettingSetting);
   __definePage("pages/setting/submit/submit", PagesSettingSubmitSubmit);

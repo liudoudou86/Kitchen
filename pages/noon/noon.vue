@@ -19,19 +19,19 @@
 						<view class="date">{{ item.date }}</view>
 					</uni-td>
 					<uni-td align="left">
-						<view>{{ item.noonfood }}</view>
+						<view>{{ item.noonfood1 }}</view>
 					</uni-td>
 					<uni-td align="left">
-						<view>{{ item.noonfood }}</view>
+						<view>{{ item.noonfood2 }}</view>
 					</uni-td>
 					<uni-td align="left">
-						<view>{{ item.noonfood }}</view>
+						<view>{{ item.noonfood3 }}</view>
 					</uni-td>
 					<uni-td align="left">
-						<view>{{ item.noonfood }}</view>
+						<view>{{ item.noonfood4 }}</view>
 					</uni-td>
 					<uni-td align="left">
-						<view>{{ item.noonfood }}</view>
+						<view>{{ item.noonfood5 }}</view>
 					</uni-td>
 					<uni-td align="left">
 						<view>{{ item.noonsoup }}</view>

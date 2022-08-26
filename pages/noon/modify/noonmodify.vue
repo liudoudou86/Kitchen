@@ -6,16 +6,28 @@
 					<view class="title">种类：</view>
 					<radio-group name="type">
 						<label>
-							<radio value="morningfood" /><text>主菜</text>
+							<radio value="noonfood1" /><text>主菜①</text>
 						</label>
 						<label>
-							<radio value="morningsoup" /><text>汤</text>
+							<radio value="noonfood3" /><text>主菜②</text>
+						</label>
+						<label>
+							<radio value="noonfood3" /><text>主菜③</text>
+						</label>
+						<label>
+							<radio value="noonfood4" /><text>主菜④</text>
+						</label>
+						<label>
+							<radio value="noonfood5" /><text>主菜⑤</text>
+						</label>
+						<label>
+							<radio value="noonsoup" /><text>汤</text>
 						</label>
 						<label>
 							<radio value="fruit" /><text>水果</text>
 						</label>
 						<label>
-							<radio value="other" /><text>凉菜</text>
+							<radio value="cold" /><text>凉菜</text>
 						</label>
 					</radio-group>
 					<view class="title">菜名：</view>
@@ -77,14 +89,18 @@
 				console.log('提交表单数据：' + JSON.stringify(e.detail.value));
 				// 调用云函数向云数据库插入数据
 				uniCloud.callFunction({
-					name: "updateMorningMaterialsData",
+					name: "updateNoonMaterialsData",
 					data: {
 						date : that.objData.date,
 						type : formData.type,
-						morningfood : that.objData.morningfood,
-						morningsoup : that.objData.morningsoup,
+						noonfood1 : that.objData.noonfood1,
+						noonfood2 : that.objData.noonfood2,
+						noonfood3 : that.objData.noonfood3,
+						noonfood4 : that.objData.noonfood4,
+						noonfood5 : that.objData.noonfood5,
+						noonsoup : that.objData.noonsoup,
 						fruit : that.objData.fruit,
-						other :  that.objData.other,
+						cold :  that.objData.cold,
 						oldNickname : that.objData.nickname,
 						nickname : formData.nickname,
 					}

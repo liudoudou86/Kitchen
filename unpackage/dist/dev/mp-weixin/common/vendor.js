@@ -8,9 +8,9 @@ If this is a native custom element, make sure to exclude it from component resol
         "127.0.0.1",
         "10.16.169.63"
     ],
-    "debugPort": 50724,
+    "debugPort": 54276,
     "initialLaunchType": "remote",
-    "servePort": 50725,
+    "servePort": 54277,
     "skipFiles": [
         "<node_internals>/**/*.js",
         "D:/Coding/HBuilderX/plugins/unicloud/**/*.js"

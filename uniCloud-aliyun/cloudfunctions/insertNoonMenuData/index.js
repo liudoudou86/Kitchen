@@ -24,17 +24,9 @@ exports.main = async (event, context) => {
 		noonFoods.push(nfData[i].nickname);
 		noonFoodsMaterials.push(nfData[i].materials);
 	};
-	// 对数组随机排序
-	const newNoonFoods = [];
-	const newNoonFoodsMaterials = [];
-	const nfLength = noonFoods.length; // 需要单独将长度定义
-	for (let i=0; i < nfLength; i++) { // 重新排列index
-		let index = Math.floor(Math.random() * (nfLength - i));
-		newNoonFoods[i] = noonFoods[index];
-		newNoonFoodsMaterials[i] = noonFoodsMaterials[index];
-		noonFoods.splice(index, 1); // 删除该元素
-		noonFoodsMaterials.splice(index, 1);
-	};
+	// 使用冒泡排序对数组随机排序
+	const newNoonFoods = noonFoods.sort(() => Math.random() - 0.5);
+	const newNoonFoodsMaterials = noonFoodsMaterials.sort(() => Math.random() - 0.5);
 	// 组合早餐主食配料表
 	const noonFoodsMaterialsList =[];
 	for (let i=0; i<dates.length; i++) {
@@ -56,17 +48,9 @@ exports.main = async (event, context) => {
 		noonSoups.push(nsData[i].nickname);
 		noonSoupsMaterials.push(nsData[i].materials);
 	};
-	// 对数组随机排序
-	const newNoonSoups = [];
-	const newNoonSoupsMaterials = [];
-	const nsLength = noonSoups.length; // 需要单独将长度定义
-	for (let i=0; i < nsLength; i++) { // 重新排列index
-		let index = Math.floor(Math.random() * (nsLength - i));
-		newNoonSoups[i] = noonSoups[index];
-		newNoonSoupsMaterials[i] = noonSoupsMaterials[index];
-		noonSoups.splice(index, 1); // 删除该元素
-		noonSoupsMaterials.splice(index, 1);
-	};
+	// 使用冒泡排序对数组随机排序
+	const newNoonSoups = noonSoups.sort(() => Math.random() - 0.5);
+	const newNoonSoupsMaterials = noonSoupsMaterials.sort(() => Math.random() - 0.5);
 	// 组合早餐汤配料表
 	const noonSoupsMaterialsList =[];
 	for (let i=0; i<dates.length; i++) {
@@ -88,17 +72,9 @@ exports.main = async (event, context) => {
 		fruits.push(fData[i].nickname);
 		fruitsMaterials.push(fData[i].materials);
 	};
-	// 对数组随机排序
-	const newFruits = [];
-	const newFruitsMaterials = [];
-	const fLength = fruits.length;
-	for (let i=0; i < fLength; i++) {
-		let index = Math.floor(Math.random() * (fLength - i));
-		newFruits[i] = fruits[index];
-		newFruitsMaterials[i] = fruitsMaterials[index];
-		fruits.splice(index, 1);
-		fruitsMaterials.splice(index, 1);
-	};
+	// 使用冒泡排序对数组随机排序
+	const newFruits = fruits.sort(() => Math.random() - 0.5);
+	const newFruitsMaterials = fruitsMaterials.sort(() => Math.random() - 0.5);
 	// 组合水果配料表
 	const fruitsMaterialsList =[];
 	for (let i=0; i<dates.length; i++) {
@@ -120,17 +96,9 @@ exports.main = async (event, context) => {
 		colds.push(cData[i].nickname);
 		coldsMaterials.push(cData[i].materials);
 	};
-	// 对数组随机排序
-	const newColds = [];
-	const newColdsMaterials = [];
-	const cLength = colds.length;
-	for (let i=0; i < cLength; i++) {
-		let index = Math.floor(Math.random() * (cLength - i));
-		newColds[i] = colds[index];
-		newColdsMaterials[i] = coldsMaterials[index];
-		colds.splice(index, 1);
-		coldsMaterials.splice(index, 1);
-	};
+	// 使用冒牌排序对数组随机排序
+	const newColds = colds.sort(() => Math.random() - 0.5);
+	const newColdsMaterials = coldsMaterials.sort(() => Math.random() - 0.5);
 	// 组合其他配料表
 	const coldsMaterialsList =[];
 	for (let i=0; i<dates.length; i++) {

@@ -87,52 +87,44 @@
 	
 </script>
 
-<style>
+<style lang="scss">
 	
 	.form{
 		padding: 0 30upx;
 		margin-top: 10px;
+		.uni-padding-wrap {
+		    margin-top: 40rpx;
+		    margin-bottom: 40rpx;
+			margin-left: 40rpx;
+			margin-right: 40rpx;
+			.uni-form-item {
+			    margin-top: 40rpx;
+			    margin-bottom: 40rpx;
+				margin-left: 40rpx;
+				margin-right: 40rpx;
+				.title {
+				    margin-top: 40rpx;
+				    margin-bottom: 40rpx;
+				}
+				.uni-input {
+				    margin-top: 40rpx;
+				    margin-bottom: 40rpx;
+				}
+				label {
+					margin-left: 20rpx;
+					margin-right: 20rpx;
+				}
+			}
+		}
 	}
-	
-	.uni-padding-wrap {
-	    margin-top: 50rpx;
-	    margin-bottom: 50rpx;
-		margin-left: 50rpx;
-		margin-right: 50rpx;
-	}
-	
-	.uni-form-item {
-		margin-top: 50rpx;
-		margin-bottom: 50rpx;
-		margin-left: 50rpx;
-		margin-right: 50rpx;
-	}
-	
-	.uni-form-item .title {
-		margin-top: 50rpx;
-		margin-bottom: 50rpx;
-	}
-	
-	.uni-form-item .uni-input {
-		margin-top: 50rpx;
-		margin-bottom: 50rpx;
-	}
-	
-	label {
-		margin-left: 10rpx;
-		margin-right: 10rpx;
-		margin-top: 10rpx;
-		margin-bottom: 10rpx;
-	}
-	
-	button {
-	    margin-top: 50rpx;
-	    margin-bottom: 50rpx;
-	}
-	
+
 	.uni-btn-v {
 	    margin: 0 auto;
 	    width: 95%;
+		button {
+		    margin-top: 50rpx;
+		    margin-bottom: 50rpx;
+		}
 	}
 
 </style>

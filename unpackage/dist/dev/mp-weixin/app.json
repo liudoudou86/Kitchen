@@ -1,59 +1,59 @@
 {
-  "pages": [
-    "pages/menu/menu",
-    "pages/morning/morning",
-    "pages/morning/modify/morningmodify",
-    "pages/noon/noon",
-    "pages/noon/modify/noonmodify",
-    "pages/material/material",
-    "pages/setting/setting",
-    "pages/setting/submit/submit",
-    "pages/setting/modify/modify"
-  ],
-  "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
-  },
-  "tabBar": {
-    "color": "#7A7E83",
-    "selectedColor": "#007AFF",
-    "borderStyle": "black",
-    "backgroundColor": "#F8F8F8",
-    "list": [
-      {
-        "pagePath": "pages/menu/menu",
-        "iconPath": "static/tabbar/tab-home.png",
-        "selectedIconPath": "static/tabbar/tab-home-current.png",
-        "text": "菜谱"
-      },
-      {
-        "pagePath": "pages/morning/morning",
-        "iconPath": "static/tabbar/tab-cate.png",
-        "selectedIconPath": "static/tabbar/tab-cate-current.png",
-        "text": "早餐"
-      },
-      {
-        "pagePath": "pages/noon/noon",
-        "iconPath": "static/tabbar/tab-cate.png",
-        "selectedIconPath": "static/tabbar/tab-cate-current.png",
-        "text": "午餐"
-      },
-      {
-        "pagePath": "pages/material/material",
-        "iconPath": "static/tabbar/tab-cart.png",
-        "selectedIconPath": "static/tabbar/tab-cart-current.png",
-        "text": "采购单"
-      },
-      {
-        "pagePath": "pages/setting/setting",
-        "iconPath": "static/tabbar/tab-my.png",
-        "selectedIconPath": "static/tabbar/tab-my-current.png",
-        "text": "设置"
-      }
-    ]
-  },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/menu/menu",
+        "pages/morning/morning",
+        "pages/morning/modify/morningmodify",
+        "pages/noon/noon",
+        "pages/noon/modify/noonmodify",
+        "pages/material/material",
+        "pages/setting/setting",
+        "pages/setting/submit/submit",
+        "pages/setting/modify/modify"
+    ],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationBarTitleText": "uni-app",
+        "navigationBarBackgroundColor": "#F8F8F8",
+        "backgroundColor": "#F8F8F8"
+    },
+    "tabBar": {
+        "color": "#7A7E83",
+        "selectedColor": "#007AFF",
+        "borderStyle": "black",
+        "backgroundColor": "#F8F8F8",
+        "list": [
+            {
+                "pagePath": "pages/menu/menu",
+                "iconPath": "static/tabbar/tab-home.png",
+                "selectedIconPath": "static/tabbar/tab-home-current.png",
+                "text": "菜谱"
+            },
+            {
+                "pagePath": "pages/morning/morning",
+                "iconPath": "static/tabbar/tab-cate.png",
+                "selectedIconPath": "static/tabbar/tab-cate-current.png",
+                "text": "早餐"
+            },
+            {
+                "pagePath": "pages/noon/noon",
+                "iconPath": "static/tabbar/tab-cate.png",
+                "selectedIconPath": "static/tabbar/tab-cate-current.png",
+                "text": "午餐"
+            },
+            {
+                "pagePath": "pages/material/material",
+                "iconPath": "static/tabbar/tab-cart.png",
+                "selectedIconPath": "static/tabbar/tab-cart-current.png",
+                "text": "采购单"
+            },
+            {
+                "pagePath": "pages/setting/setting",
+                "iconPath": "static/tabbar/tab-my.png",
+                "selectedIconPath": "static/tabbar/tab-my-current.png",
+                "text": "设置"
+            }
+        ]
+    },
+    "usingComponents": {},
+    "sitemapLocation": "sitemap.json"
 }

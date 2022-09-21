@@ -71,18 +71,17 @@
 				
 </script>
 
-<style>
+<style lang="scss">
 
  .uni-btn-v {
 	 margin-top: 50rpx;
 	 margin-bottom: 50rpx;
 	 margin-left: 50rpx;
 	 margin-right: 50rpx;
- }
- 
- .navigator-hover {
-	 margin-top: 50rpx;
-	 margin-bottom: 50rpx;
+	 .navigator-hover {
+	 	 margin-top: 50rpx;
+	 	 margin-bottom: 50rpx;
+	 }
  }
 
 </style>

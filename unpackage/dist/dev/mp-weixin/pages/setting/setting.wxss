@@ -1,1 +1,1 @@
-.uni-btn-v{margin:50rpx}.navigator-hover{margin-top:50rpx;margin-bottom:50rpx}
+.uni-btn-v{margin:50rpx}.uni-btn-v .navigator-hover{margin-top:50rpx;margin-bottom:50rpx}

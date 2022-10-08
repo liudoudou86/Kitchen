@@ -21,7 +21,7 @@
 					<view class="title">菜名：</view>
 					<input class="uni-input" name="nickname" @input="inputNickname" placeholder="请输入菜名" />
 					<block v-for="(item, _id) in nickNameList" :key="_id">
-						<text>【{{item}}】</text>
+						<span>{{item}}</span>
 					</block>
 				</view>
 				<view class="uni-btn-v">

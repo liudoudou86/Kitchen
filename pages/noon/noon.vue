@@ -14,7 +14,7 @@
 					<uni-th width="100" align="center">凉菜</uni-th>
 					<uni-th width="90" align="center">设置</uni-th>
 				</uni-tr>
-				<uni-tr v-for="(item, index) in tableData" :key="index">
+				<uni-tr v-for="(item, _id) in tableData" :key="_id">
 					<uni-td align="center">
 						<view class="date">{{ item.date }}</view>
 					</uni-td>

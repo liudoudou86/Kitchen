@@ -3530,8 +3530,8 @@ if (uni.restoreGlobal) {
               default: vue.withCtx(() => [
                 vue.createVNode(_component_uni_td, { align: "center" }, {
                   default: vue.withCtx(() => [
-                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.morningFoodData, (item, index) => {
-                      return vue.openBlock(), vue.createElementBlock("view", { key: index }, [
+                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.morningFoodData, (item, _id) => {
+                      return vue.openBlock(), vue.createElementBlock("view", { key: _id }, [
                         vue.createElementVNode("button", {
                           class: "uni-button",
                           size: "mini",
@@ -3545,8 +3545,8 @@ if (uni.restoreGlobal) {
                 }),
                 vue.createVNode(_component_uni_td, { align: "center" }, {
                   default: vue.withCtx(() => [
-                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.morningSoupData, (item, index) => {
-                      return vue.openBlock(), vue.createElementBlock("view", { key: index }, [
+                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.morningSoupData, (item, _id) => {
+                      return vue.openBlock(), vue.createElementBlock("view", { key: _id }, [
                         vue.createElementVNode("button", {
                           class: "uni-button",
                           size: "mini",
@@ -3560,8 +3560,8 @@ if (uni.restoreGlobal) {
                 }),
                 vue.createVNode(_component_uni_td, { align: "center" }, {
                   default: vue.withCtx(() => [
-                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.dinnerFoodData, (item, index) => {
-                      return vue.openBlock(), vue.createElementBlock("view", { key: index }, [
+                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.dinnerFoodData, (item, _id) => {
+                      return vue.openBlock(), vue.createElementBlock("view", { key: _id }, [
                         vue.createElementVNode("button", {
                           class: "uni-button",
                           size: "mini",
@@ -3575,8 +3575,8 @@ if (uni.restoreGlobal) {
                 }),
                 vue.createVNode(_component_uni_td, { align: "center" }, {
                   default: vue.withCtx(() => [
-                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.dinnerSoupData, (item, index) => {
-                      return vue.openBlock(), vue.createElementBlock("view", { key: index }, [
+                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.dinnerSoupData, (item, _id) => {
+                      return vue.openBlock(), vue.createElementBlock("view", { key: _id }, [
                         vue.createElementVNode("button", {
                           class: "uni-button",
                           size: "mini",
@@ -3590,8 +3590,8 @@ if (uni.restoreGlobal) {
                 }),
                 vue.createVNode(_component_uni_td, { align: "center" }, {
                   default: vue.withCtx(() => [
-                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.coldData, (item, index) => {
-                      return vue.openBlock(), vue.createElementBlock("view", { key: index }, [
+                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.coldData, (item, _id) => {
+                      return vue.openBlock(), vue.createElementBlock("view", { key: _id }, [
                         vue.createElementVNode("button", {
                           class: "uni-button",
                           size: "mini",
@@ -3605,8 +3605,8 @@ if (uni.restoreGlobal) {
                 }),
                 vue.createVNode(_component_uni_td, { align: "center" }, {
                   default: vue.withCtx(() => [
-                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.fruitData, (item, index) => {
-                      return vue.openBlock(), vue.createElementBlock("view", { key: index }, [
+                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.fruitData, (item, _id) => {
+                      return vue.openBlock(), vue.createElementBlock("view", { key: _id }, [
                         vue.createElementVNode("button", {
                           class: "uni-button",
                           size: "mini",
@@ -3620,8 +3620,8 @@ if (uni.restoreGlobal) {
                 }),
                 vue.createVNode(_component_uni_td, { align: "center" }, {
                   default: vue.withCtx(() => [
-                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.otherData, (item, index) => {
-                      return vue.openBlock(), vue.createElementBlock("view", { key: index }, [
+                    (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.otherData, (item, _id) => {
+                      return vue.openBlock(), vue.createElementBlock("view", { key: _id }, [
                         vue.createElementVNode("button", {
                           class: "uni-button",
                           size: "mini",
@@ -3754,8 +3754,8 @@ if (uni.restoreGlobal) {
               ]),
               _: 1
             }),
-            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.tableData, (item, index) => {
-              return vue.openBlock(), vue.createBlock(_component_uni_tr, { key: index }, {
+            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.tableData, (item, _id) => {
+              return vue.openBlock(), vue.createBlock(_component_uni_tr, { key: _id }, {
                 default: vue.withCtx(() => [
                   vue.createVNode(_component_uni_td, { align: "center" }, {
                     default: vue.withCtx(() => [
@@ -3915,8 +3915,8 @@ if (uni.restoreGlobal) {
               onInput: _cache[0] || (_cache[0] = (...args) => $options.inputNickname && $options.inputNickname(...args)),
               placeholder: "\u8BF7\u8F93\u5165\u83DC\u540D"
             }, null, 32),
-            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.nickNameList, (item, index) => {
-              return vue.openBlock(), vue.createElementBlock("text", { key: index }, "\u3010" + vue.toDisplayString(item) + "\u3011", 1);
+            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.nickNameList, (item, _id) => {
+              return vue.openBlock(), vue.createElementBlock("text", { key: _id }, "\u3010" + vue.toDisplayString(item) + "\u3011", 1);
             }), 128))
           ]),
           vue.createElementVNode("view", { class: "uni-btn-v" }, [
@@ -4081,8 +4081,8 @@ if (uni.restoreGlobal) {
               ]),
               _: 1
             }),
-            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.tableData, (item, index) => {
-              return vue.openBlock(), vue.createBlock(_component_uni_tr, { key: index }, {
+            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.tableData, (item, _id) => {
+              return vue.openBlock(), vue.createBlock(_component_uni_tr, { key: _id }, {
                 default: vue.withCtx(() => [
                   vue.createVNode(_component_uni_td, { align: "center" }, {
                     default: vue.withCtx(() => [
@@ -4286,8 +4286,8 @@ if (uni.restoreGlobal) {
               onInput: _cache[0] || (_cache[0] = (...args) => $options.inputNickname && $options.inputNickname(...args)),
               placeholder: "\u8BF7\u8F93\u5165\u83DC\u540D"
             }, null, 32),
-            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.nickNameList, (item, index) => {
-              return vue.openBlock(), vue.createElementBlock("text", { key: index }, "\u3010" + vue.toDisplayString(item) + "\u3011", 1);
+            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.nickNameList, (item, _id) => {
+              return vue.openBlock(), vue.createElementBlock("text", { key: _id }, "\u3010" + vue.toDisplayString(item) + "\u3011", 1);
             }), 128))
           ]),
           vue.createElementVNode("view", { class: "uni-btn-v" }, [
@@ -4730,8 +4730,8 @@ if (uni.restoreGlobal) {
               value: "",
               placeholder: "\u8BF7\u8F93\u5165\u83DC\u540D"
             }, null, 32),
-            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.nickNameList, (item, index) => {
-              return vue.openBlock(), vue.createElementBlock("text", { key: index }, "\u3010" + vue.toDisplayString(item) + "\u3011", 1);
+            (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList($data.nickNameList, (item, _id) => {
+              return vue.openBlock(), vue.createElementBlock("text", { key: _id }, "\u3010" + vue.toDisplayString(item) + "\u3011", 1);
             }), 128))
           ]),
           vue.createElementVNode("view", { class: "uni-form-item uni-column" }, [

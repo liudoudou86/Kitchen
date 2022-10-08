@@ -13,37 +13,37 @@
 				</uni-tr>
 				<uni-tr>
 					<uni-td align="center">
-						<view v-for="(item, index) in morningFoodData" :key="index">
+						<view v-for="(item, _id) in morningFoodData" :key="_id">
 							<button class="uni-button" size="mini" type="default" @click="getMaterials(item)">{{ item.nickname }}</button>
 						</view>
 					</uni-td>
 					<uni-td align="center">
-						<view v-for="(item, index) in morningSoupData" :key="index">
+						<view v-for="(item, _id) in morningSoupData" :key="_id">
 							<button class="uni-button" size="mini" type="default" @click="getMaterials(item)">{{ item.nickname }}</button>
 						</view>
 					</uni-td>
 					<uni-td align="center">
-						<view v-for="(item, index) in dinnerFoodData" :key="index">
+						<view v-for="(item, _id) in dinnerFoodData" :key="_id">
 							<button class="uni-button" size="mini" type="default" @click="getMaterials(item)">{{ item.nickname }}</button>
 						</view>
 					</uni-td>
 					<uni-td align="center">
-						<view v-for="(item, index) in dinnerSoupData" :key="index">
+						<view v-for="(item, _id) in dinnerSoupData" :key="_id">
 							<button class="uni-button" size="mini" type="default" @click="getMaterials(item)">{{ item.nickname }}</button>
 						</view>
 					</uni-td>
 					<uni-td align="center">
-						<view v-for="(item, index) in coldData" :key="index">
+						<view v-for="(item, _id) in coldData" :key="_id">
 							<button class="uni-button" size="mini" type="default" @click="getMaterials(item)">{{ item.nickname }}</button>
 						</view>
 					</uni-td>
 					<uni-td align="center">
-						<view v-for="(item, index) in fruitData" :key="index">
+						<view v-for="(item, _id) in fruitData" :key="_id">
 							<button class="uni-button" size="mini" type="default" @click="getMaterials(item)">{{ item.nickname }}</button>
 						</view>
 					</uni-td>
 					<uni-td align="center">
-						<view v-for="(item, index) in otherData" :key="index">
+						<view v-for="(item, _id) in otherData" :key="_id">
 							<button class="uni-button" size="mini" type="default" @click="getMaterials(item)">{{ item.nickname }}</button>
 						</view>
 					</uni-td>

@@ -5,7 +5,7 @@
 				<view class="uni-form-item uni-column">
 					<view class="title">菜名：</view>
 					<input class="uni-input" name="nickname" type="text" @input="inputNickname" value="" placeholder="请输入菜名" />
-					<block v-for="(item,index) in nickNameList" :key="index">
+					<block v-for="(item, _id) in nickNameList" :key="_id">
 						<text>【{{item}}】</text>
 					</block>
 				</view>

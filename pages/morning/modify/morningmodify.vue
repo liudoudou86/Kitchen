@@ -20,7 +20,7 @@
 					</radio-group>
 					<view class="title">菜名：</view>
 					<input class="uni-input" name="nickname" @input="inputNickname" placeholder="请输入菜名" />
-					<block v-for="(item,index) in nickNameList" :key="index">
+					<block v-for="(item, _id) in nickNameList" :key="_id">
 						<text>【{{item}}】</text>
 					</block>
 				</view>
